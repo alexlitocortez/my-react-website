@@ -1,27 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {FaBars} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-
-
-export const MenuBars = styled(FaBars)`
-    display: none;
-
-    @media screen and (max-width: 768px) {
-        display: block;
-        background-image: url(${FaBars});
-        background-size: contain;
-        height: 30px;
-        width: 40px;
-        color: white;
-        cursor: pointer;
-        position: absolute;
-        top: 30px;
-        right: 0;
-        transform: translateY(-50%, 25%);
-    }
-`;
 
 export const NavContainer = styled.section`
     display: flex;
@@ -53,6 +33,11 @@ const NavMenuArea = styled.div`
         cursor: pointer;
     }
 
+    a:hover {
+        opacity: 0.3;
+        transition: fill 0.25s;
+    }
+
     @media screen and (max-width: 768px) {
         display: none;
     }
@@ -64,7 +49,6 @@ function NavMenu() {
     return (
         <div>
             <NavContainer>
-                <MenuBars />
                 <NavMenuArea>
                     <ul>
                         <li><Link to='/about'>About</Link></li>
