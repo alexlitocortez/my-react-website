@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
-import myImage from '../src/caricature.jpg';
+
 
 export const HeaderContainer = styled.div`
     display: flex;
@@ -11,15 +11,6 @@ export const HeaderContainer = styled.div`
     padding: 1rem 2rem;
     background: black;
     overflow-x: hidden;
-`;
-
-export const HeaderLogo = styled(myImage)`
-    width: 60px;
-    height: 60px;
-    color: #fff;
-    position: absolute;
-    top: 15px;
-    left: 5px;
 `;
 
 export const MenuBars = styled(FaBars)`
@@ -44,7 +35,6 @@ function Header() {
     return (
         <div>
             <HeaderContainer />
-            <HeaderLogo />
             <MenuBars />
         </div>
     )
