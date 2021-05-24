@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
+import myCharacter from './../../images/caricature.jpg';
 
 
 export const HeaderContainer = styled.div`
@@ -34,7 +35,9 @@ export const MenuBars = styled(FaBars)`
 function Header() {
     return (
         <div>
-            <HeaderContainer />
+            <HeaderContainer>
+                <img src={myCharacter}></img>
+            </HeaderContainer>
             <MenuBars />
         </div>
     )

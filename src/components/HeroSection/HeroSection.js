@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
+
 const Hero = styled.section`
     height: 100vh;
     max-height: 1100px;
@@ -70,13 +71,8 @@ function HeroSection() {
         <div>
             <Hero>
                 <HeroWrapper>
+                    <HeroImage />
                         <HeroContent>
-                            <h1>
-                                It me
-                            </h1>
-                            <p>
-                                Make it happen!
-                            </p>
                         </HeroContent>
                 </HeroWrapper>
             </Hero>
