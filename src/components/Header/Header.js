@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
 import myCharacter from './../../images/caricature.jpg';
+import { Link } from 'react-router-dom';
 
 
 export const HeaderContainer = styled.div`
@@ -36,11 +37,14 @@ function Header() {
     return (
         <div>
             <HeaderContainer>
-                <img src={myCharacter}></img>
+                <img src={myCharacter} alt='caricature of myself as the logo'></img>
             </HeaderContainer>
             <MenuBars />
         </div>
     )
 }
+
+<li><Link to='/about'>About</Link></li>
+
 
 export default Header

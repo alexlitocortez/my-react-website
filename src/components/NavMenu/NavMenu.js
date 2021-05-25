@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
 export const NavContainer = styled.section`
     display: flex;
     justify-content: space-between;
@@ -51,7 +50,7 @@ function NavMenu() {
             <NavContainer>
                 <NavMenuArea>
                     <ul>
-                        <li><Link to='/about.js'>About</Link></li>
+                        <li><Link to='/about'>About</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
                         <li><Link to='/projects'>Projects</Link></li>
                         <li><Link to='/contact'>Contact</Link></li>
