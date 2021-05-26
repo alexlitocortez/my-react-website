@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 
 export const NavContainer = styled.section`
     display: flex;
@@ -8,9 +9,8 @@ export const NavContainer = styled.section`
     height: 50px;
     background: black;
     padding: 1rem 2rem;
-    z-index: 1000;
-    position: fixed;
     width: 100%;
+    position: relative;
 `;
 
 const NavMenuArea = styled.div`
@@ -46,19 +46,24 @@ const NavMenuArea = styled.div`
 
 function NavMenu() {
     return (
+        <nav>
         <div>
             <NavContainer>
                 <NavMenuArea>
                     <ul>
-                        <li><Link to='/about'>About</Link></li>
-                        <li><Link to='/blog'>Blog</Link></li>
-                        <li><Link to='/projects'>Projects</Link></li>
-                        <li><Link to='/contact'>Contact</Link></li>
+                        <li><NavLink to='/'>Home</NavLink></li>
+                        <li><NavLink to='/about'>About</NavLink></li>
+                        <li><NavLink to='/blog'>Blog</NavLink></li>
+                        <li><NavLink to='/projects'>Projects</NavLink></li>
+                        <li><NavLink to='/contact'>Contact</NavLink></li>
                     </ul>
                 </NavMenuArea>
             </NavContainer>
         </div>
+        </nav>
     );
 };
 
 export default NavMenu
+
+

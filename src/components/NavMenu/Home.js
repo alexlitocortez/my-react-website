@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
 import myCharacter from './../../images/caricature.jpg';
-import { Link } from 'react-router-dom';
-
+import Footer from '../Footer/Footer';
 
 export const HeaderContainer = styled.div`
     display: flex;
@@ -33,18 +32,20 @@ export const MenuBars = styled(FaBars)`
     }
 `;
 
-function Header() {
+function Home() {
     return (
         <div>
             <HeaderContainer>
                 <img src={myCharacter} alt='caricature of myself as the logo'></img>
             </HeaderContainer>
-            <MenuBars />
+            <Footer />
         </div>
     )
 }
 
-<li><Link to='/about'>About</Link></li>
+export default Home
 
 
-export default Header
+// Problems:
+// 1. Navmenu covers HeaderContainer (Try to bring NavMenu below header)
+// 2. Hamburger menu doesn't show when screen gets small
