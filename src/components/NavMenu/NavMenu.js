@@ -6,12 +6,13 @@ import { NavLink } from 'react-router-dom';
 export const NavContainer = styled.section`
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     height: 50px;
     background: black;
     padding: 1rem 2rem;
     width: 100%;
-    position: relative;
 `;
+
 
 const NavMenuArea = styled.div`
     display: flex;

@@ -1,43 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
-import { FaBars } from 'react-icons/fa';
-import myCharacter from './../../images/caricature.jpg';
+import Header from '../Header/Header'
 import Footer from '../Footer/Footer';
-
-export const HeaderContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    width: 100%;
-    padding: 1rem 2rem;
-    background: black;
-    overflow-x: hidden;
-`;
-
-export const MenuBars = styled(FaBars)`
-    display: none;
-
-    @media screen and (max-width: 768px) {
-        display: block;
-        background-image: url(${FaBars});
-        background-size: contain;
-        height: 30px;
-        width: 40px;
-        color: white;
-        cursor: pointer;
-        position: absolute;
-        top: 10px;
-        right: 0;
-        transform: translateY(-50%, 25%);
-    }
-`;
+import NavMenu from './NavMenu';
 
 function Home() {
     return (
         <div>
-            <HeaderContainer>
-                <img src={myCharacter} alt='caricature of myself as the logo'></img>
-            </HeaderContainer>
+            <Header />
             <Footer />
         </div>
     )
