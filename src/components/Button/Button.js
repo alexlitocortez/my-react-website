@@ -19,3 +19,5 @@ export const Button = styled(Link)`
         transform: translateY(-2px);
     }
 `;
+
+export default Button

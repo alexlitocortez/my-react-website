@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import myCharacter from './../../images/caricature.jpg';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
@@ -33,17 +33,16 @@ export const MenuBars = styled(FaBars)`
 `;
 
 function Header() {
+
     return (
         <div>
             <HeaderContainer>
                 <img src={myCharacter} style={{ borderRadius: 90 }}></img>
             </HeaderContainer>
-            <MenuBars />
+            <MenuBars onClick={this.showToggleNav}/>
         </div>
     )
 }
 
 
 export default Header
-
-// Header is right
