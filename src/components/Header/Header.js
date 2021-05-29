@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import myCharacter from './../../images/caricature.jpg';
-import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
+
 
 export const HeaderContainer = styled.div`
     display: flex;
@@ -13,25 +13,6 @@ export const HeaderContainer = styled.div`
     background: black;
 `;
 
-
-export const MenuBars = styled(FaBars)`
-    display: none;
-
-    @media screen and (max-width: 768px) {
-        display: block;
-        background-image: url(${FaBars});
-        background-size: contain;
-        height: 30px;
-        width: 40px;
-        color: white;
-        cursor: pointer;
-        position: absolute;
-        top: 10px;
-        right: 0;
-        transform: translateY(-50%, 25%);
-    }
-`;
-
 function Header() {
 
     return (
@@ -39,10 +20,10 @@ function Header() {
             <HeaderContainer>
                 <img src={myCharacter} style={{ borderRadius: 90 }}></img>
             </HeaderContainer>
-            <MenuBars onClick={this.showToggleNav}/>
         </div>
     )
 }
 
 
 export default Header
+

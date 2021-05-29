@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../Button/Button'
 import { navData } from '../data/NavData';
 import { Link } from 'react-router-dom';
-import { FaTimes } from 'react-icons/fa';
 
 const DropdownContainer = styled.div`
     display: none;
@@ -22,13 +20,10 @@ const DropdownContainer = styled.div`
     transition: 0.3s ease-in-out;
     opacity: ${({ isOpen }) => (isOpen ? `1` : `0`)};
     top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+    transform: ${({ isOpen }) => isOpen ? 'translateX(0)' : 'translateX(-100%)'};
     }
 `;
 
-
-const CloseIcon = styled(FaTimes)`
-    color: #000d1a;
-`;
 
 const DropdownMenu = styled.div`
     display: grid;
@@ -58,15 +53,11 @@ const DropdownLink = styled(Link)`
     }
 `;
 
-const BtnWrap = styled.div`
-    display: flex;
-    justify-content: center;
-`;
 
-const Dropdown = (isOpen, toggle) => {
+const Dropdown = (isOpen) => {
+
     return (
-        <DropdownContainer isOpen={isOpen} onClick={toggle}>
-                <CloseIcon />
+        <DropdownContainer isOpen={isOpen}>
                 <DropdownMenu>
                     {navData.map((item, index) => (
                         <DropdownLink to={item.link} key={index}>
@@ -74,14 +65,11 @@ const Dropdown = (isOpen, toggle) => {
                         </DropdownLink>
                     ))}
                 </DropdownMenu>
-                <BtnWrap>
-                    <Button primary='true' round='true' big='true' to='/contact'>
-                        Contact 
-                    </Button>
-                </BtnWrap>
+                
         </DropdownContainer>
     )
 }
 
 
 export default Dropdown
+
