@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { navData } from '../data/NavData';
 import { Link } from 'react-router-dom';
 
+
 const DropdownContainer = styled.div`
     display: none;
 
@@ -20,8 +21,8 @@ const DropdownContainer = styled.div`
     transition: 0.3s ease-in-out;
     opacity: ${({ isOpen }) => (isOpen ? `1` : `0`)};
     top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
-    transform: ${({ isOpen }) => isOpen ? 'translateX(0)' : 'translateX(-100%)'};
     }
+    transform: ${({ isOpen }) => isOpen ? 'translateX(0)' : 'translateX(-100%)'};
 `;
 
 
@@ -36,6 +37,7 @@ const DropdownMenu = styled.div`
         grid-template-rows: repeat(4, 60px);
     }
 `;
+
 
 const DropdownLink = styled(Link)`
     display: flex;
@@ -54,11 +56,11 @@ const DropdownLink = styled(Link)`
 `;
 
 
-const Dropdown = (isOpen) => {
+const Dropdown = (open, toggle) => {
 
     return (
-        <DropdownContainer isOpen={isOpen}>
-                <DropdownMenu>
+        <DropdownContainer open={open} onClick={toggle}>
+                <DropdownMenu onClick={toggle}>
                     {navData.map((item, index) => (
                         <DropdownLink to={item.link} key={index}>
                             {item.title}
