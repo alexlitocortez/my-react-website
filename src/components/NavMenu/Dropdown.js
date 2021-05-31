@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { navData } from '../data/NavData';
 import { Link } from 'react-router-dom';
+import { bool } from 'prop-types';
 
 
 const DropdownContainer = styled.div`
@@ -9,7 +10,6 @@ const DropdownContainer = styled.div`
 
     @media screen and (max-width: 768px) {
 
-    position: fixed,
     z-index: 999;
     width: 100%;
     height: 100%;
@@ -22,7 +22,7 @@ const DropdownContainer = styled.div`
     opacity: ${({ isOpen }) => (isOpen ? `1` : `0`)};
     top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
     }
-    transform: ${({ isOpen }) => isOpen ? 'translateX(0)' : 'translateX(-100%)'};
+    transform: ${({ Open }) => Open ? 'translateX(0)' : 'translateX(-100%)'};
 `;
 
 
@@ -56,11 +56,11 @@ const DropdownLink = styled(Link)`
 `;
 
 
-const Dropdown = (open, toggle) => {
+const Dropdown = ({ open }) => {
 
     return (
-        <DropdownContainer open={open} onClick={toggle}>
-                <DropdownMenu onClick={toggle}>
+        <DropdownContainer >
+                <DropdownMenu open={open}>
                     {navData.map((item, index) => (
                         <DropdownLink to={item.link} key={index}>
                             {item.title}
@@ -72,6 +72,4 @@ const Dropdown = (open, toggle) => {
     )
 }
 
-
 export default Dropdown
-
