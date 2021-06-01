@@ -28,9 +28,6 @@ function Footer() {
                         <i className='fab fa-linkedin'></i>
                     </Link>
                 </div>
-            <h2>
-                Alex Cortez 2021
-            </h2>
             </div>
         </div>
     )

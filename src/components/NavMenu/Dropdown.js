@@ -2,14 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { navData } from '../data/NavData';
 import { Link } from 'react-router-dom';
-import { bool } from 'prop-types';
+import { FaTimes } from 'react-icons/fa';
 
 
 const DropdownContainer = styled.div`
-    display: none;
-
-    @media screen and (max-width: 768px) {
-
+    position: fixed;
     z-index: 999;
     width: 100%;
     height: 100%;
@@ -19,10 +16,8 @@ const DropdownContainer = styled.div`
     top: 0;
     left: 0;
     transition: 0.3s ease-in-out;
-    opacity: ${({ isOpen }) => (isOpen ? `1` : `0`)};
-    top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
-    }
-    transform: ${({ Open }) => Open ? 'translateX(0)' : 'translateX(-100%)'};
+    opacity: ${({open}) => (open ? '1' : '0' )};
+    top: ${({open}) => (open ? '0' : '-100%' )};
 `;
 
 
@@ -55,19 +50,41 @@ const DropdownLink = styled(Link)`
     }
 `;
 
+const Icon = styled.div`
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+`;
 
-const Dropdown = ({ open }) => {
+const CloseIcon = styled(FaTimes)`
+    color: #000d1a;
+`;
+
+const BtnWrap = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
+const Dropdown = ({open, toggle}) => {
 
     return (
-        <DropdownContainer >
-                <DropdownMenu open={open}>
+        <DropdownContainer open={open} onClick={toggle} >
+            <Icon onClick={toggle} >
+                <CloseIcon />
+            </Icon>
+            <DropdownMenu>
                     {navData.map((item, index) => (
                         <DropdownLink to={item.link} key={index}>
                             {item.title}
                         </DropdownLink>
                     ))}
                 </DropdownMenu>
-                
+                <BtnWrap>
+                </BtnWrap>
         </DropdownContainer>
     )
 }
