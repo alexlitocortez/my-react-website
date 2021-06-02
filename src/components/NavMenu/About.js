@@ -1,28 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
-import '../../images/HeroImageOne.jpeg';
+import imageOne from '../../images/HeroImageOne.jpeg';
+import imageTwo from '../../images/HeroImageTwo.jpeg';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
-
-const AboutSection = styled.div`
-    display: grid;
-    grid-template-columns: 2fr;
+export const aboutText = styled.div`
     text-align: center;
-    margin-bottom: 4rem;
-
-    @media screen and (max-width: 480px) {
-        grid-template-rows: repeat(4, 60px);
-    }
+    font-size: 24px;
+    width: 300px;
 `;
 
 function About() {
     return (
         <div>
-            <AboutSection>
+            <aboutText>
+                Hello, my name is Alex and I'm a frontend developer. I currently live in the Bay Area and have
+                worked at a startup which sparked my interest in learning to code. 
+            </aboutText>
+            <Grid container spacing={34} justify={'center'}>
+                <Grid item>
+                    <Paper style={{ height: 300, width: 300 }}>
 
-            </AboutSection>
+                    </Paper>
+                </Grid>
+                <Grid item>
+                    <Paper style={{ height: 300, width: 300 }}>
+
+                    </Paper>
+                </Grid>
+            </Grid>
         </div>
     );
 }
 
-
 export default About
+

@@ -64,17 +64,12 @@ const CloseIcon = styled(FaTimes)`
     color: #000d1a;
 `;
 
-const BtnWrap = styled.div`
-    display: flex;
-    justify-content: center;
-`;
-
 const Dropdown = ({open, toggle}) => {
 
     return (
         <DropdownContainer open={open} onClick={toggle} >
             <Icon onClick={toggle} >
-                <CloseIcon />
+                <CloseIcon onClick={toggle}/>
             </Icon>
             <DropdownMenu>
                     {navData.map((item, index) => (
@@ -83,8 +78,6 @@ const Dropdown = ({open, toggle}) => {
                         </DropdownLink>
                     ))}
                 </DropdownMenu>
-                <BtnWrap>
-                </BtnWrap>
         </DropdownContainer>
     )
 }

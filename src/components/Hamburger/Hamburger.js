@@ -1,7 +1,8 @@
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
+import styled from 'styled-components';
 
-export const MenuBars = styled(FaBars)`
+const MenuBars = styled(FaBars)`
     display: none;
 
     @media screen and (max-width: 768px) {
@@ -25,7 +26,8 @@ export const MenuBars = styled(FaBars)`
 `;
 
 
-function Hamburger() {
+function Hamburger({toggle}) {
+
     return (
         <div>
             <MenuBars onClick={toggle} />
@@ -34,3 +36,4 @@ function Hamburger() {
 }
 
 export default Hamburger
+
