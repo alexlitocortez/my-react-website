@@ -12,6 +12,9 @@ function Footer() {
                 <Link to='/'>
                     LinkedIn
                 </Link>
+                <Link to='/'>
+                    Github
+                </Link>
                 <div className='social-media-icons'>
                     <Link
                     to='/'
@@ -26,6 +29,13 @@ function Footer() {
                     aria-label='LinkedIn'
                     >
                         <i className='fab fa-linkedin'></i>
+                    </Link>
+                    <Link
+                    to='/'
+                    target='_blank'
+                    aria-label='Github'
+                    >
+                        <i className='fab fa-github'></i>
                     </Link>
                 </div>
             </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import myCharacter from '../../images/caricature.jpg';
+import { Link } from 'react-router-dom';
+
 
 const LogoContainer = styled.div`
     display: flex;
@@ -24,17 +26,20 @@ const LogoImage = styled.div`
 `;
 
 
-
 function Logo() {
     return (
         <div>
             <LogoContainer>
-                <LogoImage>
-                    <img src={myCharacter} style={{ borderRadius: 90 }} alt='logo'></img>
-                </LogoImage>
+                    <Link to='/'>
+                    <LogoImage>
+                        <img src={myCharacter} style={{ borderRadius: 90, cursor: 'pointer' }} alt='logo'></img>
+                    </LogoImage>
+                    </Link>
             </LogoContainer>
         </div>
     )
 }
 
 export default Logo
+
+

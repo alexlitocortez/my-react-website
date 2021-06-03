@@ -44,6 +44,7 @@ const DropdownLink = styled(Link)`
     list-style: none;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    margin-bottom: 50px;
 
     &:hover {
         color: #000d1a;

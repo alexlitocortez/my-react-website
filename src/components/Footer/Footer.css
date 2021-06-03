@@ -46,9 +46,14 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 1rem;
     position: relative;
-    bottom: 80px;
+    bottom: 90px;
     left: 100px;
     margin-top: 10px;
+}
+
+.social-media-icons {
+    position: relative;
+    bottom: 23px;
 }
 
 h2 {
