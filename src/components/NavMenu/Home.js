@@ -1,15 +1,20 @@
 import React from 'react';
 import Footer from '../Footer/Footer';
+import HeroSection from '../HeroSection/HeroSection';
+
+
 
 function Home() {
     return (
         <div>
+            <HeroSection />
             <Footer />
         </div>
     )
 }
 
 export default Home
+
 
 
 // Problems:
