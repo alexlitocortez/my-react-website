@@ -60,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Blog() {
     const classes = useStyles();
-
     return (
         <div>
             <Box>
@@ -73,6 +72,7 @@ function Blog() {
                     Articles
                 </Typography>
                 <Grid Container spacing={6}>
+                    <div>
                     <Grid className={classes.item} item xs={12} sm={6} md={4} lg={3}>
                         <Card className={classes.card}>
                             <CardActionArea>
@@ -169,6 +169,7 @@ function Blog() {
                             </CardActions>
                     </Card>
                     </Grid>
+                    </div>
                 </Grid>
             </Container>
         </div>
