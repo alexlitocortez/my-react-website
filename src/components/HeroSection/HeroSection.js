@@ -25,7 +25,7 @@ function HeroSection() {
         <div>
             <Box className={classes.hero}>
                 <Box>
-                    My Blog
+                    
                 </Box>
             </Box>
         </div>

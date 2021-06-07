@@ -1,21 +1,22 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
+import styled from 'styled-components'
+import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box';
-import { Avatar, Container, Typography } from '@material-ui/core';
+import { Avatar, Typography } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
+
+import {BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+
+// Images
 import myCharacter from '../../images/caricature.jpg';
-
-
-// Image imports
 import blogImageOne from '../../images/blog_image_1.jpg';
 import blogImageTwo from '../../images/blog_image_2.jpg';
 import blogImageThree from '../../images/blog_image_3.jpg'
-
 
 const useStyles = makeStyles((theme) => ({
     hero: {
@@ -28,153 +29,152 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: '4rem',
-    },
-    blogsContainer: {
-        paddingTop: theme.spacing(3),
-        gridTemplateRows: '1fr',
-        display: 'flex'
+        fontSize: '4rem'
     },
     blogTitle: {
         fontWeight: 800,
         paddingBottom: theme.spacing(3),
-        color: 'black'
+        color: 'black',
+    },
+    blogsContainer: {
+        paddingTop: theme.spacing(3),
+        overflow: 'auto',
     },
     card: {
-        maxWidth: '100%',
-        marginTop: theme.spacing(3),
+        maxWidth: '90%',
+        marginLeft: '22px'
     },
     media: {
         height: 240
     },
+    articleTitle: {
+        fontWeight: 400,
+        color: 'black',
+        marginBottom: '5'
+    },
+    content: {
+        height: '400px',
+    },
     author: {
         display: 'flex'
-    },
-    item: {
-        border: '1px solid blue',
-        flexBasis: '33%',
-        maxWidth: '33%'
     }
-}))
+    }))
+
+const Linkish = styled(Link)`
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer
+`;
 
 
-function Blog() {
-    const classes = useStyles();
+function Resume() {
+    const classes = useStyles()
     return (
         <div>
-            <Box>
-                <Box className={classes.hero}>
-                    My Blog
-                </Box>
+            <Box className={classes.hero}>
+                <Box>React Blog</Box>
             </Box>
-            <Container maxWidth='lg' className={classes.blogsContainer}>
-                <Typography variant='h4' className={classes.blogTitle}>
-                    Articles
-                </Typography>
-                <Grid Container spacing={6}>
-                    <div>
-                    <Grid className={classes.item} item xs={12} sm={6} md={4} lg={3}>
-                        <Card className={classes.card}>
-                            <CardActionArea>
-                                <CardMedia
-                                component="img"
-                                alt="Contemplative Reptile"
-                                height="140"
-                                image={blogImageOne}
-                                title="Contemplative Reptile"
-                                />
-                                <CardContent>
-                                <Typography className={classes.blogTitle} gutterBottom variant="h5" component="h2">
-                                    Why I'm Learning To Code
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                I’ve lived in the Bay Area my whole life. Ironically, I’ve never been into technology until a couple years ago. 
-                                It all started when I got on Twitter and started following people like Naval and Sahil who talked about coding as leverage. 
-                                </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                            <CardActions className={classes.CardActions}>
-                                <Box className={classes.author}>
-                                    <Avatar src={myCharacter} />
-                                    <Box ml={2}>
-                                        <Typography variant='subtitle2' component='p'>
-                                            Alex
-                                        </Typography>
-                                    </Box>
-                                </Box>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                    <Grid className={classes.item} item xs={12} sm={6} md={4} lg={3}>
+            <Grid className={classes.blogsContainer} container spacing={3}>
+                <Grid item xs={12} sm={6} md={4} lg={4}>
+                    <Linkish to='/Combining'>
                     <Card className={classes.card}>
-                            <CardActionArea>
-                                <CardMedia
-                                component="img"
-                                alt="Contemplative Reptile"
-                                height="140"
-                                image={blogImageTwo}
-                                title="Contemplative Reptile"
-                                />
-                                <CardContent>
-                                <Typography className={classes.blogTitle} gutterBottom variant="h5" component="h2">
-                                    The Power Of Combining Marketing And Coding
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                Combining skills makes you more unique. 
-                                Lebron James, who is a physical force at 6’8 and 250 pounds can not only score at will, he can also pass. 
-                                This allows him to be a unique talent. This is what I’m trying to be in my career.
-                                </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                            <CardActions className={classes.CardActions}>
-                                <Box className={classes.author}>
-                                    <Avatar src={myCharacter} />
-                                    <Box ml={2}>
-                                        <Typography variant='subtitle2' component='p'>
-                                            Alex
-                                        </Typography>
-                                    </Box>
+                        <CardActionArea>
+                            <CardMedia
+                            className={classes.media}
+                            image={blogImageOne}
+                            />
+                            <CardContent>
+                            <Typography className={classes.articleTitle} gutterBottom variant="h5" component="h2">
+                                Why I'm Learning To Code
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                            It all started when I got on Twitter and started following people like Naval and Sahil who talked about coding as leverage.
+                            </Typography>
+                            </CardContent>
+                            <CardActionArea className={classes.cardActions}>
+                            <Box className={classes.author}>
+                                <Avatar src={myCharacter} />
+                                <Box ml={2}>
+                                    <Typography variant='subtitle2' component='p'>
+                                        Alex
+                                    </Typography>
                                 </Box>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                    <Grid className={classes.item} item xs={12} sm={6} md={4} lg={3}>
-                    <Card className={classes.card}>
-                            <CardActionArea>
-                                <CardMedia
-                                component="img"
-                                alt="Contemplative Reptile"
-                                height="140"
-                                image={blogImageThree}
-                                title="Contemplative Reptile"
-                                />
-                                <CardContent>
-                                <Typography className={classes.blogTitle} gutterBottom variant="h5" component="h2">
-                                    My Schedule For Learning To Code
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                In the beginning, I would code as long as my head could take. While that’s not the best strategy, I knew I had to do it because my learning curve was steep.
-                                </Typography>
-                                </CardContent>
+                            </Box>
                             </CardActionArea>
-                            <CardActions className={classes.CardActions}>
-                                <Box className={classes.author}>
-                                    <Avatar src={myCharacter} />
-                                    <Box ml={2}>
-                                        <Typography variant='subtitle2' component='p'>
-                                            Alex
-                                        </Typography>
-                                    </Box>
-                                </Box>
-                            </CardActions>
+                            </CardActionArea>
                     </Card>
-                    </Grid>
-                    </div>
+                    </Linkish>
                 </Grid>
-            </Container>
+                <Grid item xs={12} sm={6} md={4} lg={4}>
+                    <Card className={classes.card}>
+                        <CardActionArea>
+                            <CardMedia
+                            className={classes.media}
+                            image={blogImageTwo}
+                            />
+                            <CardContent>
+                            <Typography className={classes.articleTitle} gutterBottom variant="h5" component="h2">
+                                Combining Coding And Marketing
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                            Lebron James, who is a physical force at 6’8 and 250 pounds can not only score at will, he can also pass. 
+                            This allows him to be a unique talent. 
+                            </Typography>
+                            </CardContent>
+                        <CardActionArea className={classes.cardActions}>
+                        <Box className={classes.author}>
+                            <Avatar src={myCharacter} />
+                            <Box ml={2}>
+                                <Typography variant='subtitle2' component='p'>
+                                    Alex
+                                </Typography>
+                            </Box>
+                        </Box>
+                        </CardActionArea>
+                        </CardActionArea>
+                    </Card>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4} lg={4}>
+                    <Card className={classes.card}>
+                        <CardActionArea>
+                            <CardMedia
+                            className={classes.media}
+                            image={blogImageThree}
+                            />
+                            <CardContent>
+                            <Typography className={classes.articleTitle} gutterBottom variant="h5" component="h2">
+                                My Schedule For Learning To Code
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                            In the beginning, I would code as long as my head could take. 
+                            While that’s not the best strategy, I knew I had to do it because my learning curve was steep.
+                            </Typography>
+                            </CardContent>
+                        <CardActionArea className={classes.cardActions}>
+                            <Box className={classes.author}>
+                                <Avatar src={myCharacter} />
+                                <Box ml={2}>
+                                    <Typography variant='subtitle2' component='p'>
+                                        Alex
+                                    </Typography>
+                                </Box>
+                            </Box>
+                        </CardActionArea>
+                        </CardActionArea>
+                        </Card>
+                </Grid>
+            </Grid>
         </div>
     )
 }
 
 
-export default Blog
+
+
+
+export default Resume
+
+
+
+
+
