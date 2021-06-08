@@ -1,6 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
 import { makeStyles } from '@material-ui/core/styles'
+import styled from 'styled-components'
 import Box from '@material-ui/core/Box';
 import { Avatar, Typography } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
@@ -9,14 +8,14 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 
-import {BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
 
 // Images
 import myCharacter from '../../images/caricature.jpg';
 import blogImageOne from '../../images/blog_image_1.jpg';
 import blogImageTwo from '../../images/blog_image_2.jpg';
 import blogImageThree from '../../images/blog_image_3.jpg'
+import Combining from './Combining';
 
 const useStyles = makeStyles((theme) => ({
     hero: {
@@ -60,15 +59,17 @@ const useStyles = makeStyles((theme) => ({
     }
     }))
 
-const Linkish = styled(Link)`
-    text-decoration: none;
-    list-style: none;
-    cursor: pointer
-`;
 
 
-function Resume() {
+
+function Resume(props) {
     const classes = useStyles()
+    const history = useHistory();
+
+    function handleClick() {
+        history.push('/Combining')
+    }
+
     return (
         <div>
             <Box className={classes.hero}>
@@ -76,8 +77,7 @@ function Resume() {
             </Box>
             <Grid className={classes.blogsContainer} container spacing={3}>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
-                    <Linkish to='/Combining'>
-                    <Card className={classes.card}>
+                    <Card className={classes.card} onClick={handleClick}>
                         <CardActionArea>
                             <CardMedia
                             className={classes.media}
@@ -103,7 +103,6 @@ function Resume() {
                             </CardActionArea>
                             </CardActionArea>
                     </Card>
-                    </Linkish>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
                     <Card className={classes.card}>
