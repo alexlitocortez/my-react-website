@@ -78,7 +78,7 @@ const Dropdown = ({open, toggle}) => {
                             {item.title}
                         </DropdownLink>
                     ))}
-                </DropdownMenu>
+            </DropdownMenu>
         </DropdownContainer>
     )
 }

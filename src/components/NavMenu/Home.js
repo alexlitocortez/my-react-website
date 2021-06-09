@@ -1,6 +1,8 @@
 import React from 'react';
-import Footer from '../Footer/Footer';
 import HeroSection from '../HeroSection/HeroSection';
+import Blog from '../NavMenu/Blog';
+import Footer from '../Footer/Footer';
+
 
 
 
