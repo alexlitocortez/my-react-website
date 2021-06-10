@@ -66,7 +66,7 @@ function Blog() {
     return (
         <div>
             <Box className={classes.hero}>
-                <Box>React Blog</Box>
+                <Box>Blog</Box>
             </Box>
             <Grid className={classes.blogsContainer} container spacing={3}>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
