@@ -62,7 +62,7 @@ function Projects() {
             </Box>
             <Grid className={classes.blogsContainer} container spacing={3}>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
-                    <Link to='/drumkit' style={{ textDecoration: 'none' }}>
+                    <Link to='/drumkitproject' style={{ textDecoration: 'none' }}>
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia
@@ -92,7 +92,7 @@ function Projects() {
                     </Link>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
-                    <Link style={{ textDecoration: 'none' }}>
+                    <Link to='/dogproject' style={{ textDecoration: 'none' }}>
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia
