@@ -1,20 +1,12 @@
 import React from 'react'
 import './Drumkit.css'
+import { Drumkit } from './Drumkit'
 
 // image
 import Drums from '../../images/drumset-copy.jpg'
 
-// import Javascript functionality
-import DrumkitClass from '../Projects/DrumkitClass'
-
-import useScript from '../Hooks/useScript'
-
-const MyComponent = props => {
-  useScript('/Users/l/my-react-website/src/components/Projects/Drumkit.js');
-}
-
-
 function DrumkitProject() {
+  Drumkit()
     return (
         <div>
              <div>
