@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 
-
 const wholeContainer = styled.html`
     margin: 0;
     height: 100%;
@@ -66,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
 
 function DogProject() {
     const classes = useStyles();
-
     return (
         <div>
             <wholeContainer />

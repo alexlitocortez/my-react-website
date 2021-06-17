@@ -8,13 +8,14 @@ export function Drumkit() {
         audio.play();
         console.log(key);
         key.classList.add('playing');
+        removeTransition();
     });
 }
 
 function removeTransition(e) {
-    if(e.propertyName !== 'transform') return;
+    if(e !== 'transform') return;
     this.classList.remove('playing');
 }
 
 const keys = document.querySelectorAll('.key');
-keys.forEach(key => key.addEventListener('transitioned', removeTransition));
+keys.forEach(key => key.addEventListener('keydown', removeTransition));
