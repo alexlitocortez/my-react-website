@@ -1,0 +1,45 @@
+
+.searchbar-section {
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+
+.input {
+    width: 500px;
+    height: 50px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.analyze {
+    display: block;
+    background-color: black;
+    color: #fff;
+    font-size: .9rem;
+    border: 0;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    padding: 0 20px;
+    margin-top: 30px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.analyze:hover {
+    transform: scale(1.2);
+    transition: 0.3s ease-in-out;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
