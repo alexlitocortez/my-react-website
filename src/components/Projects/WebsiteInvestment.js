@@ -11,9 +11,12 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 
-// React Icons
-import { GiMoneyStack } from 'react-icons/gi';
+import Chart from './Chart';
 
+// React Icons
+import { MdAttachMoney } from 'react-icons/md';
+import { BsGraphUp } from 'react-icons/bs';
+import { GiMoneyStack } from 'react-icons/gi';
 
 // Importing SearchBar component
 import SearchBar from './SearchBar';
@@ -44,21 +47,27 @@ const useStyles = makeStyles((theme) => ({
     cardTitle: {
         fontWeight: 800,
         paddingBottom: theme.spacing(3),
-        color: 'black'
+        color: 'black',
+        marginLeft: '30%'
     },
     blogsContainer: {
         paddingTop: theme.spacing(3),
         overflow: 'auto',
         position: 'relative',
-        top: '100px'
+        top: '100px',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     searchBar: {
         height: '20px',
         width: '20px'
     },
     card: {
-        width: '500px',
-        marginLeft: '22px'
+        width: '450px',
+        marginLeft: '22px',
+        padding: '100px',
+        marginTop: '10px',
+        boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
     },
     content: {
         height: '400px'
@@ -67,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex'
     }
 }));
+
 
 function WebsiteInvestment() {
     const classes = useStyles();
@@ -80,6 +90,9 @@ function WebsiteInvestment() {
                     <Typography variant='h6' className={classes.title}>
                         Nichements
                     </Typography>
+                    <Box className={classes.hero}>
+                        <Chart />
+                    </Box>
                     <Button color='inherit'></Button>
                 </Toolbar>
             </AppBar>
@@ -88,26 +101,29 @@ function WebsiteInvestment() {
                     <SearchBar /> 
                 </Box>
             </Grid>
-            <Grid className={classes.blogsContainer} container spacing={3}>
+            <Grid className={classes.blogsContainer} container spacing={1}>
                 <Grid>
                     <Card className={classes.card}>
-                        <CardActionArea>
+                        <Box className={classes.cardAction}>
+                            <BsGraphUp size={40}/>
                             <Typography className={classes.cardTitle}>Traffic</Typography>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-                <Grid>
-                    <Card className={classes.card}>
-                        <Typography className={classes.cardTitle}>Potential Revenue</Typography>
+                        </Box>
                     </Card>
                 </Grid>
                 <Grid>
                     <Card className={classes.card}>
                         <Box className={classes.cardAction}>
-                            <GiMoneyStack />
+                            <MdAttachMoney size={40}/>
+                            <Typography className={classes.cardTitle}>Potential Revenue</Typography>
+                        </Box>
+                    </Card>
+                </Grid>
+                <Grid>
+                    <Card className={classes.card}>
+                        <Box className={classes.cardAction}>
+                            <GiMoneyStack size={40}/>
                             <Typography className={classes.cardTitle}>
                                 Potential Expenses<br></br>
-                                $500
                             </Typography>
                         </Box>
                     </Card>
