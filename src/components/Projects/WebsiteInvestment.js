@@ -1,17 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
+import { ImMenu } from 'react-icons/im';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-
-import Chart from './Chart';
 
 // React Icons
 import { MdAttachMoney } from 'react-icons/md';
@@ -20,6 +17,30 @@ import { GiMoneyStack } from 'react-icons/gi';
 
 // Importing SearchBar component
 import SearchBar from './SearchBar';
+import { FaBars } from 'react-icons/fa';
+
+const DashboardMenuBars = styled(FaBars)`
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+        background-image: url(${FaBars});
+        background-size: contain;
+        height: 30px;
+        width: 40px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 175px;
+        right: 0;
+        transform: translateY(-50%, 25%);
+
+        &:hover {
+            opacity: 0.3;
+            transition: 0.2s ease-in-out;
+        }
+    }
+`;
 
 
 const useStyles = makeStyles((theme) => ({
@@ -84,17 +105,12 @@ function WebsiteInvestment() {
     return (
         <div>
             <AppBar position='static'>
-                <Toolbar>
                     <IconButton edge='start' className={classes.menuButton} color='inherit' aria-label='menu'>
                     </IconButton>
-                    <Typography variant='h6' className={classes.title}>
+                    <Typography variant='h6' className={classes.title} style={{marginLeft: 28}}>
                         Nichements
                     </Typography>
-                    <Box className={classes.hero}>
-                        <Chart />
-                    </Box>
-                    <Button color='inherit'></Button>
-                </Toolbar>
+                    <DashboardMenuBars />
             </AppBar>
             <Grid className={classes.hero}>
                 <Box className={classes.searchBar}>
