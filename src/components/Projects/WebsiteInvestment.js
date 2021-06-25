@@ -16,6 +16,8 @@ import { GiMoneyStack } from 'react-icons/gi';
 // Importing SearchBar component
 import SearchBar from './SearchBar';
 import { FaBars } from 'react-icons/fa';
+import DropdownNichements from './DropdownNichements';
+import LineChart from './LineChart';
 
 const DashboardMenuBars = styled(FaBars)`
     display: none;
@@ -79,7 +81,10 @@ const useStyles = makeStyles((theme) => ({
     },
     searchBar: {
         height: '20px',
-        width: '20px'
+        width: '20px',
+    },
+    searchBarShadow: {
+        boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
     },
     card: {
         width: '450px',
@@ -97,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function WebsiteInvestment() {
+function WebsiteInvestment(toggle) {
     const classes = useStyles();
 
     return (
@@ -108,11 +113,12 @@ function WebsiteInvestment() {
                     <Typography variant='h6' className={classes.title} style={{marginLeft: 28}}>
                         Nichements
                     </Typography>
-                    <DashboardMenuBars />
+                    <DashboardMenuBars onClick={toggle} />
             </AppBar>
             <Grid className={classes.hero}>
+                <LineChart />
                 <Box className={classes.searchBar}>
-                    <SearchBar /> 
+                    <SearchBar className={classes.searchBarShadow} /> 
                 </Box>
             </Grid>
             <Grid className={classes.blogsContainer} container spacing={1}>

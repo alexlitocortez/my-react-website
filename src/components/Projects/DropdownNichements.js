@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { navData } from '../data/NavData';
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa'
+import { SaaSData } from '../data/SaaSData';
 
 const DropdownContainer = styled.div`
     position: fixed;
@@ -62,30 +62,22 @@ const CloseIcon = styled(FaTimes)`
     color: #000d1a;
 `;
 
-
-
-
-
-
-
-
-
-const Dropdown = ({open, toggle}) => {
+const DropdownNichements = ({open, toggle}) => {
 
     return (
         <DropdownContainer open={open} onClick={toggle} >
-            <Icon onClick={toggle} >
-                <CloseIcon onClick={toggle}/>
+            <Icon onClick={toggle}>
+                <CloseIcon onClick={toggle} />
             </Icon>
             <DropdownMenu>
-                    {navData.map((item, index) => (
-                        <DropdownLink to={item.link} key={index}>
-                            {item.title}
-                        </DropdownLink>
-                    ))}
+                {SaaSData.map((item, index) => (
+                    <DropdownLink to={item.link} key={index}>
+                        {item.title}
+                    </DropdownLink>
+                ))}
             </DropdownMenu>
         </DropdownContainer>
     )
 }
 
-export default Dropdown
+export default DropdownNichements
