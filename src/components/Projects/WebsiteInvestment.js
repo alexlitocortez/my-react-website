@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
+import './WebsiteInvestment.css';
 
 // React Icons
 import { MdAttachMoney } from 'react-icons/md';
@@ -16,8 +17,8 @@ import { GiMoneyStack } from 'react-icons/gi';
 // Importing SearchBar component
 import SearchBar from './SearchBar';
 import { FaBars } from 'react-icons/fa';
-import DropdownNichements from './DropdownNichements';
-import LineChart from './LineChart';
+import LineChart from './Chart';
+import Sidebar from './Sidebar';
 
 const DashboardMenuBars = styled(FaBars)`
     display: none;
@@ -115,40 +116,43 @@ function WebsiteInvestment(toggle) {
                     </Typography>
                     <DashboardMenuBars onClick={toggle} />
             </AppBar>
-            <Grid className={classes.hero}>
+            <div className="main-container">
+                <Sidebar />
+                <div className="others">
                 <LineChart />
-                <Box className={classes.searchBar}>
-                    <SearchBar className={classes.searchBarShadow} /> 
-                </Box>
-            </Grid>
-            <Grid className={classes.blogsContainer} container spacing={1}>
-                <Grid>
-                    <Card className={classes.card}>
-                        <Box className={classes.cardAction}>
-                            <BsGraphUp size={40}/>
-                            <Typography className={classes.cardTitle}>Traffic</Typography>
-                        </Box>
-                    </Card>
+                <Grid className={classes.hero}>
+                    <Box className={classes.searchBar}>
+                        <SearchBar className={classes.searchBarShadow} /> 
+                    </Box>
                 </Grid>
-                <Grid>
-                    <Card className={classes.card}>
-                        <Box className={classes.cardAction}>
-                            <MdAttachMoney size={40}/>
-                            <Typography className={classes.cardTitle}>Potential Revenue</Typography>
-                        </Box>
-                    </Card>
+                <Grid className={classes.blogsContainer} container spacing={1}>
+                    <Grid>
+                        <Card className={classes.card}>
+                            <Box className={classes.cardAction}>
+                                <BsGraphUp size={40}/>
+                                <Typography className={classes.cardTitle}>Traffic</Typography>
+                            </Box>
+                        </Card>
+                    </Grid>
+                    <Grid>
+                        <Card className={classes.card}>
+                            <Box className={classes.cardAction}>
+                                <MdAttachMoney size={40}/>
+                                <Typography className={classes.cardTitle}>Potential Revenue</Typography>
+                            </Box>
+                        </Card>
+                    </Grid>
+                    <Grid>
+                        <Card className={classes.card}>
+                            <Box className={classes.cardAction}>
+                                <GiMoneyStack size={40}/>
+                                <Typography className={classes.cardTitle}>Potential Expenses</Typography>
+                            </Box>
+                        </Card>
+                    </Grid>
                 </Grid>
-                <Grid>
-                    <Card className={classes.card}>
-                        <Box className={classes.cardAction}>
-                            <GiMoneyStack size={40}/>
-                            <Typography className={classes.cardTitle}>
-                                Potential Expenses<br></br>
-                            </Typography>
-                        </Box>
-                    </Card>
-                </Grid>
-            </Grid>
+                </div>
+            </div>
         </div>
     );
 }
