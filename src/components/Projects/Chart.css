@@ -8,6 +8,8 @@
 .chartTitle {
     margin-bottom: 5px;
     color: #404040;
+    position: relative;
+    bottom: 15px;
 }
 
 @media only screen and (max-width: 768px) {

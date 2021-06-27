@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import './WebsiteInvestment.css';
 
+
 // React Icons
 import { MdAttachMoney } from 'react-icons/md';
 import { BsGraphUp } from 'react-icons/bs';
@@ -19,6 +20,7 @@ import SearchBar from './SearchBar';
 import { FaBars } from 'react-icons/fa';
 import LineChart from './Chart';
 import Sidebar from './Sidebar';
+import { width } from '@material-ui/system';
 
 const DashboardMenuBars = styled(FaBars)`
     display: none;
@@ -42,7 +44,6 @@ const DashboardMenuBars = styled(FaBars)`
         }
     }
 `;
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -78,7 +79,12 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         top: '100px',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center'    
+    },
+    moneyMaker: {
+        '@media (max-width: 768px)': {
+            width: 450
+        },
     },
     searchBar: {
         height: '20px',
@@ -125,32 +131,32 @@ function WebsiteInvestment(toggle) {
                         <SearchBar className={classes.searchBarShadow} /> 
                     </Box>
                 </Grid>
-                <Grid className={classes.blogsContainer} container spacing={1}>
-                    <Grid>
-                        <Card className={classes.card}>
-                            <Box className={classes.cardAction}>
-                                <BsGraphUp size={40}/>
-                                <Typography className={classes.cardTitle}>Traffic</Typography>
-                            </Box>
-                        </Card>
+                    <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
+                            <Grid>
+                                <Card className={classes.card}>
+                                    <Box className={classes.cardAction}>
+                                        <BsGraphUp size={40}/>
+                                        <Typography className={classes.cardTitle} style={{color: 'royalblue'}}>Traffic</Typography>
+                                    </Box>
+                                </Card>
+                            </Grid>
+                            <Grid>
+                                <Card className={classes.card}>
+                                    <Box className={classes.cardAction}>
+                                        <MdAttachMoney size={40}/>
+                                        <Typography className={classes.cardTitle} style={{color: 'green'}}>Potential Revenue</Typography>
+                                    </Box>
+                                </Card>
+                            </Grid>
+                            <Grid>
+                                <Card className={classes.card}>
+                                    <Box className={classes.cardAction}>
+                                        <GiMoneyStack size={40}/>
+                                        <Typography className={classes.cardTitle} style={{color: 'red'}}>Potential Expenses</Typography>
+                                    </Box>
+                                </Card>
+                            </Grid>
                     </Grid>
-                    <Grid>
-                        <Card className={classes.card}>
-                            <Box className={classes.cardAction}>
-                                <MdAttachMoney size={40}/>
-                                <Typography className={classes.cardTitle}>Potential Revenue</Typography>
-                            </Box>
-                        </Card>
-                    </Grid>
-                    <Grid>
-                        <Card className={classes.card}>
-                            <Box className={classes.cardAction}>
-                                <GiMoneyStack size={40}/>
-                                <Typography className={classes.cardTitle}>Potential Expenses</Typography>
-                            </Box>
-                        </Card>
-                    </Grid>
-                </Grid>
                 </div>
             </div>
         </div>
@@ -158,3 +164,6 @@ function WebsiteInvestment(toggle) {
 }
 
 export default WebsiteInvestment
+
+
+// How to get cards to 300px width when screen size is 320px

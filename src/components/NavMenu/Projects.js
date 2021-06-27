@@ -131,7 +131,7 @@ function Projects() {
                             />
                             <CardContent>
                                 <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2'>
-                                    Website Investment
+                                    Website Investment Dashboard
                                 </Typography>
                                 <Typography variant='body2' color='textSecondary' component='p'>
 

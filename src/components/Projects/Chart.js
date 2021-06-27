@@ -1,6 +1,7 @@
 import React from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import './Chart.css'
+import MediaQuery from 'react-responsive';
 
 export default function Chart() {
 
@@ -20,17 +21,13 @@ export default function Chart() {
         {
           name: '$40,000',
           amt: 4,
-        },
-        {
-          name: '$50,000',
-          amt: 5,
         }
       ];
 
     return (
         <div className='chart'>
             <h4 className='chartTitle'>Website Valuation Estimate</h4>
-            <ResponsiveContainer width='100%' aspect={4 / 1}>
+            <ResponsiveContainer width='99%' aspect={3}>
               <LineChart data={data}>
                 <XAxis dataKey='name' stroke='#5550bd' />
                 <YAxis dataKey='amt' stroke='#5550bd' />
@@ -42,3 +39,5 @@ export default function Chart() {
         </div>
     )
 }
+
+
