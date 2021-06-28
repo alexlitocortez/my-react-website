@@ -79,7 +79,15 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         top: '100px',
         justifyContent: 'center',
-        alignItems: 'center'    
+        alignItems: 'center',
+    },
+    monetization: {
+        padding: '50px',
+        height: '300px',
+        boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
+    },
+    money: {
+        textDecoration: 'underline'
     },
     moneyMaker: {
         '@media (max-width: 768px)': {
@@ -89,6 +97,10 @@ const useStyles = makeStyles((theme) => ({
     searchBar: {
         height: '20px',
         width: '20px',
+        position: 'relative',
+        bottom: '100px',
+        left: '565px',
+        marginBottom: '50px'
     },
     searchBarShadow: {
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
@@ -122,15 +134,35 @@ function WebsiteInvestment(toggle) {
                     </Typography>
                     <DashboardMenuBars onClick={toggle} />
             </AppBar>
-            <div className="main-container">
+            <div className='main-container'>
                 <Sidebar />
-                <div className="others">
+                <div className='others'>
                 <LineChart />
+                
                 <Grid className={classes.hero}>
-                    <Box className={classes.searchBar}>
-                        <SearchBar className={classes.searchBarShadow} /> 
-                    </Box>
+                    <Card className={classes.monetization}>
+                        Monetization
+                        <div className='box-one'></div>
+                        <div className='box-two'></div>
+                        <div className='source'>
+                            <div className='revenue'>
+                                Source
+                                <li className='monetization-font' style={{listStyle: 'none'}}>Affiliate</li>
+                                <li className='monetization-font' style={{listStyle: 'none'}}>Display Ads</li>
+                            </div>
+                            <div className='percentage'>
+                                Progress
+                                <div style={{listStyle: 'none'}}>
+                                    <li className='monetization-font'>70%</li>
+                                    <li className='monetization-font'>30%</li>
+                                </div>
+                            </div>
+                        </div>
+                    </Card>
                 </Grid>
+                <Box className={classes.searchBar}>
+                        <SearchBar className={classes.searchBarShadow} /> 
+                </Box>
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
                             <Grid>
                                 <Card className={classes.card}>
