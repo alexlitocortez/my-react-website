@@ -1,61 +1,56 @@
+:root {
+    --color-light: white;
+    --color-dark: #212121;
+    --color-signal: #fab700;
 
-.searchbar-section {
-    height: 400px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 4rem;
+    --color-background: var(--color-light);
+    --color-text: var(--color-dark);
+    --color-accent: var(--color-signal);
+
+    --size-bezel: .5rem;
+    --size-radius: 4px;
 }
 
 .input {
-    width: 500px;
-    height: 50px;
-    display: flex;
-    border-radius: 10px;
-    text-align: center;
+    position: relative;
 }
 
-.analyze {
-    display: block;
-    background-color: black;
-    color: #fff;
-    font-size: .9rem;
-    border: 0;
-    border-radius: 5px;
-    height: 40px;
-    width: 100px;
-    padding: 0 20px;
-    margin-top: 30px;
-    cursor: pointer;
+.input__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+    margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 5);
+    background: pink;
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    background: var(--color-background);
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.input__field {
     box-sizing: border-box;
-    outline: none;
+    display: block;
+    width: 100%;
+    border: 3px solid currentColor;
+    padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+    color: currentColor;
+    background: transparent;
+    border-radius: var(--size-radius);
 }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button-group {
+    margin-top: calc(var(--size-bezel) *2.5);
 }
 
-@media only screen and (max-width: 768px) {
-    .input {
-        width: 450px;
-    }
-}
-
-
-
-
-
-
-
-
-@media only screen and (max-width: 768px) {
-    .sidebar {
-        display: none;
-    }
+button {
+    color: currentColor;
+    padding: var(--size-bezel) calc(var(--size-bezel) * 2);
+    background: var(--color-accent);
+    border: none;
+    border-radius: var(--size-radius);
+    font-weight: 900;
 }

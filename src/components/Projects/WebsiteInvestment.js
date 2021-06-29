@@ -9,6 +9,8 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import './WebsiteInvestment.css';
 
+import SearchBars from './SearchBars.js';
+
 
 // React Icons
 import { MdAttachMoney } from 'react-icons/md';
@@ -16,11 +18,9 @@ import { BsGraphUp } from 'react-icons/bs';
 import { GiMoneyStack } from 'react-icons/gi';
 
 // Importing SearchBar component
-import SearchBar from './SearchBar';
 import { FaBars } from 'react-icons/fa';
 import LineChart from './Chart';
 import Sidebar from './Sidebar';
-import { width } from '@material-ui/system';
 
 const DashboardMenuBars = styled(FaBars)`
     display: none;
@@ -63,8 +63,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundSize: 'cover',
         position: 'relative',
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
         fontSize: '4rem'
     },
     cardTitle: {
@@ -86,6 +84,13 @@ const useStyles = makeStyles((theme) => ({
         height: '300px',
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
     },
+    searchBar: {
+        position:'relative',
+        left: '50px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     money: {
         textDecoration: 'underline'
     },
@@ -93,14 +98,6 @@ const useStyles = makeStyles((theme) => ({
         '@media (max-width: 768px)': {
             width: 450
         },
-    },
-    searchBar: {
-        height: '20px',
-        width: '20px',
-        position: 'relative',
-        bottom: '100px',
-        left: '565px',
-        marginBottom: '50px'
     },
     searchBarShadow: {
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
@@ -160,9 +157,9 @@ function WebsiteInvestment(toggle) {
                         </div>
                     </Card>
                 </Grid>
-                <Box className={classes.searchBar}>
-                        <SearchBar className={classes.searchBarShadow} /> 
-                </Box>
+                <Grid className={classes.searchBar}>
+                    <SearchBars />
+                </Grid>
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
                             <Grid>
                                 <Card className={classes.card}>
@@ -198,4 +195,5 @@ function WebsiteInvestment(toggle) {
 export default WebsiteInvestment
 
 
-// How to get cards to 300px width when screen size is 320px
+// Get dropdown arrows placed all the way to the right
+// get dropdown menu to show up
