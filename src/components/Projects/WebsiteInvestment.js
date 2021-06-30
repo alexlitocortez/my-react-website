@@ -8,9 +8,7 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import './WebsiteInvestment.css';
-
-import SearchBars from './SearchBars.js';
-
+import HeroDashboard from './HeroDashboard';
 
 // React Icons
 import { MdAttachMoney } from 'react-icons/md';
@@ -72,24 +70,15 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '30%'
     },
     blogsContainer: {
-        paddingTop: theme.spacing(3),
-        overflow: 'auto',
         position: 'relative',
-        top: '100px',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         alignItems: 'center',
+        display: 'flex'
     },
     monetization: {
         padding: '50px',
         height: '300px',
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
-    },
-    searchBar: {
-        position:'relative',
-        left: '50px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
     },
     money: {
         textDecoration: 'underline'
@@ -103,10 +92,9 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
     },
     card: {
-        width: '450px',
-        marginLeft: '22px',
-        padding: '100px',
-        marginTop: '10px',
+        width: '200px',
+        height: '300px',
+        padding: '70px',
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
     },
     content: {
@@ -135,56 +123,28 @@ function WebsiteInvestment(toggle) {
                 <Sidebar />
                 <div className='others'>
                 <LineChart />
-                
                 <Grid className={classes.hero}>
-                    <Card className={classes.monetization}>
-                        Monetization
-                        <div className='box-one'></div>
-                        <div className='box-two'></div>
-                        <div className='source'>
-                            <div className='revenue'>
-                                Source
-                                <li className='monetization-font' style={{listStyle: 'none'}}>Affiliate</li>
-                                <li className='monetization-font' style={{listStyle: 'none'}}>Display Ads</li>
-                            </div>
-                            <div className='percentage'>
-                                Progress
-                                <div style={{listStyle: 'none'}}>
-                                    <li className='monetization-font'>70%</li>
-                                    <li className='monetization-font'>30%</li>
-                                </div>
-                            </div>
-                        </div>
-                    </Card>
-                </Grid>
-                <Grid className={classes.searchBar}>
-                    <SearchBars />
+                    <HeroDashboard />
                 </Grid>
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
-                            <Grid>
-                                <Card className={classes.card}>
-                                    <Box className={classes.cardAction}>
-                                        <BsGraphUp size={40}/>
-                                        <Typography className={classes.cardTitle} style={{color: 'royalblue'}}>Traffic</Typography>
-                                    </Box>
-                                </Card>
-                            </Grid>
-                            <Grid>
-                                <Card className={classes.card}>
-                                    <Box className={classes.cardAction}>
-                                        <MdAttachMoney size={40}/>
-                                        <Typography className={classes.cardTitle} style={{color: 'green'}}>Potential Revenue</Typography>
-                                    </Box>
-                                </Card>
-                            </Grid>
-                            <Grid>
-                                <Card className={classes.card}>
-                                    <Box className={classes.cardAction}>
-                                        <GiMoneyStack size={40}/>
-                                        <Typography className={classes.cardTitle} style={{color: 'red'}}>Potential Expenses</Typography>
-                                    </Box>
-                                </Card>
-                            </Grid>
+                        <Card className={classes.card}>
+                            <Box className={classes.cardAction}>
+                                <BsGraphUp size={40}/>
+                                <Typography className={classes.cardTitle} style={{color: 'royalblue'}}>Traffic</Typography>
+                            </Box>
+                        </Card>
+                        <Card className={classes.card}>
+                            <Box className={classes.cardAction}>
+                                <MdAttachMoney size={40}/>
+                                <Typography className={classes.cardTitle} style={{color: 'green'}}>Potential Revenue</Typography>
+                            </Box>
+                        </Card>
+                        <Card className={classes.card}>
+                            <Box className={classes.cardAction}>
+                                <GiMoneyStack size={40}/>
+                                <Typography className={classes.cardTitle} style={{color: 'red'}}>Potential Expenses</Typography>
+                            </Box>
+                        </Card>
                     </Grid>
                 </div>
             </div>

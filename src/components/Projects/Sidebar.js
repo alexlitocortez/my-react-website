@@ -41,23 +41,25 @@ export default function Sidebar() {
                         </li>
                     </ul>
                     <h3 className="sidebarTitle">Quick Menu</h3>
-                    <ul className="sidebarList">
-                        <li className="sidebarListItem">
-                            <FaUsers style={{ marginRight: '5px' }}/>
-                            Users
-                            <RiArrowDropDownLine />
-                        </li>
-                        <li className="sidebarListItem">
-                            <AiOutlineTransaction style={{ marginRight: '5px' }}/>
-                            Transactions
-                            <RiArrowDropDownLine />
-                        </li>
-                        <li className="sidebarListItem">
-                            <HiOutlineDocumentReport style={{ marginRight: '5px'}}/>
-                            Reports
-                            <RiArrowDropDownLine />
-                        </li>
-                    </ul>
+                        <ul className="sidebarList">
+                            <li className="sidebarListItem">
+                                <FaUsers style={{ marginRight: '5px' }}/>
+                                Users
+                                <RiArrowDropDownLine style={{ marginLeft: '114px' }} />
+                            </li>
+                            <li className="sidebarListItem">
+                                <AiOutlineTransaction style={{ marginRight: '5px' }}/>
+                                Transactions
+                                <RiArrowDropDownLine style={{ marginLeft: '65px' }} />
+                            </li>
+                            <li className="sidebarListItem">
+                                <HiOutlineDocumentReport style={{ marginRight: '5px'}}/>
+                                Reports
+                                <li>
+                                <RiArrowDropDownLine style={{ marginLeft: '100px' }}/>
+                                </li>
+                            </li>
+                        </ul>
                 </div>
             </div>
         </div>
