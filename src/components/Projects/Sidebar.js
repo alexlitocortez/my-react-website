@@ -22,22 +22,22 @@ export default function Sidebar() {
                         <li className='sidebarListItem'>
                             <AiFillHome style={{ marginRight: '5px' }}/>
                             Home
-                            <RiArrowDropDownLine style={{ marginRight: 'auto' }} />
+                            <RiArrowDropDownLine style={{ marginLeft: '111px' }} />
                         </li>
                         <li className='sidebarListItem'>
                             <FaBox style={{ marginRight: '5px' }}/>
                             Products
-                            <RiArrowDropDownLine />
+                            <RiArrowDropDownLine style={{ marginLeft: '91px' }} />
                         </li>
                         <li className='sidebarListItem'>
                             <GiMagnifyingGlass style={{ marginRight: '5px' }}/>
                             Explore
-                            <RiArrowDropDownLine />
+                            <RiArrowDropDownLine style={{ marginLeft: '100px' }} />
                         </li>
                         <li className='sidebarListItem'>
                             <MdPermContactCalendar style={{ marginRight: '5px' }}/>
                             Contact
-                            <RiArrowDropDownLine />
+                            <RiArrowDropDownLine style={{ marginLeft: '100px' }} />
                         </li>
                     </ul>
                     <h3 className="sidebarTitle">Quick Menu</h3>

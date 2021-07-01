@@ -15,6 +15,10 @@ const Source = styled.div`
     flex-wrap: wrap;
     font-size: 32px;
     padding: 20px;
+
+    @media screen and (max-width: 768px) {
+        margin-top: 30px
+    }
 `;
 
 const Revenue = styled.div`
@@ -53,14 +57,14 @@ const useStyles = makeStyles((theme) => ({
     positioning: {
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     card: {
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2);',
         width: '500px',
         height: '300px',
         position: 'relative',
-        left: '100px'
+        left: '100px',
     },
     boxOne: {
         width: '5px',
@@ -70,7 +74,10 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '90%',
         position: 'relative',
         top: '110px',
-        left: '47px'
+        left: '47px',
+        [theme.breakpoints.down('xs')]: {
+            display: 'none'
+        }
     },
     boxTwo: {
         width: '5px',
@@ -81,7 +88,10 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         top: '127px',
         left: '47px',
-        borderRadius: '90%'
+        borderRadius: '90%',
+        [theme.breakpoints.down('xs')]: {
+            display: 'none'
+        }
     }
 }))
 
@@ -97,14 +107,14 @@ export default function HeroDashboard() {
                     <div className={classes.boxTwo}></div>
                     <Source>
                         <Revenue>
-                            <div style={{ position: 'relative', bottom: '30px' }}>Source</div>
+                            <div className='source-text' style={{ position: 'relative', bottom: '30px' }}>Source</div>
                             <div style={{ listStyle: 'none', marginTop: '5px' }}>
                                 <Monetization>Affiliate</Monetization>
                                 <Monetization>Display Ads</Monetization>
                             </div>
                         </Revenue>
                         <Percentage>
-                            <div style={{ position: 'relative', bottom: '30px' }}>Share</div>
+                            <div className='share-text' style={{ position: 'relative', bottom: '30px' }}>Share</div>
                             <div style={{listStyle: 'none'}}>
                                 <Monetization>70%</Monetization>
                                 <Monetization>30%</Monetization>

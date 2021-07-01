@@ -15,10 +15,10 @@ import { MdAttachMoney } from 'react-icons/md';
 import { BsGraphUp } from 'react-icons/bs';
 import { GiMoneyStack } from 'react-icons/gi';
 
-// Importing SearchBar component
 import { FaBars } from 'react-icons/fa';
-import LineChart from './Chart';
+import LineChart from './Charts/Chart';
 import Sidebar from './Sidebar';
+import RevenueChart from './Charts/RevenueChart';
 
 const DashboardMenuBars = styled(FaBars)`
     display: none;
@@ -41,6 +41,12 @@ const DashboardMenuBars = styled(FaBars)`
             transition: 0.2s ease-in-out;
         }
     }
+`;
+
+const MoneyTime = styled.div`
+    position: relative;
+    top: 200px;
+    height: 1000px;
 `;
 
 const useStyles = makeStyles((theme) => ({
@@ -85,7 +91,9 @@ const useStyles = makeStyles((theme) => ({
     },
     moneyMaker: {
         '@media (max-width: 768px)': {
-            width: 450
+            position: 'relative',
+            top: '210px',
+            right: '50px',
         },
     },
     searchBarShadow: {
@@ -95,7 +103,10 @@ const useStyles = makeStyles((theme) => ({
         width: '200px',
         height: '300px',
         padding: '70px',
-        boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
+        boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)',
+        '@media (max-width: 768px)': {
+            width: '410px'
+        }
     },
     content: {
         height: '400px'
@@ -146,6 +157,9 @@ function WebsiteInvestment(toggle) {
                             </Box>
                         </Card>
                     </Grid>
+                    <MoneyTime>
+                        <RevenueChart />
+                    </MoneyTime>
                 </div>
             </div>
         </div>

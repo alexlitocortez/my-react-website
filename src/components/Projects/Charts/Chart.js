@@ -1,7 +1,6 @@
 import React from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import './Chart.css'
-import MediaQuery from 'react-responsive';
 
 export default function Chart() {
 
