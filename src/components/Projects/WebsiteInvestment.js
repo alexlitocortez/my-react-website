@@ -7,18 +7,24 @@ import IconButton from '@material-ui/core/IconButton';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
+import Container from '@material-ui/core/Container';
 import './WebsiteInvestment.css';
-import HeroDashboard from './HeroDashboard';
 
 // React Icons
 import { MdAttachMoney } from 'react-icons/md';
 import { BsGraphUp } from 'react-icons/bs';
 import { GiMoneyStack } from 'react-icons/gi';
 
+
+// Imported components
 import { FaBars } from 'react-icons/fa';
+import HeroDashboard from './HeroDashboard';
 import LineChart from './Charts/Chart';
 import Sidebar from './Sidebar';
 import RevenueChart from './Charts/RevenueChart';
+import TrafficChart from './Charts/TrafficChart';
+import ExpensesChart from './Charts/ExpensesChart';
+import RevenuePie from './Charts/RevenuePie';
 
 const DashboardMenuBars = styled(FaBars)`
     display: none;
@@ -45,8 +51,21 @@ const DashboardMenuBars = styled(FaBars)`
 
 const MoneyTime = styled.div`
     position: relative;
-    top: 200px;
-    height: 1000px;
+    top: 70px;
+    right: 240px;
+    display: flex;
+`;
+
+const MoneyClocks = styled.div`
+    position: relative;
+    bottom: 10px;
+    right: 300px;
+`;
+
+const Line = styled.div`
+    border: 1px solid #000;
+    height: 10px;
+    transform: rotate(90deg);
 `;
 
 const useStyles = makeStyles((theme) => ({
@@ -100,8 +119,8 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
     },
     card: {
-        width: '200px',
-        height: '300px',
+        width: '400px',
+        height: '350px',
         padding: '70px',
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)',
         '@media (max-width: 768px)': {
@@ -134,40 +153,57 @@ function WebsiteInvestment(toggle) {
                 <Sidebar />
                 <div className='others'>
                 <LineChart />
-                <Grid className={classes.hero}>
+                <Container style={{ marginBottom: '15px' }}>
                     <HeroDashboard />
-                </Grid>
+                </Container>
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
                         <Card className={classes.card}>
                             <Box className={classes.cardAction}>
                                 <BsGraphUp size={40}/>
-                                <Typography className={classes.cardTitle} style={{color: 'royalblue'}}>Traffic</Typography>
+                                <Typography className={classes.cardTitle} style={{color: 'royalblue' }}>Traffic</Typography>
+                                <MoneyTime>
+                                    <TrafficChart />
+                                </MoneyTime>
                             </Box>
                         </Card>
                         <Card className={classes.card}>
                             <Box className={classes.cardAction}>
                                 <MdAttachMoney size={40}/>
-                                <Typography className={classes.cardTitle} style={{color: 'green'}}>Potential Revenue</Typography>
+                                <Typography className={classes.cardTitle} style={{color: 'green'}}>Revenue</Typography>
+                                <MoneyTime>
+                                    <RevenueChart />
+                                </MoneyTime>
                             </Box>
                         </Card>
                         <Card className={classes.card}>
                             <Box className={classes.cardAction}>
                                 <GiMoneyStack size={40}/>
-                                <Typography className={classes.cardTitle} style={{color: 'red'}}>Potential Expenses</Typography>
+                                <Typography className={classes.cardTitle} style={{color: 'red'}}>Expenses</Typography>
+                                <MoneyTime>
+                                    <ExpensesChart />
+                                </MoneyTime>
+                            </Box>
+                        </Card>
+                        <Card className={classes.card}>
+                            <Box className={classes.cardAction}>
+                                <Typography className={classes.cardTitle} style={{ color: '#21B6A8', textAlign: 'center' }}>Monetization Split</Typography>
+                                <MoneyClocks>
+                                    <RevenuePie />
+                                </MoneyClocks>
                             </Box>
                         </Card>
                     </Grid>
-                    <MoneyTime>
-                        <RevenueChart />
-                    </MoneyTime>
                 </div>
             </div>
         </div>
     );
 }
 
+
 export default WebsiteInvestment
 
 
-// Get dropdown arrows placed all the way to the right
 // get dropdown menu to show up
+
+// Center chart titles
+// Add pie chart for fourth card

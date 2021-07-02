@@ -1,41 +1,40 @@
-import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React from "react";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 
-
+const data = [
+  {
+    name: "Jan",
+    revenue: 120,
+  },
+  {
+    name: "Feb",
+    revenue: 300,
+  },
+  {
+    name: "March",
+    revenue: 200,
+  }
+];
 
 export default function RevenueChart() {
-    const data = [
-        {
-          month: 'Jan',
-          revenue: '$100',
-          actual: '$120'
-        },
-        {
-          month: 'Feb',
-          revenue: '$200',
-          actual: '$150'
-        },
-        {
-          month: 'March',
-          revenue: '$300',
-          actual: '$230'
-        }
-      ];
-
-    return (
-        <div>
-            <ResponsiveContainer width='100%' aspect={3}>
-                <BarChart
-                    data={data}
-                >
-                    <CartesianGrid strokeDasharray='3 3'/>
-                    <XAxis dataKey='month' />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey='actual' fill='blue' />
-                </BarChart>
-            </ResponsiveContainer>
-        </div>
-    )
+  return (
+    <BarChart
+      width={500}
+      height={300}
+      data={data}
+      margin={{
+        top: 5,
+        right: 30,
+        left: 20,
+        bottom: 5
+      }}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Bar dataKey="revenue" fill="#82ca9d" />
+    </BarChart>
+  );
 }

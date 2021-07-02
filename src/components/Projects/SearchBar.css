@@ -11,12 +11,6 @@
     --size-radius: 4px;
 }
 
-.overall {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
 .input__field {
     box-sizing: border-box;
     display: block;
@@ -34,7 +28,6 @@
     top: 0;
     padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
     margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 5);
-    background: pink;
     white-space: nowrap;
     transform: translate(0, 0);
     transform-origin: 0 0;

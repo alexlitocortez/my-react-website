@@ -2,40 +2,10 @@ import React from 'react';
 import './SearchBar.css';
 import { makeStyles } from '@material-ui/core';
 import styled from 'styled-components';
-import './SearchBar.css';
 
 
 //Material UI components
-import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-
-const Source = styled.div`
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    font-size: 32px;
-    padding: 20px;
-
-    @media screen and (max-width: 768px) {
-        margin-top: 30px
-    }
-`;
-
-const Revenue = styled.div`
-    color: #696969;
-`;
-
-const Percentage = styled.div`
-    text-align: right;
-    color: #696969;
-`;
-
-const Monetization = styled.li`
-    font-size: 20px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    color: #A9A9A9;
-`;
 
 const ButtonGroup = styled.div`
     margin-top: calc(var(--size-bezel) * 2.5);
@@ -52,7 +22,6 @@ const MoneyMaker = styled.button`
     justify-content: space-around;
 `;
 
-
 const useStyles = makeStyles((theme) => ({
     positioning: {
         display: 'flex',
@@ -60,11 +29,10 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
     },
     card: {
-        boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2);',
-        width: '500px',
+        boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)',
         height: '300px',
-        position: 'relative',
-        left: '100px',
+        width: '100%',
+        flex: '1'
     },
     boxOne: {
         width: '5px',
@@ -100,41 +68,17 @@ export default function HeroDashboard() {
 
     return (
         <div>
-            <Grid className='overall'>
-                <Card className={classes.card}>
-                    <div style={{ textAlign: 'center', fontSize: '32px', marginTop: '20px' }}>Monetization</div>
-                    <div className={classes.boxOne}></div>
-                    <div className={classes.boxTwo}></div>
-                    <Source>
-                        <Revenue>
-                            <div className='source-text' style={{ position: 'relative', bottom: '30px' }}>Source</div>
-                            <div style={{ listStyle: 'none', marginTop: '5px' }}>
-                                <Monetization>Affiliate</Monetization>
-                                <Monetization>Display Ads</Monetization>
-                            </div>
-                        </Revenue>
-                        <Percentage>
-                            <div className='share-text' style={{ position: 'relative', bottom: '30px' }}>Share</div>
-                            <div style={{listStyle: 'none'}}>
-                                <Monetization>70%</Monetization>
-                                <Monetization>30%</Monetization>
-                            </div>
-                        </Percentage>
-                    </Source>
-                </Card>
                 <Card className= { `${classes.positioning} ${classes.card}` }>
                     <label>
                         <label>
                             <input class='input__field' type='text' placeholder='Website URL' />
-                            <span className='input__label' style={{ textAlign: 'center' }}>Enter Website</span>
                         </label>
                         <ButtonGroup>
-                            <MoneyMaker style={{ marginRight: '15px' }}>Analyze</MoneyMaker>
-                            <MoneyMaker type='reset'>Reset</MoneyMaker>
+                            <MoneyMaker style={{ marginRight: '15px', cursor: 'pointer' }}>Analyze</MoneyMaker>
+                            <MoneyMaker type='reset' style={{ cursor: 'pointer' }}>Reset</MoneyMaker>
                         </ButtonGroup>
                     </label>
                 </Card>
-            </Grid>
         </div>
     )
 }
