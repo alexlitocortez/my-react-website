@@ -10,11 +10,6 @@ import Card from '@material-ui/core/Card';
 import Container from '@material-ui/core/Container';
 import './WebsiteInvestment.css';
 
-// React Icons
-import { MdAttachMoney } from 'react-icons/md';
-import { BsGraphUp } from 'react-icons/bs';
-import { GiMoneyStack } from 'react-icons/gi';
-
 
 // Imported components
 import { FaBars } from 'react-icons/fa';
@@ -58,14 +53,19 @@ const MoneyTime = styled.div`
 
 const MoneyClocks = styled.div`
     position: relative;
-    bottom: 10px;
-    right: 300px;
+    bottom: 30px;
+    right: 20px;
 `;
 
 const Line = styled.div`
-    border: 1px solid #000;
-    height: 10px;
-    transform: rotate(90deg);
+    height: 0.4px;
+    width: 25em;
+    transform: rotate(0deg);
+    border: 1px solid #E0E0E0;
+    background-color: #E0E0E0;
+    display: block;
+    position: relative;
+    top: 30px;
 `;
 
 const useStyles = makeStyles((theme) => ({
@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '70px',
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)',
         '@media (max-width: 768px)': {
-            width: '410px'
+            width: '410px',
         }
     },
     content: {
@@ -132,7 +132,12 @@ const useStyles = makeStyles((theme) => ({
     },
     cardAction: {
         display: 'flex'
-    }
+    },
+    chartAdjustment: {
+        '@media (max-width: 768px)': {
+            position: 'relative',
+            right: '200px'
+    }}
 }));
 
 
@@ -158,35 +163,48 @@ function WebsiteInvestment(toggle) {
                 </Container>
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
                         <Card className={classes.card}>
+                            <Line />
                             <Box className={classes.cardAction}>
-                                <BsGraphUp size={40}/>
-                                <Typography className={classes.cardTitle} style={{color: 'royalblue' }}>Traffic</Typography>
-                                <MoneyTime>
+                                    <Typography className={classes.cardTitle} style={{color: '#696969'}}>
+                                        Traffic
+                                        <div className="close"></div>
+                                    </Typography>
+                                <MoneyTime className={classes.chartAdjustment}>
                                     <TrafficChart />
                                 </MoneyTime>
                             </Box>
                         </Card>
                         <Card className={classes.card}>
+                            <Line />
                             <Box className={classes.cardAction}>
-                                <MdAttachMoney size={40}/>
-                                <Typography className={classes.cardTitle} style={{color: 'green'}}>Revenue</Typography>
+                                    <Typography className={classes.cardTitle} style={{color: '#696969'}}>
+                                        Revenue
+                                        <div className="close"></div>
+                                    </Typography>
                                 <MoneyTime>
                                     <RevenueChart />
                                 </MoneyTime>
                             </Box>
                         </Card>
                         <Card className={classes.card}>
+                            <Line />
                             <Box className={classes.cardAction}>
-                                <GiMoneyStack size={40}/>
-                                <Typography className={classes.cardTitle} style={{color: 'red'}}>Expenses</Typography>
+                                    <Typography className={classes.cardTitle} style={{color: '#696969'}}>
+                                        Expenses
+                                        <div className="close"></div>
+                                    </Typography>
                                 <MoneyTime>
                                     <ExpensesChart />
                                 </MoneyTime>
                             </Box>
                         </Card>
                         <Card className={classes.card}>
+                            <Line />
+                                <Typography className={classes.cardTitle} style={{ color: '#696969' }}>
+                                    Monetization Split
+                                    <div className='close'></div>
+                                </Typography>
                             <Box className={classes.cardAction}>
-                                <Typography className={classes.cardTitle} style={{ color: '#21B6A8', textAlign: 'center' }}>Monetization Split</Typography>
                                 <MoneyClocks>
                                     <RevenuePie />
                                 </MoneyClocks>
@@ -198,6 +216,7 @@ function WebsiteInvestment(toggle) {
         </div>
     );
 }
+
 
 
 export default WebsiteInvestment

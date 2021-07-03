@@ -6,8 +6,35 @@
     flex: 4;
 }
 
+.close {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    background-color: #E0E0E0;
+}
+
+.close:after {
+    content: '';
+    height: 60px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 28px;
+}
+
+.close:before {
+    content: '';
+    height: 60px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 28px;
+}
+
+
+
 @media only screen and (max-width: 768px) {
     .sidebar {
         display: none;
     }
-}
+} 
