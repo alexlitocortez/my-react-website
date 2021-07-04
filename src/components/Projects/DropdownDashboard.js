@@ -1,23 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FaTimes } from 'react-icons/fa';
+import { saaSData } from '../data/SaaSData';
 import { Link } from 'react-router-dom';
-import { FaTimes } from 'react-icons/fa'
-import { SaaSData } from '../data/SaaSData';
+import { Typography } from '@material-ui/core';
 
 const DropdownContainer = styled.div`
     position: fixed;
     z-index: 999;
     width: 100%;
     height: 100%;
-    background: #cd853f;
+    background: #696969;
     display: grid;
     align-items: center;
     top: 0;
     left: 0;
     transition: 0.3s ease-in-out;
-    opacity: ${({open}) => (open ? '1' : '0' )};
+    opacity: ${({open}) => (open ? `1` : '0' )};
     top: ${({open}) => (open ? '0' : '-100%' )};
 `;
+
 
 const DropdownMenu = styled.div`
     display: grid;
@@ -28,23 +30,6 @@ const DropdownMenu = styled.div`
 
     @media screen and (max-width: 480px) {
         grid-template-rows: repeat(4, 60px);
-    }
-`;
-
-const DropdownLink = styled(Link)`
-    display: flex;
-    color: #fff;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    list-style: none;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    margin-bottom: 50px;
-
-    &:hover {
-        color: #000d1a;
     }
 `;
 
@@ -62,22 +47,22 @@ const CloseIcon = styled(FaTimes)`
     color: #000d1a;
 `;
 
-const DropdownNichements = ({open, toggle}) => {
+const DropdownDashboard = ({open, toggle}) => {
 
     return (
         <DropdownContainer open={open} onClick={toggle} >
-            <Icon onClick={toggle}>
-                <CloseIcon onClick={toggle} />
+            <Icon onClick={toggle} >
+                <CloseIcon onClick={toggle}/>
             </Icon>
             <DropdownMenu>
-                {SaaSData.map((item, index) => (
-                    <DropdownLink to={item.link} key={index}>
+                {saaSData.map((item, index) => (
+                    <Typography tp={item.link} key={index}>
                         {item.title}
-                    </DropdownLink>
+                    </Typography>
                 ))}
             </DropdownMenu>
         </DropdownContainer>
     )
 }
 
-export default DropdownNichements
+export default DropdownDashboard    

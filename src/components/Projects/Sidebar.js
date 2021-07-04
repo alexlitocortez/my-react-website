@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Sidebar.css'
 
 // React icons
@@ -13,8 +13,13 @@ import { RiArrowDropDownLine } from 'react-icons/ri';
 
 
 export default function Sidebar() {
+    const [menuClose, setMenuClose] = useState(false);
+
+    const menuIconClick = () => {
+        menuClose ? setMenuClose(false) : setMenuClose(true);
+    }
     return (
-        <div className='sidebar'>
+        <div className='sidebar' >
             <div className='sidebarWrapper'>
                 <div className='sidebarMenu'>
                     <h3 className='sidebarTitle'>Dashboard</h3>

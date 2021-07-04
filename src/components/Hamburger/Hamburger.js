@@ -36,4 +36,3 @@ function Hamburger({toggle}) {
 }
 
 export default Hamburger
-

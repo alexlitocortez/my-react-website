@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -20,6 +20,7 @@ import RevenueChart from './Charts/RevenueChart';
 import TrafficChart from './Charts/TrafficChart';
 import ExpensesChart from './Charts/ExpensesChart';
 import RevenuePie from './Charts/RevenuePie';
+import DropdownDashboard from './DropdownDashboard';
 
 const DashboardMenuBars = styled(FaBars)`
     display: none;
@@ -53,7 +54,7 @@ const MoneyTime = styled.div`
 
 const MoneyClocks = styled.div`
     position: relative;
-    bottom: 30px;
+    bottom: 70px;
     right: 20px;
 `;
 
@@ -141,8 +142,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function WebsiteInvestment(toggle) {
+function WebsiteInvestment() {
     const classes = useStyles();
+
+    const [open, setOpen] = useState(false);
+
+    const toggle = () => {
+        setOpen(!open)
+    }
 
     return (
         <div>
@@ -152,7 +159,8 @@ function WebsiteInvestment(toggle) {
                     <Typography variant='h6' className={classes.title} style={{marginLeft: 28}}>
                         Nichements
                     </Typography>
-                    <DashboardMenuBars onClick={toggle} />
+                    <DashboardMenuBars open={open} onClick={toggle} />
+                    <DropdownDashboard open={open} toggle={toggle} />
             </AppBar>
             <div className='main-container'>
                 <Sidebar />

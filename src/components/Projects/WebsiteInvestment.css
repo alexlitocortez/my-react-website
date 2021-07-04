@@ -7,31 +7,31 @@
 }
 
 .close {
-    width: 60px;
-    height: 60px;
+    background: #E0E0E0;
+    width: 30px;
+    height: 30px;
     position: relative;
-    background-color: #E0E0E0;
+    bottom: 30px;
+    left: 230px;
 }
 
 .close:after {
     content: '';
-    height: 60px;
+    height: 30px;
     border-left: 2px solid #fff;
     position: absolute;
     transform: rotate(45deg);
-    left: 28px;
+    left: 14px;
 }
 
 .close:before {
     content: '';
-    height: 60px;
+    height: 30px;
     border-left: 2px solid #fff;
     position: absolute;
     transform: rotate(-45deg);
-    left: 28px;
+    left: 14px;
 }
-
-
 
 @media only screen and (max-width: 768px) {
     .sidebar {
