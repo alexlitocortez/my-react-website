@@ -225,12 +225,7 @@ function WebsiteInvestment() {
     );
 }
 
-
-
 export default WebsiteInvestment
 
 
-// get dropdown menu to show up
-
-// Center chart titles
-// Add pie chart for fourth card
+//Make the X icons close the charts and rearrange the boxes

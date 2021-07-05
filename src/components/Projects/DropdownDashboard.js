@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
 import { saaSData } from '../data/SaaSData';
-import { Link } from 'react-router-dom';
 import { Typography } from '@material-ui/core';
+import DropdownImage from './DropdownImage';
+import Grid from '@material-ui/core/Grid';
+
 
 const DropdownContainer = styled.div`
     position: fixed;
@@ -21,17 +23,7 @@ const DropdownContainer = styled.div`
 `;
 
 
-const DropdownMenu = styled.div`
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 80px);
-    text-align: center;
-    margin-bottom: 4rem;
 
-    @media screen and (max-width: 480px) {
-        grid-template-rows: repeat(4, 60px);
-    }
-`;
 
 const Icon = styled.div`
     position: absolute;
@@ -54,13 +46,18 @@ const DropdownDashboard = ({open, toggle}) => {
             <Icon onClick={toggle} >
                 <CloseIcon onClick={toggle}/>
             </Icon>
-            <DropdownMenu>
-                {saaSData.map((item, index) => (
-                    <Typography tp={item.link} key={index}>
-                        {item.title}
-                    </Typography>
-                ))}
-            </DropdownMenu>
+                <Grid container>
+                    <Grid item xs={6}>
+                        <DropdownImage />
+                    </Grid>
+                    <Grid item xs={6}>
+                    {saaSData.map((item, index) => (
+                        <Typography style={{ padding: '20px' }} tp={item.link} key={index}>
+                            {item.title}
+                        </Typography>
+                    ))}
+                    </Grid>
+            </Grid>
         </DropdownContainer>
     )
 }
