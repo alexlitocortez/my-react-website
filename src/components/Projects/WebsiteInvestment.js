@@ -21,6 +21,7 @@ import TrafficChart from './Charts/TrafficChart';
 import ExpensesChart from './Charts/ExpensesChart';
 import RevenuePie from './Charts/RevenuePie';
 import DropdownDashboard from './DropdownDashboard';
+import { CloseFunction } from './CloseFunction';
 
 const DashboardMenuBars = styled(FaBars)`
     display: none;
@@ -150,6 +151,8 @@ function WebsiteInvestment() {
     const toggle = () => {
         setOpen(!open)
     }
+
+    CloseFunction()
 
     return (
         <div>
