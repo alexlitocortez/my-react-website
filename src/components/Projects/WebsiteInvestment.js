@@ -21,7 +21,6 @@ import TrafficChart from './Charts/TrafficChart';
 import ExpensesChart from './Charts/ExpensesChart';
 import RevenuePie from './Charts/RevenuePie';
 import DropdownDashboard from './DropdownDashboard';
-import { CloseFunction } from './CloseFunction';
 
 const DashboardMenuBars = styled(FaBars)`
     display: none;
@@ -152,7 +151,12 @@ function WebsiteInvestment() {
         setOpen(!open)
     }
 
-    CloseFunction()
+    const message = () => {
+        var card = document.getElementById('card');
+        if(document.getElementById('close').clicked == true) {
+            card.style.display = 'none';
+        }
+    }
 
     return (
         <div>
@@ -173,12 +177,12 @@ function WebsiteInvestment() {
                     <HeroDashboard />
                 </Container>
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
-                        <Card className={classes.card}>
+                        <Card className={classes.card} id='card'>
                             <Line />
                             <Box className={classes.cardAction}>
                                     <Typography className={classes.cardTitle} style={{color: '#696969'}}>
                                         Traffic
-                                        <div className="close"></div>
+                                        <div className="close" id='close' onClick={message}></div>
                                     </Typography>
                                 <MoneyTime className={classes.chartAdjustment}>
                                     <TrafficChart />
@@ -190,7 +194,7 @@ function WebsiteInvestment() {
                             <Box className={classes.cardAction}>
                                     <Typography className={classes.cardTitle} style={{color: '#696969'}}>
                                         Revenue
-                                        <div className="close"></div>
+                                        <div className="close" id='close'></div>
                                     </Typography>
                                 <MoneyTime>
                                     <RevenueChart />
@@ -202,7 +206,7 @@ function WebsiteInvestment() {
                             <Box className={classes.cardAction}>
                                     <Typography className={classes.cardTitle} style={{color: '#696969'}}>
                                         Expenses
-                                        <div className="close"></div>
+                                        <div className="close" id='close'></div>
                                     </Typography>
                                 <MoneyTime>
                                     <ExpensesChart />
@@ -213,7 +217,7 @@ function WebsiteInvestment() {
                             <Line />
                                 <Typography className={classes.cardTitle} style={{ color: '#696969' }}>
                                     Monetization Split
-                                    <div className='close'></div>
+                                    <div className='close' id='close'></div>
                                 </Typography>
                             <Box className={classes.cardAction}>
                                 <MoneyClocks>
@@ -232,3 +236,10 @@ export default WebsiteInvestment
 
 
 //Make the X icons close the charts and rearrange the boxes
+
+
+
+
+// Take out the dog project and add my NBA project
+// Style projects so they look appealing
+// Fix home page

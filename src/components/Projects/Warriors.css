@@ -1,0 +1,175 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1em;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background-color: lightblue;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: absolute;
+    top: 400px;
+    left: 50%;
+}
+
+#getImage {
+    position: absolute;
+    top: 0px;
+    left: 30%;
+    transform: translateX(-50%, -50%);
+}
+
+/* Player name */
+#thisone {
+    position: relative;
+    right: 100px;
+}
+
+.button {
+    padding: 10px;
+    width: 250px;
+    position: relative;
+    right: 120px;
+    color: white;
+    background-color: #1d428a;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+    display: block;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.text-align {
+    position: fixed;
+    left: 46%;
+    top: 600px;
+}
+
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: darkgray;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* dot effects */
+.greyout {
+    background-color: grey;
+    padding: 10px;
+    animation-duration: .2s;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Media Queries */
+@media (min-width: 769px) and (max-width: 1200px) {
+    #getImage {
+        height: 250px;
+    }
+
+    .slideshow-container {
+        position: absolute;
+        top: 45%;
+    }
+
+    .text-align {
+        position: absolute;
+        top: 75%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .text-align {
+        position: absolute;
+        left: 43%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    #getImage {
+        position: absolute;
+        left: 65%;
+        width: 400px;
+    }
+
+    .slideshow-container {
+        position: absolute;
+        left: 100%;
+    }
+}
+
+
+
+

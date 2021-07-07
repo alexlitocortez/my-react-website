@@ -12,7 +12,7 @@ import Grid from '@material-ui/core/Grid';
 // Images
 import myCharacter from '../../images/caricature.jpg';
 import projectImageOne from '../../images/drumkit.jpg';
-import projectImageTwo from '../../images/dog.jpg';
+import projectImageTwo from '../../images/warrior.jpg';
 import projectImageThree from '../../images/investment.jpg';
 
 const useStyles = makeStyles((theme) => ({
@@ -74,7 +74,6 @@ function Projects() {
                                     Drumkit Sounds
                                 </Typography>
                                 <Typography variant='body2' color='textSecondary' component='p'>
-
                                 </Typography>
                             </CardContent>
                             <CardActionArea className={classes.cardActions}>
@@ -92,7 +91,7 @@ function Projects() {
                     </Link>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
-                    <Link to='/dogproject' style={{ textDecoration: 'none' }}>
+                    <Link to='/warriors' style={{ textDecoration: 'none' }}>
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia
@@ -101,10 +100,9 @@ function Projects() {
                             />
                             <CardContent>
                                 <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2'>
-                                    Dog Image Generator
+                                    Warrior Players Stats
                                 </Typography>
                                 <Typography variant='body2' color='textSecondary' component='p'>
-
                                 </Typography>
                             </CardContent>
                             <CardActionArea className={classes.cardActions}>
