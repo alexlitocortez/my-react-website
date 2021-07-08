@@ -1,17 +1,46 @@
-const slides = document.getElementsByClassName("mySlides");
-const numbers = document.getElementById('numbertext');
-const button = document.getElementById('button');
-const textAlign = document.getElementById('text-align');
-const image = document.getElementById('getImage');
-const header = document.getElementById('thisone');
 
+import { useEffect } from 'react';
+
+const WarriorFunction= () => {
+    useEffect(() => {
+
+
+    const button = document.getElementById('button');
+    const image = document.getElementById('getImage');
+    const header = document.getElementById('thisone');
+
+    
+    })
+}
+
+
+
+
+
+
+
+const useScript = url => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = url;
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, [url]);
+};
+
+export default useScript;
 
 // Array of NBA player images
-const images = ["/Users/l/my-react-website/src/images/curry.jpg", "/Users/l/my-react-website/src/images/oubre.jpg",
-"/Users/l/my-react-website/src/images/wiggins.jpeg", "/Users/l/my-react-website/src/images/green.jpg",
-"/Users/l/my-react-website/src/images/wiseman.jpg"];
+const images = [
+    "/Users/l/my-react-website/src/images/curry.jpg", "/Users/l/my-react-website/src/images/oubre.jpg",
+    "/Users/l/my-react-website/src/images/wiggins.jpeg", "/Users/l/my-react-website/src/images/green.jpg",
+    "/Users/l/my-react-website/src/images/wiseman.jpg"
+]
 
-// Array of individual NBA player images
+// Variables of individual player images
 const curry = "/Users/l/my-react-website/src/images/curry.jpg";
 const oubre = "/Users/l/my-react-website/src/images/oubre.jpg";
 const wiggins = "/Users/l/my-react-website/src/images/wiggins.jpeg";
@@ -22,17 +51,16 @@ const btns = document.querySelectorAll('.dot');
 
 var counter = 0;
 
+
 // Event listener which triggers functions when I click the button
 
-
-export function WarriorFunction() {
-    button.addEventListener('click', () => {
-        addOne();
-        dotsColor();
-        pointStats();
-        reboundStats();
-        assistStats();
-},
+function overall() {
+    addOne()
+    dotsColor()
+    pointStats()
+    reboundStats()
+    assistStats()
+}
 
 // Function which triggers different images and text when button clicked
 function addOne() {
@@ -43,7 +71,7 @@ function addOne() {
     header.innerHTML = input[counter];
     image.src = images[counter];
     counter++;
-},
+}
 
 // Gives backgroundcolor to each dot when button is clicked
 function dotsColor() {
@@ -68,7 +96,7 @@ function dotsColor() {
         dotFour.classList.remove('greyout');
         dotFive.classList.toggle('greyout');
     }
-},
+}
 
 // Changes points to match player's stats
 function pointStats() {
@@ -88,7 +116,7 @@ function pointStats() {
     } else {
         document.getElementById('ppg').innerHTML = stats[4];
     }
-},
+}
 
 // Changes rebounds to match player's stats
 function reboundStats() {
@@ -108,7 +136,7 @@ function reboundStats() {
     } else {
         document.getElementById('rpg').innerHTML = reboundStats[4];
     }
-},
+}
 
 // Changes assists to match player's stats
 function assistStats() {
@@ -129,3 +157,5 @@ function assistStats() {
         document.getElementById('apg').innerHTML = assistStats[4];
     }
 }
+
+button.addEventListener('click', overall())
