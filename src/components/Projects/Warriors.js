@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './warriors.module.css';
 import { makeStyles } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 
-import { WarriorFunction } from './WarriorFunction';
+import curry from '/Users/l/my-react-website/src/images/curry.jpg';
+import green from '/Users/l/my-react-website/src/images/green.jpg';
+import oubre from '/Users/l/my-react-website/src/images/oubre.jpg';
+
 
 const useStyles = makeStyles((theme) => ({
     playerImage: {
+        display: 'flex',
+        justifyContent: 'center',
+        textAlign: 'center',
+        height: '600px',
+        width: '600px'
+    },
+    namePlacement: {
         display: 'flex',
         justifyContent: 'center',
         textAlign: 'center'
@@ -41,26 +51,34 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
+
 function Warriors() {
-    const classes = useStyles();
+    const classes = useStyles()
 
-    WarriorFunction()
+    const players = {
+        warriors: [curry, green, oubre]
+    }
 
-    return (
+    // useEffect(() => {
+    //     button.addEventListener('click', WarriorsFunction)
+    //     })
+
+
+    return (                
         <div>
             <head>
                 <meta charSet='UTF-8'></meta>
                 <meta name='viewport' content='width=device-width, initial-scale=1.0'></meta>
             </head>
             <body>
-                <img id={styles['getImage']} className={styles.fade} src='curry.jpg' alt='Stephen Curry' width='600' height='400'>
-
-                </img>
                 <Container className={classes.playerImage}>
+                <img className={styles.fade} alt='Stephen Curry' style={{ maxWidth: 600, maxHeight: 600 }}></img>
+                </Container>
+                <Container className={classes.namePlacement}>
                     <h1><span id={styles['thisone']}>Stephen Curry</span></h1>
                 </Container>
                 <Box className={classes.buttonPlacement}>
-                    <button type='button' className={styles.button}>CHANGE PLAYER</button>
+                    <button type='button' className={styles.button} id='button'>CHANGE PLAYER</button>
                 </Box>
                 <br></br>
                 <Container className={classes.textAlign}>
@@ -82,6 +100,12 @@ function Warriors() {
     )
 }
 
-
-
 export default Warriors
+
+
+// 1. Fix image problems (image works when i put it into variable. EX. src={green})
+// 2. Test out the first function
+
+
+// How to use useState to access array of images and loop through them while displaying them
+// Also put onClick on button I'm going to use
