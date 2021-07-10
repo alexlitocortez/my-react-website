@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './warriors.module.css';
 import { makeStyles } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-
 import curry from '/Users/l/my-react-website/src/images/curry.jpg';
-import green from '/Users/l/my-react-website/src/images/green.jpg';
 import oubre from '/Users/l/my-react-website/src/images/oubre.jpg';
+import wiggins from '/Users/l/my-react-website/src/images/wiggins.jpeg';
+import green from '/Users/l/my-react-website/src/images/green.jpg';
+import wiseman from '/Users/l/my-react-website/src/images/wiseman.jpg';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -51,18 +52,24 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
+const warriorRoster = [
+    curry, oubre, wiggins, green, wiseman
+]
 
 function Warriors() {
+
+    const[count, setCount] = useState()
+
+    function message() {
+        var imageBox = document.getElementById('imageBox')
+        var counter = 0;
+        if(counter == warriorRoster.length){
+            imageBox.src = warriorRoster[counter];
+            counter++;
+        }
+       }
+
     const classes = useStyles()
-
-    const players = {
-        warriors: [curry, green, oubre]
-    }
-
-    // useEffect(() => {
-    //     button.addEventListener('click', WarriorsFunction)
-    //     })
-
 
     return (                
         <div>
@@ -72,13 +79,13 @@ function Warriors() {
             </head>
             <body>
                 <Container className={classes.playerImage}>
-                <img className={styles.fade} alt='Stephen Curry' style={{ maxWidth: 600, maxHeight: 600 }}></img>
+                <img src={curry} className={styles.fade} id='imageBox' alt='Warriors player' style={{ maxWidth: 600, maxHeight: 600 }}></img>
                 </Container>
                 <Container className={classes.namePlacement}>
                     <h1><span id={styles['thisone']}>Stephen Curry</span></h1>
                 </Container>
                 <Box className={classes.buttonPlacement}>
-                    <button type='button' className={styles.button} id='button'>CHANGE PLAYER</button>
+                    <button onClick={message} type='button' className={styles.button} id='button'>Change Player</button>
                 </Box>
                 <br></br>
                 <Container className={classes.textAlign}>
@@ -108,4 +115,3 @@ export default Warriors
 
 
 // How to use useState to access array of images and loop through them while displaying them
-// Also put onClick on button I'm going to use
