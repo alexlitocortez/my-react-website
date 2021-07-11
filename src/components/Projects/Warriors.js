@@ -52,22 +52,40 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const warriorRoster = [
-    curry, oubre, wiggins, green, wiseman
-]
-
 function Warriors() {
 
-    const[count, setCount] = useState()
+    const [warriorPlayer, setWarriorPlayer] = useState(curry)
 
-    function message() {
-        var imageBox = document.getElementById('imageBox')
-        var counter = 0;
-        if(counter == warriorRoster.length){
-            imageBox.src = warriorRoster[counter];
-            counter++;
+    const warriorImages = [
+        {
+            curry,
+            oubre,
+            wiggins,
+            green,
+            wiseman
         }
-       }
+    ]
+
+    const handleClick = () => {
+        setWarriorPlayer(warriorImages.map())
+    }
+
+
+    function imageHelper() {
+
+    }
+
+
+
+    function addOne() {
+        var input = ["Stephen Curry", "Kelly Oubre", "Andrew Wiggins", "Draymond Green", "James Wiseman"];
+        if(counter == input.length)
+        if(counter == images.length)
+        counter = 0;
+        header.innerHTML = input[counter];
+        image.src = images[counter];
+        counter++;
+    }
 
     const classes = useStyles()
 
@@ -79,13 +97,13 @@ function Warriors() {
             </head>
             <body>
                 <Container className={classes.playerImage}>
-                <img src={curry} className={styles.fade} id='imageBox' alt='Warriors player' style={{ maxWidth: 600, maxHeight: 600 }}></img>
+                <img src={imageHelper} className={styles.fade} id='imageBox' alt='Warriors player' style={{ maxWidth: 600, maxHeight: 600 }}></img>
                 </Container>
                 <Container className={classes.namePlacement}>
                     <h1><span id={styles['thisone']}>Stephen Curry</span></h1>
                 </Container>
                 <Box className={classes.buttonPlacement}>
-                    <button onClick={message} type='button' className={styles.button} id='button'>Change Player</button>
+                    <button onClick={handleClick} type='button' className={styles.button} id='button'>Change Player</button>
                 </Box>
                 <br></br>
                 <Container className={classes.textAlign}>
@@ -111,7 +129,8 @@ export default Warriors
 
 
 // 1. Fix image problems (image works when i put it into variable. EX. src={green})
-// 2. Test out the first function
 
 
 // How to use useState to access array of images and loop through them while displaying them
+
+//Use useState it this doesn't work
