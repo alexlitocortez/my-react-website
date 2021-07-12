@@ -1,0 +1,40 @@
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+#thisone {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.button {
+    padding: 10px;
+    width: 250px;
+    color: white;
+    background-color: #1d428a;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+    display: block;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+}
