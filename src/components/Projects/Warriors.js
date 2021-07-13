@@ -49,6 +49,17 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function Warriors() {
+
+    
+
+    const handleClick = () => {
+        if(document.getElementById('kelly') == 'clicked') {
+            document.getElementById('ppg').innerHTML = '17';
+            document.getElementById('rpg').innerHTML = '5';
+            document.getElementById('apg').innerHTML = '3';
+        }
+    }
+
     const classes = useStyles()
 
     return (                
@@ -59,24 +70,12 @@ function Warriors() {
             </head>
             <body>
                 <ImageAndText />
-                <Container className={classes.textAlign}>
-                    <span id={styles['dotOne']} class={styles.dot}></span>
-                    <span id={styles['dotTwo']} class={styles.dot}></span>
-                    <span id={styles['dotThree']} class={styles.dot}></span>
-                    <span id={styles['dotFour']} class={styles.dot}></span>
-                    <span id={styles['dotFive']} class={styles.dot}></span>
-                </Container>
-                <Container className={classes.statsBox}>
-                    <Container className={classes.innerStatsBox}>
-                    <h1>PPG: <span id={styles['ppg']}></span></h1>
-                    <h1>RPG: <span id={styles['rpg']}></span></h1>
-                    <h1>APG: <span id={styles['apg']}></span></h1>
-                    </Container>
-                </Container>
             </body>
         </div>
     )
 }
+
+
 
 export default Warriors
 
