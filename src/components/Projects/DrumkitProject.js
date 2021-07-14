@@ -1,7 +1,6 @@
 import React from 'react'
 import './Drumkit.css'
 import { Drumkit } from './Drumkit'
-import { removeTransition } from './Drumkit'
 
 // image
 import Drums from '../../images/drumset-copy.jpg'

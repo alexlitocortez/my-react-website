@@ -1,6 +1,5 @@
 
 import React from 'react';
-import styled from 'styled-components';
 import './DropdownImage.css';
 import { IconContext } from 'react-icons/';
 

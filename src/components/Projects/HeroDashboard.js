@@ -56,7 +56,6 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         top: '127px',
         left: '47px',
-        borderRadius: '90%',
         [theme.breakpoints.down('xs')]: {
             display: 'none'
         }
