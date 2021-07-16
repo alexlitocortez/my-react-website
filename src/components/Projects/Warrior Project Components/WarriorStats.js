@@ -116,10 +116,6 @@ function WarriorStats() {
     const [greyDot, setGreyDot] = useState()
 
 
-
-
-
-
     // Creating this function which contains multiple function to put in onclick
 
     const setStatsForCurry = () => {
@@ -127,7 +123,7 @@ function WarriorStats() {
         setWarriorPointStats(curryStats.points);
         setWarriorReboundStats(curryStats.rebounds);
         setWarriorAssistStats(curryStats.assists);
-        ToggleSwitch();
+        toggleSwitch();
     }
 
     const setStatsForOubre = () => {
@@ -156,19 +152,20 @@ function WarriorStats() {
         setWarriorPointStats(wisemanStats.points);
         setWarriorReboundStats(wisemanStats.rebounds);
         setWarriorAssistStats(wisemanStats.assists);
+        toggleSwitch();
     }
 
-    const ToggleSwitch = () => {
+    const toggleSwitch = () => {
         greyDot ? setGreyDot(false) : setGreyDot(true);
-        console.log('works');
+        console.log('it works')
     }
-
-
 
 
     // How to turn off dot when another button is clicked
 
     const classes = useStyles()
+
+// How to target ID with active class with React
 
     return (
         <div>
@@ -176,11 +173,11 @@ function WarriorStats() {
                 <img className={classes.image} id='warriorImage' src={warrior}></img>
             </Container>
             <Box className={classes.dotAlign}>
-                <span id='dotOne' className={ `${classes.dot} ${greyDot ? 'greyout': 'null'}`}></span>
-                <span id='dotTwo' className='dot'>{greyDot}</span>
-                <span id='dotThree' className='dot'>{greyDot}</span>
-                <span id='dotFour' className='dot'>{greyDot}</span>
-                <span id='dotFive' className='dot'>{greyDot}</span>
+                    <span id='dotOne' className={ `${classes.dot} ${greyDot ? 'greyout': 'dot'}`}></span>
+                    <span id='dotTwo' className='dot'></span>
+                    <span id='dotThree' className='dot'></span>
+                    <span id='dotFour' className='dot'></span>
+                    <span id='dotFive' className={ `${classes.dot} ${greyDot ? 'greyout': 'dot'}`}></span>
             </Box>
             <Box className={classes.buttonPlacement}>
             <button onClick={() => setStatsForCurry()} className='button' id='steph' type='button'>Stephen Curry</button>
