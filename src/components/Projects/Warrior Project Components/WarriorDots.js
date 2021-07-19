@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import './WarriorStats.css';
+import './WarriorDots.css';
 import { classes } from 'istanbul-lib-coverage';
 
 const useStyles = makeStyles((theme) => ({
@@ -21,34 +22,55 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const setStatsForCurry = () => {
-    toggleSwitch();
-}
 
-const setStatsForOubre = () => {
-    toggleSwitch();
-}
-
-const setStatsForWiggins = () => {
-    toggleSwitch();
-}
-
-const setStatsForGreen = () => {
-    toggleSwitch();
-}
-
-const setStatsForWiseman = () => {
-    toggleSwitch();
-}
-
-const toggleSwitch = () => {
-    greyDot ? setGreyDot(false) : setGreyDot(true);
-    console.log('it works')
-}
 
 
 function WarriorDots() {
+
+    const [greyDot, setGreyDot] = useState({
+        activeObject: null,
+        objects: [{ id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}]
+    })
+
+    const setStatsForCurry = () => {
+        toggleSwitch();
+    }
+    
+    const setStatsForOubre = () => {
+        toggleSwitch();
+    }
+    
+    const setStatsForWiggins = () => {
+        toggleSwitch();
+    }
+    
+    const setStatsForGreen = () => {
+        toggleSwitch();
+    }
+    
+    const setStatsForWiseman = () => {
+        toggleSwitch();
+    }
+    
+    const toggleSwitch = () => {
+        greyDot ? setGreyDot(false) : setGreyDot(true);
+        console.log('it works')
+    }
+
     const classes = useStyles()
+
+    function ToggleActive(index) {
+        setGreyDot({...greyDot, activeObject: greyDot.objects[index] })
+        console.log('works')
+    }
+
+    function ToggleActiveStyles(index) {
+        if(greyDot.objects[index] === greyDot.activeObject){
+            return 'dot active' 
+        } else {
+            return 'dot inactive'
+        }
+    }
 
     return (
         <div>
@@ -66,6 +88,13 @@ function WarriorDots() {
                 <button onClick={() => setStatsForGreen()} className='button' id='draymond' type='button'>Draymond Green</button>
                 <button onClick={() => setStatsForWiseman()} className='button' id='james' type='button'>James Wiseman</button>
             </Box>
+            <div>
+                {greyDot.objects.map((elements, index) => (
+                    <div key={index} className={ToggleActiveStyles(index)} onClick={() => {
+                        ToggleActive(index);
+                    }}></div>
+                ))}
+            </div>
         </div>
     )
 }

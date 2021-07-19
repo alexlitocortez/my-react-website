@@ -1,0 +1,17 @@
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: darkgray;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.inactive {
+    background-color: darkgray;
+}
+
+.active {
+    background-color: #3498db;
+}
