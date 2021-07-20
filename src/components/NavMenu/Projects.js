@@ -150,7 +150,7 @@ function Projects() {
                     </Link>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
-                    <Link to='/dots' style={{ textDecoration: 'none' }}>
+                    <Link to='/warriordots' style={{ textDecoration: 'none' }}>
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia

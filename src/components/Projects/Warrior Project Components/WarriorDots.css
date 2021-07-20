@@ -1,11 +1,14 @@
-.dot {
+
+.button {
+    padding: 10px;
+    width: 250px;
+    color: white;
+    background-color: #1d428a;
+    border-radius: 5px;
     cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: darkgray;
-    border-radius: 50%;
-    display: inline-block;
+    outline: none;
+    font-weight: bold;
+    display: block;
 }
 
 .inactive {

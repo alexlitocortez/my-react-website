@@ -49,11 +49,11 @@
     display: inline-block;
 }
 
-.greyout {
-    background-color: grey;
-    padding: 2px;
-    animation-duration: .2s;
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
+.inactive {
+    background-color: darkgray;
 }
+
+.active {
+    background-color: #3498db;
+}
+

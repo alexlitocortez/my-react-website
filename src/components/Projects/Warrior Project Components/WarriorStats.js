@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import './WarriorStats.css';
+import styles from './WarriorStats.module.css';
 import { makeStyles } from '@material-ui/core';
 
 
@@ -61,6 +61,15 @@ const useStyles = makeStyles((theme) => ({
         height: '320px',
         color: 'white'
     },
+    dot: {
+        cursor: 'pointer',
+        height: '15px',
+        width: '15px',
+        margin: '0 2px',
+        backgroundColor: 'darkgray',
+        borderRadius: '50%',
+        display: 'block'
+    },
     dotAlign: {
         position: 'relative',
         display: 'flex',
@@ -113,17 +122,16 @@ function WarriorStats() {
 
     const [warriorAssisStats, setWarriorAssistStats] = useState('5.8')
 
-    const [greyDot, setGreyDot] = useState()
-
-
-    // Creating this function which contains multiple function to put in onclick
+    const [greyDot, setGreyDot] = useState({
+        activeObject: null,
+        objects: [{id: 'dotOne'}, {id: 'dotTwo'}, {id: 'dotThree'}, {id: 'dotFour'}, {id: 'dotFive'}]
+    })
 
     const setStatsForCurry = () => {
         setWarrior(curry);
         setWarriorPointStats(curryStats.points);
         setWarriorReboundStats(curryStats.rebounds);
         setWarriorAssistStats(curryStats.assists);
-        toggleSwitch();
     }
 
     const setStatsForOubre = () => {
@@ -152,12 +160,6 @@ function WarriorStats() {
         setWarriorPointStats(wisemanStats.points);
         setWarriorReboundStats(wisemanStats.rebounds);
         setWarriorAssistStats(wisemanStats.assists);
-        toggleSwitch();
-    }
-
-    const toggleSwitch = () => {
-        greyDot ? setGreyDot(false) : setGreyDot(true);
-        console.log('it works')
     }
 
 
@@ -165,26 +167,24 @@ function WarriorStats() {
 
     const classes = useStyles()
 
-// How to target ID with active class with React
-
     return (
         <div>
             <Container className={classes.playerImage}>
                 <img className={classes.image} id='warriorImage' src={warrior}></img>
             </Container>
             <Box className={classes.dotAlign}>
-                    <span id='dotOne' className={ `${classes.dot} ${greyDot ? 'greyout': 'dot'}`}></span>
-                    <span id='dotTwo' className='dot'></span>
-                    <span id='dotThree' className='dot'></span>
-                    <span id='dotFour' className='dot'></span>
-                    <span id='dotFive' className={ `${classes.dot} ${greyDot ? 'greyout': 'dot'}`}></span>
+                <span id='dotOne' className='dot'></span>
+                <span id='dotTwo' className='dot'></span>
+                <span id='dotThree' className='dot'></span>
+                <span id='dotFour' className='dot'></span>
+                <span id='dotFive' className='dot'></span>
             </Box>
             <Box className={classes.buttonPlacement}>
-            <button onClick={() => setStatsForCurry()} className='button' id='steph' type='button'>Stephen Curry</button>
-            <button onClick={() => setStatsForOubre()} className='button' id='kelly' type='button'>Kelly Oubre</button>
-            <button onClick={() => setStatsForWiggins()} className='button' id='andrew' type='button'>Andrew Wiggins</button>
-            <button onClick={() => setStatsForGreen()} className='button' id='draymond' type='button'>Draymond Green</button>
-            <button onClick={() => setStatsForWiseman()} className='button' id='james' type='button'>James Wiseman</button>
+            <button onClick={() => setStatsForCurry()} className={styles.button} id='steph' type='button'>Stephen Curry</button>
+            <button onClick={() => setStatsForOubre()} className={styles.button} id='kelly' type='button'>Kelly Oubre</button>
+            <button onClick={() => setStatsForWiggins()} className={styles.button} id='andrew' type='button'>Andrew Wiggins</button>
+            <button onClick={() => setStatsForGreen()} className={styles.button} id='draymond' type='button'>Draymond Green</button>
+            <button onClick={() => setStatsForWiseman()} className={styles.button} id='james' type='button'>James Wiseman</button>
             </Box>
             <Container className={classes.statsBox}>
                 <Container className={classes.innerStatsBox}>
@@ -198,3 +198,7 @@ function WarriorStats() {
 }
 
 export default WarriorStats
+
+
+// CSS applies to whole app need to fix this
+// button onClick to trigger color switch and correspond with dot
