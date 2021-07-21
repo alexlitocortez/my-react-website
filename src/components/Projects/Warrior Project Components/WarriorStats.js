@@ -24,7 +24,8 @@ const useStyles = makeStyles((theme) => ({
     namePlacement: {
         display: 'flex',
         justifyContent: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize: '32px'
     },
     buttonPlacement: {
         display: 'flex',
@@ -110,11 +111,24 @@ const wisemanStats = {
     assists: '0.7'
 }
 
+const playerName = {
+    steph: 'Stephen Curry',
+    kelly: 'Kelly Oubre',
+    Andrew: 'Andrew Wiggins',
+    Draymond: 'Draymond Green',
+    James: 'James Wiseman'
+}
+
+const dotPlacement = {
+    dotOne: document.getElementById('dotOne'),
+}
 
 
 function WarriorStats() {
 
     const [warrior, setWarrior] = useState(curry)
+
+    const [warriorName, setWarriorName] = useState(playerName.steph)
 
     const [warriorPointStats, setWarriorPointStats] = useState('32')
 
@@ -122,16 +136,12 @@ function WarriorStats() {
 
     const [warriorAssisStats, setWarriorAssistStats] = useState('5.8')
 
-    const [greyDot, setGreyDot] = useState({
-        activeObject: null,
-        objects: [{id: 'dotOne'}, {id: 'dotTwo'}, {id: 'dotThree'}, {id: 'dotFour'}, {id: 'dotFive'}]
-    })
-
     const setStatsForCurry = () => {
         setWarrior(curry);
         setWarriorPointStats(curryStats.points);
         setWarriorReboundStats(curryStats.rebounds);
         setWarriorAssistStats(curryStats.assists);
+        setWarriorName(playerName.steph);
     }
 
     const setStatsForOubre = () => {
@@ -139,6 +149,7 @@ function WarriorStats() {
         setWarriorPointStats(oubreStats.points);
         setWarriorReboundStats(oubreStats.rebounds);
         setWarriorAssistStats(oubreStats.assists);
+        setWarriorName(playerName.kelly);
     }
 
     const setStatsForWiggins = () => {
@@ -146,6 +157,7 @@ function WarriorStats() {
         setWarriorPointStats(wigginStats.points);
         setWarriorReboundStats(wigginStats.rebounds);
         setWarriorAssistStats(wigginStats.assists);
+        setWarriorName(playerName.Andrew);
     }
 
     const setStatsForGreen = () => {
@@ -153,6 +165,7 @@ function WarriorStats() {
         setWarriorPointStats(draymondStats.points);
         setWarriorReboundStats(draymondStats.rebounds);
         setWarriorAssistStats(draymondStats.assists);
+        setWarriorName(playerName.Draymond);
     }
 
     const setStatsForWiseman = () => {
@@ -160,7 +173,9 @@ function WarriorStats() {
         setWarriorPointStats(wisemanStats.points);
         setWarriorReboundStats(wisemanStats.rebounds);
         setWarriorAssistStats(wisemanStats.assists);
+        setWarriorName(playerName.James);
     }
+
 
 
     // How to turn off dot when another button is clicked
@@ -172,6 +187,9 @@ function WarriorStats() {
             <Container className={classes.playerImage}>
                 <img className={classes.image} id='warriorImage' src={warrior}></img>
             </Container>
+            <Box className={classes.namePlacement}>
+                <h1>{warriorName}</h1>
+            </Box>
             <Box className={classes.dotAlign}>
                 <span id='dotOne' className='dot'></span>
                 <span id='dotTwo' className='dot'></span>
