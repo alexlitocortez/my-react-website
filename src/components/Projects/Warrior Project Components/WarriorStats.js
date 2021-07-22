@@ -77,7 +77,8 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         margin: 'auto',
         right: '10px',
-        marginBottom: '3rem'
+        marginBottom: '3rem',
+        marginTop: '3rem'
     }
 }))
 
@@ -119,16 +120,45 @@ const playerName = {
     James: 'James Wiseman'
 }
 
-const dotPlacement = {
-    dotOne: document.getElementById('dotOne'),
-}
-
-
 function WarriorStats() {
 
     const [warrior, setWarrior] = useState(curry)
 
     const [warriorName, setWarriorName] = useState(playerName.steph)
+
+
+    // Dot functionality
+
+    const [greyDot, setGreyDot] = useState(false)
+
+    const toggleClass = () => {
+        setGreyDot(!greyDot);
+    }
+
+    const [greyDotTwo, setGreyDotTwo] = useState(false)
+
+    const toggleClassTwo = () => {
+        setGreyDotTwo(!greyDotTwo);
+    }
+
+    const [greyDotThree, setGreyDotThree] = useState(false)
+
+    const toggleClassThree = () => {
+        setGreyDotThree(!greyDotThree);
+    }
+
+    const [greyDotFour, setGreyDotFour] = useState(false)
+
+    const toggleClassFour = () => {
+        setGreyDotFour(!greyDotFour);
+    }
+
+    const [greyDotFive, setGreyDotFive] = useState(false)
+
+    const toggleClassFive = () => {
+        setGreyDotFive(!greyDotFive);
+    }
+
 
     const [warriorPointStats, setWarriorPointStats] = useState('32')
 
@@ -136,12 +166,15 @@ function WarriorStats() {
 
     const [warriorAssisStats, setWarriorAssistStats] = useState('5.8')
 
+    // Main function which holds all the other functions
+
     const setStatsForCurry = () => {
         setWarrior(curry);
         setWarriorPointStats(curryStats.points);
         setWarriorReboundStats(curryStats.rebounds);
         setWarriorAssistStats(curryStats.assists);
         setWarriorName(playerName.steph);
+        toggleClass();
     }
 
     const setStatsForOubre = () => {
@@ -150,6 +183,7 @@ function WarriorStats() {
         setWarriorReboundStats(oubreStats.rebounds);
         setWarriorAssistStats(oubreStats.assists);
         setWarriorName(playerName.kelly);
+        toggleClassTwo();
     }
 
     const setStatsForWiggins = () => {
@@ -158,6 +192,7 @@ function WarriorStats() {
         setWarriorReboundStats(wigginStats.rebounds);
         setWarriorAssistStats(wigginStats.assists);
         setWarriorName(playerName.Andrew);
+        toggleClassThree();
     }
 
     const setStatsForGreen = () => {
@@ -166,6 +201,7 @@ function WarriorStats() {
         setWarriorReboundStats(draymondStats.rebounds);
         setWarriorAssistStats(draymondStats.assists);
         setWarriorName(playerName.Draymond);
+        toggleClassFour();
     }
 
     const setStatsForWiseman = () => {
@@ -174,9 +210,8 @@ function WarriorStats() {
         setWarriorReboundStats(wisemanStats.rebounds);
         setWarriorAssistStats(wisemanStats.assists);
         setWarriorName(playerName.James);
+        toggleClassFive();
     }
-
-
 
     // How to turn off dot when another button is clicked
 
@@ -188,14 +223,14 @@ function WarriorStats() {
                 <img className={classes.image} id='warriorImage' src={warrior}></img>
             </Container>
             <Box className={classes.namePlacement}>
-                <h1>{warriorName}</h1>
+                <h1><span id='namePlacement'>{warriorName}</span></h1>
             </Box>
             <Box className={classes.dotAlign}>
-                <span id='dotOne' className='dot'></span>
-                <span id='dotTwo' className='dot'></span>
-                <span id='dotThree' className='dot'></span>
-                <span id='dotFour' className='dot'></span>
-                <span id='dotFive' className='dot'></span>
+                <span id='dotOne' className={` ${styles.dot} ${greyDot ? styles.active : null}` }></span>
+                <span id='dotTwo' className={` ${styles.dot} ${greyDotTwo ? styles.active : null}` }></span>
+                <span id='dotThree' className={` ${styles.dot} ${greyDotThree ? styles.active : null}` }></span>
+                <span id='dotFour' className={` ${styles.dot} ${greyDotFour ? styles.active : null}` }></span>
+                <span id='dotFive' className={` ${styles.dot} ${greyDotFive ? styles.active : null}` }></span>
             </Box>
             <Box className={classes.buttonPlacement}>
             <button onClick={() => setStatsForCurry()} className={styles.button} id='steph' type='button'>Stephen Curry</button>

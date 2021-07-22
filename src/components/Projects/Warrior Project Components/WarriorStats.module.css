@@ -46,7 +46,8 @@
     margin: 0 2px;
     background-color: darkgray;
     border-radius: 50%;
-    display: inline-block;
+    display: block;
+    position: relative;
 }
 
 .inactive {
@@ -54,6 +55,5 @@
 }
 
 .active {
-    background-color: #3498db;
+    background-color: #152238;
 }
-
