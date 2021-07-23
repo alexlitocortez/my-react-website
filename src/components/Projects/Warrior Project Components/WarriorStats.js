@@ -129,36 +129,37 @@ function WarriorStats() {
 
     // Dot functionality
 
-    const [greyDot, setGreyDot] = useState(false)
+    //How to undo active class on one div when clicking another div
+
+    const [greyDot, setGreyDot] = useState(true)
 
     const toggleClass = () => {
-        setGreyDot(!greyDot);
+        greyDot ? setGreyDot(false) : setGreyDot(true)
     }
 
     const [greyDotTwo, setGreyDotTwo] = useState(false)
 
     const toggleClassTwo = () => {
-        setGreyDotTwo(!greyDotTwo);
+        greyDotTwo ? setGreyDotTwo(false) : setGreyDotTwo(true);
     }
 
     const [greyDotThree, setGreyDotThree] = useState(false)
 
     const toggleClassThree = () => {
-        setGreyDotThree(!greyDotThree);
+        greyDotThree ? setGreyDotThree(false) : setGreyDotThree(true);
     }
 
     const [greyDotFour, setGreyDotFour] = useState(false)
 
     const toggleClassFour = () => {
-        setGreyDotFour(!greyDotFour);
+        greyDotFour ? setGreyDotFour(false) : setGreyDotFour(true);
     }
 
     const [greyDotFive, setGreyDotFive] = useState(false)
 
     const toggleClassFive = () => {
-        setGreyDotFive(!greyDotFive);
+        greyDotFive ? setGreyDotFive(false) : setGreyDotFive(true);
     }
-
 
     const [warriorPointStats, setWarriorPointStats] = useState('32')
 
@@ -217,6 +218,7 @@ function WarriorStats() {
 
     const classes = useStyles()
 
+
     return (
         <div>
             <Container className={classes.playerImage}>
@@ -226,18 +228,38 @@ function WarriorStats() {
                 <h1><span id='namePlacement'>{warriorName}</span></h1>
             </Box>
             <Box className={classes.dotAlign}>
-                <span id='dotOne' className={` ${styles.dot} ${greyDot ? styles.active : null}` }></span>
-                <span id='dotTwo' className={` ${styles.dot} ${greyDotTwo ? styles.active : null}` }></span>
-                <span id='dotThree' className={` ${styles.dot} ${greyDotThree ? styles.active : null}` }></span>
-                <span id='dotFour' className={` ${styles.dot} ${greyDotFour ? styles.active : null}` }></span>
-                <span id='dotFive' className={` ${styles.dot} ${greyDotFive ? styles.active : null}` }></span>
+                <span id='dotOne' className={` ${styles.dot} ${greyDot ? styles.active : ''}` }></span>
+                <span id='dotTwo' className={` ${styles.dot} ${greyDotTwo ? styles.active : ''}` }></span>
+                <span id='dotThree' className={` ${styles.dot} ${greyDotThree ? styles.active : ''}` }></span>
+                <span id='dotFour' className={` ${styles.dot} ${greyDotFour ? styles.active : ''}` }></span>
+                <span id='dotFive' className={` ${styles.dot} ${greyDotFive ? styles.active : ''}` }></span>
             </Box>
             <Box className={classes.buttonPlacement}>
-            <button onClick={() => setStatsForCurry()} className={styles.button} id='steph' type='button'>Stephen Curry</button>
-            <button onClick={() => setStatsForOubre()} className={styles.button} id='kelly' type='button'>Kelly Oubre</button>
-            <button onClick={() => setStatsForWiggins()} className={styles.button} id='andrew' type='button'>Andrew Wiggins</button>
-            <button onClick={() => setStatsForGreen()} className={styles.button} id='draymond' type='button'>Draymond Green</button>
-            <button onClick={() => setStatsForWiseman()} className={styles.button} id='james' type='button'>James Wiseman</button>
+            <button onClick={() => setStatsForCurry()} 
+                    className={styles.button} 
+                    id='steph' 
+                    type='button'>
+            Stephen Curry</button>
+            <button onClick={() => setStatsForOubre()} 
+                    className={styles.button} 
+                    id='kelly' 
+                    type='button'>
+            Kelly Oubre</button>
+            <button onClick={() => setStatsForWiggins()} 
+                    className={styles.button} 
+                    id='andrew' 
+                    type='button'>
+            Andrew Wiggins</button>
+            <button onClick={() => setStatsForGreen()} 
+                    className={styles.button} 
+                    id='draymond' 
+                    type='button'>
+            Draymond Green</button>
+            <button onClick={() => setStatsForWiseman()} 
+                    className={styles.button} 
+                    id='james' 
+                    type='button'>
+            James Wiseman</button>
             </Box>
             <Container className={classes.statsBox}>
                 <Container className={classes.innerStatsBox}>
@@ -253,5 +275,4 @@ function WarriorStats() {
 export default WarriorStats
 
 
-// CSS applies to whole app need to fix this
-// button onClick to trigger color switch and correspond with dot
+// How to code for on/off switch for active class
