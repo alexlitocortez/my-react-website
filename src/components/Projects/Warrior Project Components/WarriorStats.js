@@ -133,33 +133,57 @@ function WarriorStats() {
 
     const [greyDot, setGreyDot] = useState(true)
 
-    const toggleClass = () => {
-        greyDot ? setGreyDot(false) : setGreyDot(true)
-    }
-
     const [greyDotTwo, setGreyDotTwo] = useState(false)
-
-    const toggleClassTwo = () => {
-        greyDotTwo ? setGreyDotTwo(false) : setGreyDotTwo(true);
-    }
 
     const [greyDotThree, setGreyDotThree] = useState(false)
 
-    const toggleClassThree = () => {
-        greyDotThree ? setGreyDotThree(false) : setGreyDotThree(true);
-    }
-
     const [greyDotFour, setGreyDotFour] = useState(false)
-
-    const toggleClassFour = () => {
-        greyDotFour ? setGreyDotFour(false) : setGreyDotFour(true);
-    }
 
     const [greyDotFive, setGreyDotFive] = useState(false)
 
+    const toggleClass = () => {
+        greyDot ? setGreyDot(false) : setGreyDot(true);
+        greyDotTwo ? setGreyDotTwo(false) : setGreyDotTwo(false);
+        greyDotThree ? setGreyDotThree(false) : setGreyDotThree(false);
+        greyDotFour ? setGreyDotFour(false) : setGreyDotFour(false);
+        greyDotFive ? setGreyDotFive(false) : setGreyDotFive(false)
+    }
+
+    const toggleClassTwo = () => {
+        greyDotTwo ? setGreyDotTwo(false) : setGreyDotTwo(true);
+        greyDot ? setGreyDot(false) : setGreyDot(false);
+        greyDotThree ? setGreyDotThree(false) : setGreyDotThree(false);
+        greyDotFour ? setGreyDotFour(false) : setGreyDotFour(false);
+        greyDotFive ? setGreyDotFive(false) : setGreyDotFive(false);
+    }
+
+    const toggleClassThree = () => {
+        greyDotThree ? setGreyDotThree(false) : setGreyDotThree(true);
+        greyDot ? setGreyDot(false) : setGreyDot(false);
+        greyDotTwo ? setGreyDotTwo(false) : setGreyDotTwo(false);
+        greyDotFour ? setGreyDotFour(false) : setGreyDotFour(false);
+        greyDotFive ? setGreyDotFive(false) : setGreyDotFive(false);
+    }
+
+
+    const toggleClassFour = () => {
+        greyDotFour ? setGreyDotFour(false) : setGreyDotFour(true);
+        greyDot ? setGreyDot(false) : setGreyDot(false);
+        greyDotTwo ? setGreyDotTwo(false) : setGreyDotTwo(false);
+        greyDotThree ? setGreyDotThree(false) : setGreyDotThree(false);
+        greyDotFive ? setGreyDotFive(false) : setGreyDotFive(false);
+    }
+
+
     const toggleClassFive = () => {
         greyDotFive ? setGreyDotFive(false) : setGreyDotFive(true);
+        greyDot ? setGreyDot(false) : setGreyDot(false);
+        greyDotTwo ? setGreyDotTwo(false) : setGreyDotTwo(false);
+        greyDotThree ? setGreyDotThree(false) : setGreyDotThree(false);
+        greyDotFour ? setGreyDotFour(false) : setGreyDotFour(false);
     }
+
+    // useState for Warrior player statistics
 
     const [warriorPointStats, setWarriorPointStats] = useState('32')
 
@@ -217,6 +241,9 @@ function WarriorStats() {
     // How to turn off dot when another button is clicked
 
     const classes = useStyles()
+
+
+
 
 
     return (
