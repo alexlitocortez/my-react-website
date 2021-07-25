@@ -20,13 +20,13 @@ const data = [
 export default function ExpensesChart() {
     return (
         <BarChart 
-            width={500}
+            width={470}
             height={300}
             data={data}
             margin={{
                 top: 5,
                 right: 30,
-                left: 20,
+                left: -18,
                 bottom: 5
             }}
         >
@@ -34,7 +34,6 @@ export default function ExpensesChart() {
             <XAxis dataKey='name' />
             <YAxis />
             <Tooltip />
-            <Legend />
             <Bar dataKey='expenses' fill='#FF0000' />
         </BarChart>
     )

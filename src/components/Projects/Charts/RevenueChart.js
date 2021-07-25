@@ -24,8 +24,8 @@ export default function RevenueChart() {
       data={data}
       margin={{
         top: 5,
-        right: 30,
-        left: 20,
+        right: 50,
+        left: -4,
         bottom: 5
       }}
     >
@@ -33,7 +33,6 @@ export default function RevenueChart() {
       <XAxis dataKey="name" />
       <YAxis />
       <Tooltip />
-      <Legend />
       <Bar dataKey="revenue" fill="#82ca9d" />
     </BarChart>
   );

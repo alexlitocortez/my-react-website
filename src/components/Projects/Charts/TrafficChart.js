@@ -5,15 +5,15 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'rec
 const data = [
     {
         name: 'Jan',
-        traffic: 10000
+        traffic: 3000
     },
     {
         name: 'Feb',
-        traffic: 9000
+        traffic: 3500
     },
     {
         name: 'March',
-        traffic: 9700
+        traffic: 5000
     }
 ];
 
@@ -26,7 +26,7 @@ export default function TrafficChart() {
       margin={{
         top: 5,
         right: 30,
-        left: 20,
+        left: 10,
         bottom: 5
       }}
     >
@@ -34,7 +34,6 @@ export default function TrafficChart() {
       <XAxis dataKey="name" />
       <YAxis />
       <Tooltip />
-      <Legend />
       <Bar dataKey="traffic" fill="#4169e1" />
     </BarChart>
   );

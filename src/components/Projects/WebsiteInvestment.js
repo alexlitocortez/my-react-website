@@ -45,13 +45,6 @@ const DashboardMenuBars = styled(FaBars)`
     }
 `;
 
-const MoneyTime = styled.div`
-    position: relative;
-    top: 70px;
-    right: 240px;
-    display: flex;
-`;
-
 const MoneyClocks = styled.div`
     position: relative;
     bottom: 70px;
@@ -68,6 +61,8 @@ const Line = styled.div`
     position: relative;
     top: 30px;
 `;
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -91,20 +86,18 @@ const useStyles = makeStyles((theme) => ({
     },
     cardTitle: {
         fontWeight: 800,
-        paddingBottom: theme.spacing(3),
         color: 'black',
-        marginLeft: '30%'
-    },
+        position: 'relative',
+        color: '#696969',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+        },
     blogsContainer: {
         position: 'relative',
         justifyContent: 'space-around',
         alignItems: 'center',
         display: 'flex'
-    },
-    monetization: {
-        padding: '50px',
-        height: '300px',
-        boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
     },
     money: {
         textDecoration: 'underline'
@@ -119,6 +112,9 @@ const useStyles = makeStyles((theme) => ({
     searchBarShadow: {
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
     },
+    titleContainer: {
+        boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
+    },
     card: {
         width: '400px',
         height: '350px',
@@ -128,18 +124,13 @@ const useStyles = makeStyles((theme) => ({
             width: '410px',
         }
     },
-    content: {
-        height: '400px'
-    },
     cardAction: {
         display: 'flex'
-    },
-    chartAdjustment: {
-        '@media (max-width: 768px)': {
-            position: 'relative',
-            right: '200px'
-    }}
-}));
+    }
+}
+));
+
+
 
 
 function WebsiteInvestment() {
@@ -178,47 +169,45 @@ function WebsiteInvestment() {
                 </Container>
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
                         <Card className={classes.card} id='card'>
+                            <Container className={classes.cardTitle}>
+                                Traffic
+                                <div className='close' id='close'></div>
+                            </Container>
                             <Line />
                             <Box className={classes.cardAction}>
-                                    <Typography className={classes.cardTitle} style={{color: '#696969'}}>
-                                        Traffic
-                                        <div className="close" id='close' onClick={message}></div>
-                                    </Typography>
-                                <MoneyTime className={classes.chartAdjustment}>
                                     <TrafficChart />
-                                </MoneyTime>
                             </Box>
                         </Card>
                         <Card className={classes.card}>
+                            <Container className={classes.cardTitle}>
+                                Revenue
+                                <div className='close' id='close'></div>
+                            </Container>
                             <Line />
                             <Box className={classes.cardAction}>
-                                    <Typography className={classes.cardTitle} style={{color: '#696969'}}>
-                                        Revenue
-                                        <div className="close" id='close'></div>
-                                    </Typography>
-                                <MoneyTime>
+                                <containerForCharts>
                                     <RevenueChart />
-                                </MoneyTime>
+                                </containerForCharts>
                             </Box>
                         </Card>
                         <Card className={classes.card}>
+                        <Container className={classes.cardTitle}>
+                            Expenses
+                            <div className='close' id='close'></div>
+                        </Container>
                             <Line />
                             <Box className={classes.cardAction}>
-                                    <Typography className={classes.cardTitle} style={{color: '#696969'}}>
-                                        Expenses
-                                        <div className="close" id='close'></div>
-                                    </Typography>
-                                <MoneyTime>
+                                <containerForCharts>
                                     <ExpensesChart />
-                                </MoneyTime>
+                                </containerForCharts>
                             </Box>
                         </Card>
                         <Card className={classes.card}>
+                            <Container className={classes.cardTitle}>
+                                Monetization Split
+                                <div className='close' id='close'></div>
+                            </Container>
                             <Line />
-                                <Typography className={classes.cardTitle} style={{ color: '#696969' }}>
-                                    Monetization Split
-                                    <div className='close' id='close'></div>
-                                </Typography>
                             <Box className={classes.cardAction}>
                                 <MoneyClocks>
                                     <RevenuePie />

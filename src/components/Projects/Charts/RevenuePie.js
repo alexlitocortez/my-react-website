@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { PieChart, Pie, Cell, Legend } from 'recharts';
+import { makeStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 
 const data = [
     { name: 'Affiliate', value: 70 },
@@ -10,7 +12,18 @@ const data = [
 const COLORS = [ '#0088FE', '#00C49F' ];
 
 
+const useStyles = makeStyles((theme) => ({
+    legendAdjustment: {
+        position: 'relative',
+        left: '50px'
+    }
+})) 
+
+
 export default function RevenuePie() {
+
+    const classes = useStyles();
+
     return (
         <div>
             <PieChart width={800} height={400}>
@@ -28,8 +41,10 @@ export default function RevenuePie() {
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                 </Pie>
-                <Legend />
+                    <Legend />
             </PieChart>
         </div>
     )
 }
+
+
