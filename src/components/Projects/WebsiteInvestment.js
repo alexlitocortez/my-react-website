@@ -45,12 +45,6 @@ const DashboardMenuBars = styled(FaBars)`
     }
 `;
 
-const MoneyClocks = styled.div`
-    position: relative;
-    bottom: 70px;
-    right: 20px;
-`;
-
 const Line = styled.div`
     height: 0.4px;
     width: 25em;
@@ -72,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(2),
     },
     title: {
-        flexGrow: 1,
+        flexGrow: 1
     },
     hero: {
         backgroundColor: '#fff',
@@ -84,6 +78,18 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         fontSize: '4rem'
     },
+    lineChartAdjustment: {
+        '@media (max-width: 768px)': {
+            position: 'relative',
+            right: '1.5rem'
+        }
+    },
+    dashboardAdjustment: {
+        '@media (max-width: 768px)': {
+            position: 'relative',
+            right: '1rem'
+        }
+    },
     cardTitle: {
         fontWeight: 800,
         color: 'black',
@@ -91,8 +97,18 @@ const useStyles = makeStyles((theme) => ({
         color: '#696969',
         display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        '@media (max-width: 768px)': {
+            position: 'relative',
+            left: '2rem'
+        }
         },
+    lineAdjustment: {
+        '@media (max-width: 768px)': {
+        position: 'relative',
+        left: '2.2rem'
+        }
+    },
     blogsContainer: {
         position: 'relative',
         justifyContent: 'space-around',
@@ -121,32 +137,60 @@ const useStyles = makeStyles((theme) => ({
         padding: '70px',
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)',
         '@media (max-width: 768px)': {
-            width: '410px',
+            width: '410px'
         }
     },
     cardAction: {
-        display: 'flex'
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '3rem'
+    },
+    trafficAdjustment: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '3rem',
+        position: 'relative',
+        right: '1rem',
+        '@media (max-width: 768px)': {
+            position: 'relative',
+            left: '1rem'
+        }
+    },
+    revenueAdjustment: {
+        '@media (max-width: 768px)': {
+            position: 'relative',
+            left: '1.8rem'
+        }
+    },
+    expenseAdjustment: {
+        '@media (max-width: 768px)': {
+            position: 'relative',
+            left: '1.6rem'
+        }
+    },
+    revenuePieAdjustment: {
+        position: 'relative',
+        left: '5rem',
+        bottom: '4rem'
     }
 }
 ));
-
-
-
 
 function WebsiteInvestment() {
     const classes = useStyles();
 
     const [open, setOpen] = useState(false);
 
+    const [show, setShow] = useState(false);
+
     const toggle = () => {
-        setOpen(!open)
+        setOpen(!open);
     }
 
-    const message = () => {
-        var card = document.getElementById('card');
-        if(document.getElementById('close').clicked == true) {
-            card.style.display = 'none';
-        }
+    const toggleShow = () => {
+        setShow(!show);
     }
 
     return (
@@ -163,56 +207,53 @@ function WebsiteInvestment() {
             <div className='main-container'>
                 <Sidebar />
                 <div className='others'>
-                <LineChart />
-                <Container style={{ marginBottom: '15px' }}>
+                <div className={classes.lineChartAdjustment}>
+                    <h3 style={{ textAlign: 'center', marginTop: '2rem', marginBottom: '2rem', color: '#696969' }}>Website Valuation Estimate</h3>
+                    <LineChart />
+                </div>
+                <Container style={{ marginBottom: '15px' }} className={classes.dashboardAdjustment}>
                     <HeroDashboard />
                 </Container>
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
-                        <Card className={classes.card} id='card'>
+                        <Card className={` ${classes.card} ${show ? classes.inactive : ''} `} id='card'>
                             <Container className={classes.cardTitle}>
                                 Traffic
                                 <div className='close' id='close'></div>
                             </Container>
-                            <Line />
-                            <Box className={classes.cardAction}>
-                                    <TrafficChart />
-                            </Box>
+                            <Line className={classes.lineAdjustment} />
+                            <div className={classes.trafficAdjustment}>
+                                <TrafficChart />
+                            </div>
                         </Card>
                         <Card className={classes.card}>
                             <Container className={classes.cardTitle}>
                                 Revenue
                                 <div className='close' id='close'></div>
                             </Container>
-                            <Line />
-                            <Box className={classes.cardAction}>
-                                <containerForCharts>
-                                    <RevenueChart />
-                                </containerForCharts>
-                            </Box>
+                            <Line className={classes.lineAdjustment} />
+                            <div className={` ${classes.cardAction} ${classes.revenueAdjustment} `}>
+                                <RevenueChart />
+                            </div>
                         </Card>
                         <Card className={classes.card}>
                         <Container className={classes.cardTitle}>
                             Expenses
                             <div className='close' id='close'></div>
                         </Container>
-                            <Line />
-                            <Box className={classes.cardAction}>
-                                <containerForCharts>
-                                    <ExpensesChart />
-                                </containerForCharts>
-                            </Box>
+                            <Line className={classes.lineAdjustment} />
+                            <div className={` ${classes.cardAction} ${classes.expenseAdjustment} `}>
+                                <ExpensesChart />
+                            </div>
                         </Card>
                         <Card className={classes.card}>
                             <Container className={classes.cardTitle}>
                                 Monetization Split
                                 <div className='close' id='close'></div>
                             </Container>
-                            <Line />
-                            <Box className={classes.cardAction}>
-                                <MoneyClocks>
-                                    <RevenuePie />
-                                </MoneyClocks>
-                            </Box>
+                            <Line className={classes.lineAdjustment} />
+                            <div className={classes.revenuePieAdjustment}>
+                                <RevenuePie />
+                            </div>
                         </Card>
                     </Grid>
                 </div>

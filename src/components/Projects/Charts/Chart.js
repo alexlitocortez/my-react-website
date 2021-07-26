@@ -25,7 +25,6 @@ export default function Chart() {
 
     return (
         <div className='chart'>
-            <h4 className='chartTitle'>Website Valuation Estimate</h4>
             <ResponsiveContainer width='99%' aspect={3}>
               <LineChart data={data}>
                 <XAxis dataKey='name' stroke='#5550bd' />

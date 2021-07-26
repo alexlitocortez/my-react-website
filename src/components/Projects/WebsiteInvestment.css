@@ -12,6 +12,7 @@
     height: 30px;
     position: relative;
     cursor: pointer;
+    border-radius: 10%;
 }
 
 .close:after {
@@ -30,6 +31,14 @@
     position: absolute;
     transform: rotate(-45deg);
     left: 14px;
+}
+
+.close:hover {
+    background-color: red;
+}
+
+.inactive {
+    display: none;
 }
 
 @media only screen and (max-width: 768px) {
