@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -172,8 +172,10 @@ const useStyles = makeStyles((theme) => ({
     },
     revenuePieAdjustment: {
         position: 'relative',
-        left: '5rem',
-        bottom: '4rem'
+        left: '5rem'
+    },
+    inactive: {
+        display: 'none'
     }
 }
 ));
@@ -181,16 +183,44 @@ const useStyles = makeStyles((theme) => ({
 function WebsiteInvestment() {
     const classes = useStyles();
 
-    const [open, setOpen] = useState(false);
+    // useState for opening and closing side menu
 
-    const [show, setShow] = useState(false);
+    const [open, setOpen] = useState(false);
 
     const toggle = () => {
         setOpen(!open);
     }
 
+    // useState for closing and opening the different card metrics
+
+    const [show, setShow] = useState(false)
+
     const toggleShow = () => {
-        setShow(!show);
+        show ? setShow(false) : setShow(true);
+    }
+
+    const [showDiv, setShowDiv] = useState(false)
+
+    const toggleDiv = () => {
+        showDiv ? setShowDiv(false) : setShowDiv(true);
+    }
+
+    const [showTwo, setShowTwo] = useState(false)
+
+    const toggleShowTwo = () => {
+        showTwo ? setShowTwo(false) : setShowTwo(true);
+    }
+
+    const [showThree, setShowThree] = useState(false)
+
+    const toggleShowThree = () => {
+        showThree ? setShowThree(false) : setShowThree(true)
+    }
+
+    const [showFour, setShowFour] = useState(false)
+
+    const toggleShowFour = () => {
+        showFour ? setShowFour(false) : setShowFour(true)
     }
 
     return (
@@ -215,40 +245,46 @@ function WebsiteInvestment() {
                     <HeroDashboard />
                 </Container>
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
-                        <Card className={` ${classes.card} ${show ? classes.inactive : ''} `} id='card'>
+                        <Card className={` ${classes.card} ${show ? classes.inactive : ''}`} id='card'>
+                            {
+                                showDiv ? <button>show traffic</button>:null
+                            }
                             <Container className={classes.cardTitle}>
                                 Traffic
-                                <div className='close' id='close'></div>
+                                <div className='close' id='close' onClick={() => {
+                                    toggleShow();
+                                    toggleDiv();
+                                }}></div>
                             </Container>
                             <Line className={classes.lineAdjustment} />
                             <div className={classes.trafficAdjustment}>
                                 <TrafficChart />
                             </div>
                         </Card>
-                        <Card className={classes.card}>
+                        <Card className={` ${classes.card} ${showTwo ? classes.inactive : ''}`}>
                             <Container className={classes.cardTitle}>
                                 Revenue
-                                <div className='close' id='close'></div>
+                                <div className='close' id='close' onClick={toggleShowTwo}></div>
                             </Container>
                             <Line className={classes.lineAdjustment} />
                             <div className={` ${classes.cardAction} ${classes.revenueAdjustment} `}>
                                 <RevenueChart />
                             </div>
                         </Card>
-                        <Card className={classes.card}>
-                        <Container className={classes.cardTitle}>
-                            Expenses
-                            <div className='close' id='close'></div>
-                        </Container>
+                        <Card className={` ${classes.card} ${showThree ? classes.inactive : ''}`}>
+                            <Container className={classes.cardTitle}>
+                                Expenses
+                                <div className='close' id='close' onClick={toggleShowThree}></div>
+                            </Container>
                             <Line className={classes.lineAdjustment} />
                             <div className={` ${classes.cardAction} ${classes.expenseAdjustment} `}>
                                 <ExpensesChart />
                             </div>
                         </Card>
-                        <Card className={classes.card}>
+                        <Card className={` ${classes.card} ${showFour ? classes.inactive : ''}`}>
                             <Container className={classes.cardTitle}>
                                 Monetization Split
-                                <div className='close' id='close'></div>
+                                <div className='close' id='close' onClick={toggleShowFour}></div>
                             </Container>
                             <Line className={classes.lineAdjustment} />
                             <div className={classes.revenuePieAdjustment}>

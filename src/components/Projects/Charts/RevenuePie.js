@@ -26,7 +26,7 @@ export default function RevenuePie() {
 
     return (
         <div>
-            <PieChart width={800} height={400}>
+            <PieChart width={800} height={340}>
                 <Pie
                     data={data}
                     cx={120}
