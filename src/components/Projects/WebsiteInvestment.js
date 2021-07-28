@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import Container from '@material-ui/core/Container';
@@ -21,6 +20,10 @@ import TrafficChart from './Charts/TrafficChart';
 import ExpensesChart from './Charts/ExpensesChart';
 import RevenuePie from './Charts/RevenuePie';
 import DropdownDashboard from './DropdownDashboard';
+import TrafficButton from './WebsiteInvestmentButtons.js/TrafficButton';
+import RevenueButton from './WebsiteInvestmentButtons.js/RevenueButton';
+import ExpensesButton from './WebsiteInvestmentButtons.js/ExpensesButton';
+import MonetizationButton from './WebsiteInvestmentButtons.js/MonetizationButton';
 
 const DashboardMenuBars = styled(FaBars)`
     display: none;
@@ -55,8 +58,6 @@ const Line = styled.div`
     position: relative;
     top: 30px;
 `;
-
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -199,12 +200,6 @@ function WebsiteInvestment() {
         show ? setShow(false) : setShow(true);
     }
 
-    const [showDiv, setShowDiv] = useState(false)
-
-    const toggleDiv = () => {
-        showDiv ? setShowDiv(false) : setShowDiv(true);
-    }
-
     const [showTwo, setShowTwo] = useState(false)
 
     const toggleShowTwo = () => {
@@ -221,6 +216,32 @@ function WebsiteInvestment() {
 
     const toggleShowFour = () => {
         showFour ? setShowFour(false) : setShowFour(true)
+    }
+
+    // useState for button components
+
+    const [showTraffic, setShowTraffic] = useState(false)
+
+    const toggleDiv = () => {
+        showTraffic ? setShowTraffic(false) : setShowTraffic(true)
+    }
+
+    const [showRevenue, setShowRevenue] = useState(false)
+
+    const toggleDivTwo = () => {
+        showRevenue ? setShowRevenue(false) : setShowRevenue(true)
+    }
+
+    const [showExpenses, setShowExpenses] = useState(false)
+
+    const toggleDivThree = () => {
+        showExpenses ? setShowExpenses(false) : setShowExpenses(true)
+    }
+
+    const [showMonetization, setShowMonetization] = useState(false)
+
+    const toggleDivFour = () => {
+        showMonetization ? setShowMonetization(false) : setShowMonetization(true)
     }
 
     return (
@@ -245,10 +266,10 @@ function WebsiteInvestment() {
                     <HeroDashboard />
                 </Container>
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
+                        {
+                            showTraffic ? <TrafficButton /> : null
+                        }
                         <Card className={` ${classes.card} ${show ? classes.inactive : ''}`} id='card'>
-                            {
-                                showDiv ? <button>show traffic</button>:null
-                            }
                             <Container className={classes.cardTitle}>
                                 Traffic
                                 <div className='close' id='close' onClick={() => {
@@ -261,30 +282,48 @@ function WebsiteInvestment() {
                                 <TrafficChart />
                             </div>
                         </Card>
+                        {
+                            showRevenue ? <RevenueButton /> : null
+                        }
                         <Card className={` ${classes.card} ${showTwo ? classes.inactive : ''}`}>
                             <Container className={classes.cardTitle}>
                                 Revenue
-                                <div className='close' id='close' onClick={toggleShowTwo}></div>
+                                <div className='close' id='close' onClick={() => {
+                                    toggleShowTwo();
+                                    toggleDivTwo();
+                                }}></div>
                             </Container>
                             <Line className={classes.lineAdjustment} />
                             <div className={` ${classes.cardAction} ${classes.revenueAdjustment} `}>
                                 <RevenueChart />
                             </div>
                         </Card>
+                        {
+                            showExpenses ? <ExpensesButton /> : null
+                        }
                         <Card className={` ${classes.card} ${showThree ? classes.inactive : ''}`}>
                             <Container className={classes.cardTitle}>
                                 Expenses
-                                <div className='close' id='close' onClick={toggleShowThree}></div>
+                                <div className='close' id='close' onClick={() => {
+                                    toggleShowThree();
+                                    toggleDivThree();
+                                }}></div>
                             </Container>
                             <Line className={classes.lineAdjustment} />
                             <div className={` ${classes.cardAction} ${classes.expenseAdjustment} `}>
                                 <ExpensesChart />
                             </div>
                         </Card>
+                        {
+                            showMonetization ? <MonetizationButton /> : null
+                        }
                         <Card className={` ${classes.card} ${showFour ? classes.inactive : ''}`}>
                             <Container className={classes.cardTitle}>
                                 Monetization Split
-                                <div className='close' id='close' onClick={toggleShowFour}></div>
+                                <div className='close' id='close' onClick={() => {
+                                    toggleShowFour();
+                                    toggleDivFour();
+                                }}></div>
                             </Container>
                             <Line className={classes.lineAdjustment} />
                             <div className={classes.revenuePieAdjustment}>
