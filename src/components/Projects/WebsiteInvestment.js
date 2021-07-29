@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -24,6 +24,8 @@ import TrafficButton from './WebsiteInvestmentButtons.js/TrafficButton';
 import RevenueButton from './WebsiteInvestmentButtons.js/RevenueButton';
 import ExpensesButton from './WebsiteInvestmentButtons.js/ExpensesButton';
 import MonetizationButton from './WebsiteInvestmentButtons.js/MonetizationButton';
+
+// Importing cards
 
 const DashboardMenuBars = styled(FaBars)`
     display: none;
@@ -340,11 +342,8 @@ function WebsiteInvestment() {
 export default WebsiteInvestment
 
 
-//Make the X icons close the charts and rearrange the boxes
 
 
 
 
-// Take out the dog project and add my NBA project
-// Style projects so they look appealing
 // Fix home page
