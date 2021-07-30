@@ -1,26 +1,29 @@
 import React, {useState} from 'react'
 import { makeStyles } from '@material-ui/core';
 import TrafficCard from './TrafficCard';
-import { display } from '@material-ui/system';
-
+import '/Users/l/my-react-website/src/components/Projects/WebsiteInvestment.css';
 
 
 const useStyles = makeStyles((theme) => ({
     buttonStyle: {
         cursor: 'pointer',
-        color: '#3f51b5',
-        backgroundColor: 'white',
+        color: 'white',
+        backgroundColor: '#3f51b5',
+        fontSize: '14px',
+        fontFamily: 'sans-serif',
+        textTransform: 'capitalize',
+        width: '8em',
+        height: '5em',
         padding: '10px',
+        marginBottom: '3rem',
         borderRadius: '10%',
         outline: 'none',
         borderColor: '#3f51b5',
         '&:hover': {
-            padding: '12px',
-            transition: '0.3s'
-        },
-    buttonDisappear: {
-        display: 'none'
-    }
+            padding: '14px',
+            transition: '0.3s',
+            transform: 'translateX(1em)'
+        }
     }
 }))
 
@@ -33,15 +36,18 @@ function TrafficButton() {
         showTrafficChart ? setShowTrafficChart(false) : setShowTrafficChart(true)
     }
 
-    const [buttonDisappear, setButtonDisappear] = useState(false)
+    const [open, setOpen] = useState(false)
 
-    const toggleButtonDisappear = () => {
-        buttonDisappear ? setButtonDisappear(false) : setButtonDisappear(true)
+    const toggleButton = () => {
+        setOpen(!open);
     }
 
     return (
         <div>
-            <button className={classes.buttonStyle} id='trafficButton' onClick={toggleTrafficChart}
+            <button className={` ${classes.buttonStyle} ${open ? 'open' : null}`} onClick={() => {
+                toggleTrafficChart();
+                toggleButton();
+                }}
             >Show Traffic</button>
             {
                 showTrafficChart ? <TrafficCard /> : null
@@ -51,6 +57,9 @@ function TrafficButton() {
 }
 
 export default TrafficButton
+
+
+
 
 // 2 things need to happen when button is clicked:
 // 1. button needs to disappear
