@@ -1,15 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Card from '@material-ui/core/Card';
 import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
-import TrafficChart from '/Users/l/my-react-website/src/components/Projects/Charts/TrafficChart.js';
-import '/Users/l/my-react-website/src/components/Projects/WebsiteInvestment.css';
-import { useState } from 'react';
-
-
-
-
+import RevenueChart from '../../Charts/RevenueChart';
 
 const Line = styled.div`
     height: 0.4px;
@@ -50,24 +44,26 @@ const useStyles = makeStyles((theme) => ({
             left: '2.2rem'
         }
     },
-    trafficAdjustment: {
+    revenueAdjustment: {
+        '@media (max-width: 768px)': {
+            position: 'relative',
+            left: '1.8rem'
+        }
+    },
+    cardAction: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: '3rem',
-        position: 'relative',
-        right: '1rem',
-        '@media (max-width: 768px)': {
-            position: 'relative',
-            left: '1rem'
-        }
+        marginTop: '3rem'
     },
     inactive: {
         display: 'none'
     }
 }))
 
-function TrafficCard() {
+
+
+function RevenueCard() {
 
     const classes = useStyles();
 
@@ -79,8 +75,9 @@ function TrafficCard() {
 
     return (
         <Card className={` ${classes.card} ${show ? classes.inactive : ''}`}>
+            
             <Container className={classes.cardTitle}>
-                Traffic
+                Revenue
                     <div className='close' id='close' onClick={() => {
                         toggleShow();
                     }}>
@@ -88,14 +85,11 @@ function TrafficCard() {
                     </div>
             </Container>
             <Line className={classes.lineAdjustment} />
-            <div className={classes.trafficAdjustment}>
-                <TrafficChart />
+            <div className={` ${classes.revenueAdjustment} ${classes.cardAction}`}>
+                <RevenueChart />
             </div>
         </Card>
     )
 }
 
-export default TrafficCard
-
-
-// It works but when I click the button and the div appears and click the X again, it doesn't show the button
+export default RevenueCard

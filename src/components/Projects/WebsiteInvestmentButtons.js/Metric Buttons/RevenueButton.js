@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { makeStyles } from '@material-ui/core';
-import TrafficCard from './TrafficCard';
 import '/Users/l/my-react-website/src/components/Projects/WebsiteInvestment.css';
+import RevenueCard from '../Metric Cards/RevenueCard.js';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,21 +20,15 @@ const useStyles = makeStyles((theme) => ({
         outline: 'none',
         borderColor: '#3f51b5',
         '&:hover': {
-            padding: '14px',
+            padding: '12px',
             transition: '0.3s',
             transform: 'translateX(1em)'
         }
     }
 }))
 
-function TrafficButton() {
+function RevenueButton() {
     const classes = useStyles();
-
-    const [showTrafficChart, setShowTrafficChart] = useState(false)
-
-    const toggleTrafficChart = () => {
-        showTrafficChart ? setShowTrafficChart(false) : setShowTrafficChart(true)
-    }
 
     const [open, setOpen] = useState(false)
 
@@ -42,26 +36,24 @@ function TrafficButton() {
         setOpen(!open);
     }
 
+    const [showRevenueChart, setShowRevenueChart] = useState(false)
+
+    const toggleRevenueChart = () => {
+        showRevenueChart ? setShowRevenueChart(false) : setShowRevenueChart(true)
+    }
+
     return (
         <div>
-            <button className={` ${classes.buttonStyle} ${open ? 'open' : null}`} onClick={() => {
-                toggleTrafficChart();
+            <button className={` ${classes.buttonStyle} ${open ? 'open' : null} `} onClick={() => {
                 toggleButton();
+                toggleRevenueChart();
                 }}
-            >Show Traffic</button>
-            {
-                showTrafficChart ? <TrafficCard /> : null
-            }
+                >Show Revenue</button>
+                {
+                    showRevenueChart ? <RevenueCard /> : null
+                }
         </div>
     )
 }
 
-export default TrafficButton
-
-
-
-
-// 2 things need to happen when button is clicked:
-// 1. button needs to disappear
-// 2. card component needs to appear
-
+export default RevenueButton

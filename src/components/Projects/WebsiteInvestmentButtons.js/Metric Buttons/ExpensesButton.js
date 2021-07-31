@@ -2,7 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core';
 import { useState } from 'react';
 import '/Users/l/my-react-website/src/components/Projects/WebsiteInvestment.css';
-
+import ExpenseCard from '../Metric Cards/ExpenseCard';
 
 const useStyles = makeStyles((theme) => ({
     buttonStyle: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'capitalize',
         width: '8em',
         height: '5em',
-        padding: '10px',
+        padding: '4px',
         marginBottom: '3rem',
         borderRadius: '10%',
         outline: 'none',
@@ -27,7 +27,9 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-function RevenueButton() {
+
+function ExpensesButton() {
+
     const classes = useStyles();
 
     const [open, setOpen] = useState(false)
@@ -36,11 +38,24 @@ function RevenueButton() {
         setOpen(!open);
     }
 
+    const [showExpenseChart, setShowExpenseChart] = useState(false)
+
+    const toggleExpenseChart = () => {
+        showExpenseChart ? setShowExpenseChart(false) : setShowExpenseChart(true)
+    }
+
     return (
         <div>
-            <button className={` ${classes.buttonStyle} ${open ? 'open' : null} `} onClick={toggleButton}>Show Revenue</button>
+            <button className={` ${classes.buttonStyle} ${open ? 'open' : null} `} onClick={() => {
+                toggleButton();
+                toggleExpenseChart();
+                }}
+                >Show Expenses</button>
+                {
+                    showExpenseChart ? <ExpenseCard /> : null
+                }
         </div>
     )
 }
 
-export default RevenueButton
+export default ExpensesButton

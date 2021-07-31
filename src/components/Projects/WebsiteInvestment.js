@@ -20,10 +20,10 @@ import TrafficChart from './Charts/TrafficChart';
 import ExpensesChart from './Charts/ExpensesChart';
 import RevenuePie from './Charts/RevenuePie';
 import DropdownDashboard from './DropdownDashboard';
-import TrafficButton from './WebsiteInvestmentButtons.js/TrafficButton';
-import RevenueButton from './WebsiteInvestmentButtons.js/RevenueButton';
-import ExpensesButton from './WebsiteInvestmentButtons.js/ExpensesButton';
-import MonetizationButton from './WebsiteInvestmentButtons.js/MonetizationButton';
+import TrafficButton from './WebsiteInvestmentButtons.js/Metric Buttons/TrafficButton';
+import RevenueButton from './WebsiteInvestmentButtons.js/Metric Buttons/RevenueButton';
+import ExpensesButton from './WebsiteInvestmentButtons.js/Metric Buttons/ExpensesButton';
+import MonetizationButton from './WebsiteInvestmentButtons.js/Metric Buttons/MonetizationButton';
 
 // Importing cards
 

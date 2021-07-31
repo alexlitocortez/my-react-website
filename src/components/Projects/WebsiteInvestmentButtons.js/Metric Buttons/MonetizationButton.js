@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import { useState } from 'react';
 import '/Users/l/my-react-website/src/components/Projects/WebsiteInvestment.css';
+import MonetizationCard from '../Metric Cards/MonetizationCard';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
     buttonStyle: {
@@ -17,18 +21,15 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '3rem',
         borderRadius: '10%',
         outline: 'none',
-        borderColor: '#3f51b5',
         '&:hover': {
-            padding: '12px',
+            padding: '1px',
             transition: '0.3s',
             transform: 'translateX(1em)'
         }
     }
 }))
 
-
-function ExpensesButton() {
-
+function MonetizationButton() {
     const classes = useStyles();
 
     const [open, setOpen] = useState(false)
@@ -37,11 +38,26 @@ function ExpensesButton() {
         setOpen(!open);
     }
 
+    const [showRevenuePieChart, setShowRevenuePieChart] = useState(false)
+
+    const toggleRevenuePieChart = () => {
+        showRevenuePieChart ? setShowRevenuePieChart(false) : setShowRevenuePieChart(true)
+    }
+
     return (
         <div>
-            <button className={` ${classes.buttonStyle} ${open ? 'open' : null} `} onClick={toggleButton}>Show Expenses</button>
+            <button className={` ${classes.buttonStyle} ${open ? 'open' : null} `} onClick={() => {
+                toggleButton();
+                toggleRevenuePieChart();
+                }}
+                >Show Monetization Sources</button>
+                {
+                    showRevenuePieChart ? <MonetizationCard /> : null
+                }
         </div>
     )
 }
 
-export default ExpensesButton
+export default MonetizationButton
+
+
