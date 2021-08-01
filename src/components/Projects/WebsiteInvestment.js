@@ -24,6 +24,7 @@ import TrafficButton from './WebsiteInvestmentButtons.js/Metric Buttons/TrafficB
 import RevenueButton from './WebsiteInvestmentButtons.js/Metric Buttons/RevenueButton';
 import ExpensesButton from './WebsiteInvestmentButtons.js/Metric Buttons/ExpensesButton';
 import MonetizationButton from './WebsiteInvestmentButtons.js/Metric Buttons/MonetizationButton';
+import TrafficCard from './WebsiteInvestmentButtons.js/Metric Cards/TrafficCard';
 
 // Importing cards
 
