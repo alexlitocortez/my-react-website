@@ -275,7 +275,7 @@ function WebsiteInvestment() {
                         <Card className={` ${classes.card} ${show ? classes.inactive : ''}`} id='card'>
                             <Container className={classes.cardTitle}>
                                 Traffic
-                                <div className='close' id='close' onClick={() => {
+                                <div className='close' onClick={() => {
                                     toggleShow();
                                     toggleDiv();
                                 }}></div>
@@ -291,7 +291,7 @@ function WebsiteInvestment() {
                         <Card className={` ${classes.card} ${showTwo ? classes.inactive : ''}`}>
                             <Container className={classes.cardTitle}>
                                 Revenue
-                                <div className='close' id='close' onClick={() => {
+                                <div className='close' onClick={() => {
                                     toggleShowTwo();
                                     toggleDivTwo();
                                 }}></div>
@@ -307,7 +307,7 @@ function WebsiteInvestment() {
                         <Card className={` ${classes.card} ${showThree ? classes.inactive : ''}`}>
                             <Container className={classes.cardTitle}>
                                 Expenses
-                                <div className='close' id='close' onClick={() => {
+                                <div className='close' onClick={() => {
                                     toggleShowThree();
                                     toggleDivThree();
                                 }}></div>
@@ -323,7 +323,7 @@ function WebsiteInvestment() {
                         <Card className={` ${classes.card} ${showFour ? classes.inactive : ''}`}>
                             <Container className={classes.cardTitle}>
                                 Monetization Split
-                                <div className='close' id='close' onClick={() => {
+                                <div className='close' onClick={() => {
                                     toggleShowFour();
                                     toggleDivFour();
                                 }}></div>
