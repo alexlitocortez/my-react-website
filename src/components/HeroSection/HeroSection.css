@@ -1,0 +1,14 @@
+
+.header {
+    text-align: center;
+    font-size: 45px;
+    margin-top: 2rem;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+    font-size: 32px;
+    margin-top: 4rem;
+}
+
