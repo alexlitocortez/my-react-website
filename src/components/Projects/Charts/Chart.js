@@ -29,7 +29,7 @@ export default function Chart() {
               <LineChart data={data}>
                 <XAxis dataKey='name' stroke='#5550bd' />
                 <YAxis dataKey='amt' stroke='#5550bd' />
-                <Line type='monotone' dataKey='amt' stroke='#5550bd'></Line>
+                <Line type='monotone' dataKey='amt' stroke='#7510F7'></Line>
                 <Tooltip />
                 <CartesianGrid stroke='#e0dfdf'/>
               </LineChart>

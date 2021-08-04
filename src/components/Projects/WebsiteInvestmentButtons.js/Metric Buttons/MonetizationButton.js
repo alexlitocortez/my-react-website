@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     buttonStyle: {
         cursor: 'pointer',
         color: 'white',
-        backgroundColor: '#3f51b5',
+        backgroundColor: '#7510F7',
         fontSize: '14px',
         fontFamily: 'sans-serif',
         textTransform: 'capitalize',

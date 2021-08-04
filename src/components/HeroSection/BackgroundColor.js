@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import styled from 'styled-components';
-import Container from '@material-ui/core/Container';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
     section: {
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         top: '100px',
         left: 0,
         right: 0,
-        backgroundColor: 'black',
+        backgroundColor: '#7510F7',
         color: 'white',
         position: 'relative',
         bottom: '200px',

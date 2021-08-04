@@ -249,9 +249,8 @@ function WebsiteInvestment() {
 
     return (
         <div>
-            <AppBar position='static'>
-                    <IconButton edge='start' className={classes.menuButton} color='inherit' aria-label='menu'>
-                    </IconButton>
+            <AppBar position='static' style={{ backgroundColor: '#7510F7' }}>
+                    <IconButton edge='start' className={classes.menuButton} color='inherit' aria-label='menu'></IconButton>
                     <Typography variant='h6' className={classes.title} style={{marginLeft: 28}}>
                         Nichements
                     </Typography>

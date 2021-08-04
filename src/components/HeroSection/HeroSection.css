@@ -5,10 +5,14 @@
     margin-top: 2rem;
 }
 
-li {
+.list {
     list-style: none;
     text-align: center;
     font-size: 32px;
     margin-top: 4rem;
 }
 
+.centerImage {
+    display: flex;
+    justify-content: center;
+}
