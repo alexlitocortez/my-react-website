@@ -5,13 +5,11 @@ import imageTwo from '../../images/HeroImageTwo.jpeg';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
-
 export const aboutText = styled.div`
     text-align: center;
     font-size: 24px;
     width: 300px;
 `;
-
 
 const BoxTitle = styled.div`
     color: #333;
