@@ -20,10 +20,12 @@ li {
 }
 
 .footer {
-    padding: 1rem;
-    position: relative;
-    top: 345px;
+    position: static;
+    right: 5rem;
     bottom: 0;
     left: 0;
+    right: 0;
     width: 100%;
 }
+
+
