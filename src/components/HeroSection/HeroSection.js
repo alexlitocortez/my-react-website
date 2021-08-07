@@ -5,6 +5,8 @@ import Card from '@material-ui/core/Card';
 import { BsCodeSlash } from 'react-icons/bs';
 import BackgroundColor from '/Users/l/my-react-website/src/components/HeroSection/BackgroundColor.js';
 import './HeroSection.css';
+import BackgroundColorTwo from './BackgroundColorTwo';
+import BackgroundColorThree from './BackgroundColorThree';
 
 
 const CodingImage = styled(BsCodeSlash)`

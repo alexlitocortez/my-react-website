@@ -1,9 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 
-
-
-
 const useStyles = makeStyles((theme) => ({
     section: {
         height: '400px',
@@ -42,5 +39,3 @@ function BackgroundColor() {
 }
 
 export default BackgroundColor
-
-
