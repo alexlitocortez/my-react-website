@@ -268,8 +268,10 @@ function WebsiteInvestment() {
                     <HeroDashboard />
                 </Container>
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
-                        
-                        <Card className={` ${classes.card} ${show ? classes.inactive : ''}`} id='card'>
+                        {
+                            showTraffic ? <TrafficButton /> : ''
+                        }
+                        <Card className={` ${classes.card} ${show ? classes.inactive : ''} `} id='card'>
                             <Container className={classes.cardTitle}>
                                 Traffic
                                 <div className='close' onClick={() => {
