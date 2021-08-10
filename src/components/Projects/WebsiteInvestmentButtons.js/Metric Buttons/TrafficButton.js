@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
 import { makeStyles } from '@material-ui/core';
 import TrafficCard from '../Metric Cards/TrafficCard';
-import '/Users/l/my-react-website/src/components/Projects/WebsiteInvestment.css';
+import './TrafficButton.css';
+
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -36,17 +38,17 @@ function TrafficButton() {
         showTrafficChart ? setShowTrafficChart(false) : setShowTrafficChart(true)
     }
 
-    const [open, setOpen] = useState(false)
+    const [show, setShow] = useState(false)
 
-    const toggleButton = () => {
-        setOpen(!open);
+    const toggleShow = () => {
+        show ? setShow(false) : setShow(true)
     }
 
     return (
         <div>
-            <button className={` ${classes.buttonStyle} ${open ? 'open' : null}`} onClick={() => {
+            <button className={` ${classes.buttonStyle} ${show ? classes.inactive : ''} `} onClick={() => {
                 toggleTrafficChart();
-                toggleButton();
+                toggleShow();
                 }}
             >Show Traffic</button>
             {
@@ -57,8 +59,6 @@ function TrafficButton() {
 }
 
 export default TrafficButton
-
-
 
 
 // 2 things need to happen when button is clicked:

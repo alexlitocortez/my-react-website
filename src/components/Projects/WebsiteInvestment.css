@@ -41,6 +41,10 @@
     display: none;
 }
 
+.active {
+    display: block;
+}
+
 .open {
     display: none;
 }

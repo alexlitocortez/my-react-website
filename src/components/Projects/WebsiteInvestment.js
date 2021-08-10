@@ -24,7 +24,6 @@ import TrafficButton from './WebsiteInvestmentButtons.js/Metric Buttons/TrafficB
 import RevenueButton from './WebsiteInvestmentButtons.js/Metric Buttons/RevenueButton';
 import ExpensesButton from './WebsiteInvestmentButtons.js/Metric Buttons/ExpensesButton';
 import MonetizationButton from './WebsiteInvestmentButtons.js/Metric Buttons/MonetizationButton';
-import TrafficCard from './WebsiteInvestmentButtons.js/Metric Cards/TrafficCard';
 
 // Importing cards
 
@@ -269,14 +268,14 @@ function WebsiteInvestment() {
                 </Container>
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
                         {
-                            showTraffic ? <TrafficButton /> : ''
+                            showTraffic ? <TrafficButton /> : null
                         }
                         <Card className={` ${classes.card} ${show ? classes.inactive : ''} `} id='card'>
                             <Container className={classes.cardTitle}>
                                 Traffic
                                 <div className='close' onClick={() => {
-                                    toggleShow();
-                                    toggleDiv();
+                                    toggleShow(); //This function makes the metric card disappear when close button clicked
+                                    toggleDiv(); //This function shows the button after the close button is clicked
                                 }}></div>
                             </Container>
                             <Line className={classes.lineAdjustment} />
