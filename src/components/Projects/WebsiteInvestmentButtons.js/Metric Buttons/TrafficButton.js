@@ -3,9 +3,6 @@ import { makeStyles } from '@material-ui/core';
 import TrafficCard from '../Metric Cards/TrafficCard';
 import './TrafficButton.css';
 
-
-
-
 const useStyles = makeStyles((theme) => ({
     buttonStyle: {
         cursor: 'pointer',
@@ -25,7 +22,10 @@ const useStyles = makeStyles((theme) => ({
             padding: '14px',
             transition: '0.3s',
             transform: 'translateX(1em)'
-        }
+        },
+    inactive: {
+        display: 'none'
+    }
     }
 }))
 
@@ -42,11 +42,16 @@ function TrafficButton() {
 
     const toggleShow = () => {
         show ? setShow(false) : setShow(true)
+        document.getElementById('close').classList.toggle('inactive')
+
+        // how to get button to show more than once:
+
+        //1. Maybe do another useState/If/else statement for when the button is already visible
     }
 
     return (
         <div>
-            <button className={` ${classes.buttonStyle} ${show ? classes.inactive : ''} `} onClick={() => {
+            <button id='close' className={classes.buttonStyle} onClick={() => {
                 toggleTrafficChart();
                 toggleShow();
                 }}
@@ -59,6 +64,7 @@ function TrafficButton() {
 }
 
 export default TrafficButton
+
 
 
 // 2 things need to happen when button is clicked:
