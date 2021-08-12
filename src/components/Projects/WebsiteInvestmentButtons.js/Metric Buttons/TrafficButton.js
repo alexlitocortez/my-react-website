@@ -29,6 +29,8 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
+
+
 function TrafficButton() {
     const classes = useStyles();
 
@@ -42,8 +44,6 @@ function TrafficButton() {
 
     const toggleShow = () => {
         show ? setShow(false) : setShow(true)
-        document.getElementById('close').classList.toggle('inactive')
-
         // how to get button to show more than once:
 
         //1. Maybe do another useState/If/else statement for when the button is already visible
@@ -51,7 +51,7 @@ function TrafficButton() {
 
     return (
         <div>
-            <button id='close' className={classes.buttonStyle} onClick={() => {
+            <button className={classes.buttonStyle} onClick={() => {
                 toggleTrafficChart();
                 toggleShow();
                 }}
@@ -66,8 +66,5 @@ function TrafficButton() {
 export default TrafficButton
 
 
-
-// 2 things need to happen when button is clicked:
-// 1. button needs to disappear
-// 2. card component needs to appear
+// How to get button to keep appearing
 

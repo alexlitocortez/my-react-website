@@ -22,9 +22,6 @@ const DropdownContainer = styled.div`
     top: ${({open}) => (open ? '0' : '-100%' )};
 `;
 
-
-
-
 const Icon = styled.div`
     position: absolute;
     top: 1.2rem;

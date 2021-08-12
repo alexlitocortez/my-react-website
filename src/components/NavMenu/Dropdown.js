@@ -65,13 +65,11 @@ const CloseIcon = styled(FaTimes)`
     color: #000d1a;
 `;
 
-
-
 const Dropdown = ({open, toggle}) => {
 
     return (
         <DropdownContainer open={open} onClick={toggle} >
-            <Icon onClick={toggle} >
+            <Icon onClick={toggle}>
                 <CloseIcon onClick={toggle}/>
             </Icon>
             <DropdownMenu>
