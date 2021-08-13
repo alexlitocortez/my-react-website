@@ -24,7 +24,6 @@ import TrafficButton from './WebsiteInvestmentButtons.js/Metric Buttons/TrafficB
 import RevenueButton from './WebsiteInvestmentButtons.js/Metric Buttons/RevenueButton';
 import ExpensesButton from './WebsiteInvestmentButtons.js/Metric Buttons/ExpensesButton';
 import MonetizationButton from './WebsiteInvestmentButtons.js/Metric Buttons/MonetizationButton';
-import AddTripButton from './AddTripButton';
 
 // Importing cards
 
@@ -247,12 +246,6 @@ function WebsiteInvestment() {
         showMonetization ? setShowMonetization(false) : setShowMonetization(true)
     }
 
-    const [state, setState] = useState('start')
-
-     const triggerAddTripState = () => {
-        setState('add-trip')
-    }
-
     return (
         <div>
             <AppBar position='static' style={{ backgroundColor: '#7510F7' }}>
@@ -273,17 +266,6 @@ function WebsiteInvestment() {
                 <Container style={{ marginBottom: '15px' }} className={classes.dashboardAdjustment}>
                     <HeroDashboard />
                 </Container>
-
-                <div>
-                    {
-                        state === 'start' && (
-                            <AddTripButton addTrip={this.triggerAddTripState} />
-                        )
-                    }
-                    {
-                        state === 'add-trip' && <TrafficChart />
-                    }
-                </div>
 
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
                         {
@@ -358,10 +340,3 @@ function WebsiteInvestment() {
 }
 
 export default WebsiteInvestment
-
-
-
-
-
-
-// Fix home page

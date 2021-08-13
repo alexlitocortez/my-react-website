@@ -11,6 +11,9 @@ import oubre from '/Users/l/my-react-website/src/images/oubre.jpg';
 import wiggins from '/Users/l/my-react-website/src/images/wiggins.jpeg';
 import green from '/Users/l/my-react-website/src/images/green.jpg';
 import wiseman from '/Users/l/my-react-website/src/images/wiseman.jpg';
+import RevenueButton from '../WebsiteInvestmentButtons.js/Metric Buttons/RevenueButton';
+import TrafficButton from '../WebsiteInvestmentButtons.js/Metric Buttons/TrafficButton';
+import TrafficChart from '../Charts/TrafficChart';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -121,6 +124,12 @@ const playerName = {
 }
 
 function WarriorStats() {
+    const [state, setState] = useState('start')
+
+    const [showResults, setShowResults] = useState(false)
+    const onClick = () => setShowResults(true)
+
+
 
     const [warrior, setWarrior] = useState(curry)
 
@@ -242,10 +251,6 @@ function WarriorStats() {
 
     const classes = useStyles()
 
-
-
-
-
     return (
         <div>
             <Container className={classes.playerImage}>
@@ -295,11 +300,23 @@ function WarriorStats() {
                 <h1>APG: {warriorAssisStats}</h1>
                 </Container>
             </Container>
+
+            <div>
+                {
+                    state === 'start' && (
+                        <TrafficButton onClick={onClick}/>
+                        {showResults ? <TrafficButton /> : null}
+                        // do onclick for component and put a function where trafficbutton disappears when clicked
+                )}
+                {state === 'add-trip' && (
+                    <TrafficChart />
+                )}
+            </div>
         </div>
     )
 }
 
 export default WarriorStats
 
-
-// How to code for on/off switch for active class
+<input type="submit" value="Search" onClick={onClick} />
+      { showResults ? <Results /> : null }

@@ -57,3 +57,7 @@
 .active {
     background-color: #152238;
 } 
+
+.invisible {
+    display: none;
+}
