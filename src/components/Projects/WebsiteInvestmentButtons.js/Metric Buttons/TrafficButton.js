@@ -40,20 +40,18 @@ function TrafficButton() {
         showTrafficChart ? setShowTrafficChart(false) : setShowTrafficChart(true)
     }
 
-    const [show, setShow] = useState(false)
+    const [show, setShow] = useState(true)
 
-    const toggleShow = () => {
-        show ? setShow(false) : setShow(true)
-        // how to get button to show more than once:
-
-        //1. Maybe do another useState/If/else statement for when the button is already visible
+    const onClick = () => {
+        show ?  setShow(document.getElementById('close').classList.toggle('inactive')) : setShow(false)
     }
+
 
     return (
         <div>
-            <button className={classes.buttonStyle} onClick={() => {
+            <button id='close' className={classes.buttonStyle} onClick={() => {
                 toggleTrafficChart();
-                toggleShow();
+                onClick();
                 }}
             >Show Traffic</button>
             {
@@ -66,5 +64,5 @@ function TrafficButton() {
 export default TrafficButton
 
 
-// How to get button to keep appearing
+// Why does trafficbutton render one more button when I close the traffic chart
 

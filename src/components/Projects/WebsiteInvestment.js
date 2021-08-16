@@ -268,7 +268,22 @@ function WebsiteInvestment() {
                 </Container>
 
                     <Grid className={ `${classes.blogsContainer} ${classes.moneyMaker}` } container spacing={1}>
-                        
+                        {
+                            showTraffic ? <TrafficButton /> : null
+                        }
+                        <Card className={` ${classes.card} ${show ? classes.inactive : ''} `} id='card'>
+                            <Container className={classes.cardTitle}>
+                                Traffic
+                                <div className='close' onClick={() => {
+                                    toggleShow(); //This function makes the metric card disappear when close button clicked
+                                    toggleDiv();
+                                }}></div>
+                            </Container>
+                            <Line className={classes.lineAdjustment} />
+                            <div className={classes.trafficAdjustment}>
+                                <TrafficChart />
+                            </div>
+                        </Card>
                         {
                             showRevenue ? <RevenueButton /> : null
                         }

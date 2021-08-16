@@ -80,10 +80,8 @@ function TrafficCard() {
     }
 
     return (
+        <div>
         <Card className={` ${classes.card} ${show ? classes.inactive : ''}`}>
-            {
-                showTraffic ? <TrafficButton /> : null
-            }
             <Container className={classes.cardTitle}>
                 Traffic
                     <div className='close' id='close' onClick={() => {
@@ -97,6 +95,10 @@ function TrafficCard() {
                 <TrafficChart />
             </div>
         </Card>
+        {
+            showTraffic ? <TrafficButton /> : null
+        }
+        </div>
     )
 }
 
