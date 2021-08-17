@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Card from '@material-ui/core/Card';
 import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import TrafficChart from '/Users/l/my-react-website/src/components/Projects/Charts/TrafficChart.js';
 import TrafficButton from '/Users/l/my-react-website/src/components/Projects/WebsiteInvestmentButtons.js/Metric Buttons/TrafficButton.js';
-import '/Users/l/my-react-website/src/components/Projects/WebsiteInvestment.css';
+import '/Users/l/my-react-website/src/components/Projects/WebsiteInvestmentButtons.js/Metric Cards/CloseButton.css';
 
 const Line = styled.div`
     height: 0.4px;
@@ -81,7 +81,10 @@ function TrafficCard() {
 
     return (
         <div>
-        <Card className={` ${classes.card} ${show ? classes.inactive : ''}`}>
+            {
+                showTraffic ? <TrafficButton /> : null
+            }
+        <Card className={` ${classes.card} ${show ? classes.inactive : ''} `}>
             <Container className={classes.cardTitle}>
                 Traffic
                     <div className='close' id='close' onClick={() => {
@@ -95,14 +98,10 @@ function TrafficCard() {
                 <TrafficChart />
             </div>
         </Card>
-        {
-            showTraffic ? <TrafficButton /> : null
-        }
         </div>
     )
 }
 
 export default TrafficCard
 
-
-// It works but when I click the button and the div appears and click the X again, it doesn't show the button
+// 1. First solution is to use useEffect with useState

@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import { makeStyles } from '@material-ui/core';
 import TrafficCard from '../Metric Cards/TrafficCard';
-import './TrafficButton.css';
 
 const useStyles = makeStyles((theme) => ({
     buttonStyle: {
@@ -29,10 +28,14 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-
-
 function TrafficButton() {
     const classes = useStyles();
+
+    const [open, setOpen] = useState(false)
+
+    const toggleButton = () => {
+        setOpen(!open);
+    }
 
     const [showTrafficChart, setShowTrafficChart] = useState(false)
 
@@ -40,18 +43,11 @@ function TrafficButton() {
         showTrafficChart ? setShowTrafficChart(false) : setShowTrafficChart(true)
     }
 
-    const [show, setShow] = useState(true)
-
-    const onClick = () => {
-        show ?  setShow(document.getElementById('close').classList.toggle('inactive')) : setShow(false)
-    }
-
-
     return (
         <div>
-            <button id='close' className={classes.buttonStyle} onClick={() => {
+            <button className={` ${classes.buttonStyle} ${open ? 'open' : null} `} onClick={() => {
+                toggleButton();
                 toggleTrafficChart();
-                onClick();
                 }}
             >Show Traffic</button>
             {
@@ -62,7 +58,3 @@ function TrafficButton() {
 }
 
 export default TrafficButton
-
-
-// Why does trafficbutton render one more button when I close the traffic chart
-

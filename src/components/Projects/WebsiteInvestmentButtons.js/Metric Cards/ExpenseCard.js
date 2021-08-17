@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import ExpensesChart from '../../Charts/ExpensesChart';
+import ExpensesButton from '../Metric Buttons/ExpensesButton';
 
 
 const Line = styled.div`
@@ -72,12 +73,23 @@ function ExpenseCard() {
         show ? setShow(false) : setShow(true)
     }
 
+    const [showExpenses, setShowExpenses] = useState(false)
+
+    const toggleDiv = () => {
+        showExpenses ? setShowExpenses(false) : setShowExpenses(true)
+    }
+
     return (
+            <div>
+                {
+                    showExpenses ? <ExpensesButton /> : null
+                }
             <Card className={` ${classes.card} ${show ? classes.inactive : ''}`}>
                 <Container className={classes.cardTitle}>
                     Expense
                         <div className='close' id='close' onClick={() => {
                             toggleShow();
+                            toggleDiv();
                         }}>
 
                         </div>
@@ -87,6 +99,7 @@ function ExpenseCard() {
                     <ExpensesChart />
                 </div>
             </Card>
+            </div>
     )
 }
 

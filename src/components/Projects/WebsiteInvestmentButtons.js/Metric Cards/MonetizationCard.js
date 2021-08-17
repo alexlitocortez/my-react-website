@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import RevenuePie from '../../Charts/RevenuePie';
+import MonetizationButton from '../Metric Buttons/MonetizationButton';
 
 
 const Line = styled.div`
@@ -70,21 +71,32 @@ function MonetizationCard() {
         show ? setShow(false) : setShow(true)
     }
 
+    const [showMonetization, setshowMonetization] = useState(false)
+
+    const toggleDiv = () => {
+        showMonetization ? setshowMonetization(false) : setshowMonetization(true)
+    }
+
     return (
+        <div>
+            {
+                showMonetization ? <MonetizationButton /> : null
+            }
         <Card className={` ${classes.card} ${show ? classes.inactive : ''}`}>
             <Container className={classes.cardTitle}>
                 Monetization Split
                     <div className='close' id='close' onClick={() => {
                         toggleShow();
+                        toggleDiv();
                     }}>
-
                     </div>
             </Container>
             <Line className={classes.lineAdjustment} />
             <div className={classes.revenuePieAdjustment}>
                 <RevenuePie />
             </div>
-    </Card>
+        </Card>
+        </div>
     )
 }
 

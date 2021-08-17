@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import RevenueChart from '../../Charts/RevenueChart';
+import RevenueButton from '../Metric Buttons/RevenueButton';
 
 const Line = styled.div`
     height: 0.4px;
@@ -73,15 +74,24 @@ function RevenueCard() {
         show ? setShow(false) : setShow(true)
     }
 
+    const [showRevenue, setShowRevenue] = useState(false)
+
+    const toggleDiv = () => {
+        showRevenue ? setShowRevenue(false) : setShowRevenue(true)
+    }
+
     return (
+        <div>
+            {
+                showRevenue ? <RevenueButton /> : null
+            }
         <Card className={` ${classes.card} ${show ? classes.inactive : ''}`}>
-            
             <Container className={classes.cardTitle}>
                 Revenue
                     <div className='close' id='close' onClick={() => {
                         toggleShow();
+                        toggleDiv();
                     }}>
-
                     </div>
             </Container>
             <Line className={classes.lineAdjustment} />
@@ -89,6 +99,7 @@ function RevenueCard() {
                 <RevenueChart />
             </div>
         </Card>
+        </div>
     )
 }
 

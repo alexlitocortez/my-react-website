@@ -275,7 +275,7 @@ function WebsiteInvestment() {
                             <Container className={classes.cardTitle}>
                                 Traffic
                                 <div className='close' onClick={() => {
-                                    toggleShow(); //This function makes the metric card disappear when close button clicked
+                                    toggleShow();
                                     toggleDiv();
                                 }}></div>
                             </Container>

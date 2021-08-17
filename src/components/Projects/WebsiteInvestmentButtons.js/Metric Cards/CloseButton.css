@@ -1,0 +1,40 @@
+
+.close {
+    background: #E0E0E0;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+.close:after {
+    content: '';
+    height: 30px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 14px;
+}
+
+.close:after {
+    content: '';
+    height: 30px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 14px;
+}
+
+.close:before {
+    content: '';
+    height: 30px;
+    border-left: 2px solid #fff;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 14px;
+}
+
+.close:hover {
+    background-color: red;
+}
