@@ -15,10 +15,9 @@ export const NavContainer = styled.section`
 const NavMenuArea = styled.div`
     display: flex;
     align-items: center;
-    margin-right: -48px;
 
     li {
-        display: inline;
+        display: inline-block;
     }
 
     a {
