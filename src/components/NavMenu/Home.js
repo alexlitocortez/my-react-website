@@ -4,7 +4,6 @@ import Footer from '../Footer/Footer';
 import BackgroundColorTwo from '../HeroSection/BackgroundColorTwo';
 import BackgroundColorThree from '../HeroSection/BackgroundColorThree';
 
-
 function Home() {
     return (
         <div>
