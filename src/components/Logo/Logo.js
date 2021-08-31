@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import myCharacter from '../../images/caricature.jpg';
 import { Link } from 'react-router-dom';
+import NavMenu from '../NavMenu/NavMenu';
+import { NavLink } from 'react-router-dom';
+import './Logo.css';
 
 
 const LogoContainer = styled.div`
-    display: flex;
     justify-content: space-between;
     flex-direction: row;
     height: 80px;
@@ -25,6 +27,37 @@ const LogoImage = styled.div`
     left: 5px;
 `;
 
+const NavMenuArea = styled.div`
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 45px;
+    left: 400px;
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 24px;
+        align-items: center;
+        padding: 0 1rem;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    a:hover {
+        opacity: 0.3;
+        transition: fill 0.25s;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+`;
+
 
 function Logo() {
     return (
@@ -35,11 +68,43 @@ function Logo() {
                         <img src={myCharacter} style={{ borderRadius: 90, cursor: 'pointer' }} alt='logo'></img>
                     </LogoImage>
                     </Link>
+                    <NavMenuArea>
+                        <ul>
+                            <li><NavLink to='/'>Home</NavLink></li>
+                            <li><NavLink to='/about'>About</NavLink></li>
+                            <li><NavLink to='/blog'>Blog</NavLink></li>
+                            <li><NavLink to='/projects'>Projects</NavLink></li>
+                            <li><NavLink to='/resume'>Resume</NavLink></li>
+                            <li><NavLink to='/contact'>Contact</NavLink></li>
+                        </ul>
+
+                        <div className='social-icons'>
+                            <Link
+                            to='/'
+                            target='_blank'
+                            aria-label='Twitter'
+                            >
+                                <i className='fab fa-twitter'></i>
+                            </Link>
+                            <Link
+                            to='/'
+                            target='_blank'
+                            aria-label='LinkedIn'
+                            >
+                                <i className='fab fa-linkedin'></i>
+                            </Link>
+                            <Link
+                            to='/'
+                            target='_blank'
+                            aria-label='Github'
+                            >
+                                <i className='fab fa-github'></i>
+                            </Link>
+                        </div>
+                    </NavMenuArea>
             </LogoContainer>
         </div>
     )
 }
 
 export default Logo
-
-

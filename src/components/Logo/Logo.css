@@ -1,0 +1,15 @@
+
+.social-icons {
+    padding: 1rem 0 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 30px;
+    right: 0;
+}
+
+.fab {
+    display: block;
+    position: relative;
+    bottom: 50px;
+}

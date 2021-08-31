@@ -3,10 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
 import Card from '@material-ui/core/Card';
 import { BsCodeSlash } from 'react-icons/bs';
-import BackgroundColor from '/Users/l/my-react-website/src/components/HeroSection/BackgroundColor.js';
+import BackgroundColorOne from './BackgroundColorOne.js';
 import './HeroSection.css';
 import BackgroundColorTwo from './BackgroundColorTwo';
 import BackgroundColorThree from './BackgroundColorThree';
+import BackgroundColor from './BackgroundColor.js';
 
 
 const CodingImage = styled(BsCodeSlash)`
@@ -52,6 +53,7 @@ function HeroSection() {
     return (
         <div>
             <BackgroundColor />
+            <BackgroundColorOne />
             <div className={classes.hero}>
                 <Card className={classes.card} style={{ zIndex: 1000}}>
                     <div className= 'centerImage'>

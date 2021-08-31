@@ -1,39 +1,45 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+
 
 const useStyles = makeStyles((theme) => ({
-    section: {
-        height: '400px',
-        width: '100%',
-        margin: '0',
-        padding: '1rem 0 0',
-        textAlign: 'center',
-        top: '100px',
-        left: 0,
-        right: 0,
-        backgroundColor: '#7510F7',
-        color: 'white',
-        position: 'relative',
-        bottom: '200px',
-    },
-    header: {
+    hero: {
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: '4rem'
+        justifyContent: 'space-between'
+    },
+    firstText: {
+        color: '#7510f7',
+
+    },
+    button: {
+        backgroundColor: '#c585f7',
+        color: 'white',
+        borderRadius: '10%',
+        padding: '1rem',
+        display: 'block',
+        outline: 'none'
     }
 }))
 
 function BackgroundColor() {
+
     const classes = useStyles();
 
     return (
-        <div className={classes.section}>
-            <h1 className={classes.header}>Hi, I’m Alex. Nice to meet you.</h1>
-            <div>
-            Since beginning my journey as a freelance designer nearly 10 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. 
-            I'm quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time.
-            </div>
+        <div>
+            <Grid className={classes.hero}>
+                <div className={classes.firstText}>
+                    Hi, I'm Alex.
+                    Nice to meet you.
+                    <button className={classes.button}>
+                        Know More
+                    </button>
+                </div>
+                <div>
+                    Hi
+                </div>
+            </Grid>
         </div>
     )
 }
