@@ -10,17 +10,27 @@ const useStyles = makeStyles((theme) => ({
     },
     firstText: {
         color: '#7510f7',
-
+        fontSize: '32px',
+        position: 'relative',
+        
     },
     button: {
-        backgroundColor: '#c585f7',
+        backgroundColor: '#757AE5',
         color: 'white',
         borderRadius: '10%',
         padding: '1rem',
         display: 'block',
-        outline: 'none'
+        outline: 'none',
+        cursor: 'pointer',
+        border: 'none',
+        '&hover': {
+            padding: '1px',
+            transition: '0.3s',
+            transform: 'translateX(1em)'
+        }
     }
 }))
+
 
 function BackgroundColor() {
 

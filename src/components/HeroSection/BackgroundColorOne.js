@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -12,16 +13,28 @@ const useStyles = makeStyles((theme) => ({
         top: '100px',
         left: 0,
         right: 0,
-        backgroundColor: '#7510F7',
+        backgroundColor: '#000022',
         color: 'white',
         position: 'relative',
-        bottom: '200px',
+        bottom: '50px',
     },
     header: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: '4rem'
+        textAlign: 'left',
+        marginBottom: '1rem'
+    },
+    headerLine: {
+        width: '25em',
+        borderColor: '#08D665'
+    },
+    bodyDiv: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'left',
+        width: '25em'
     }
 }))
 
@@ -29,13 +42,14 @@ function BackgroundColorOne() {
     const classes = useStyles();
 
     return (
-        <div className={classes.section}>
-            <h1 className={classes.header}>Hi, I’m Alex. Nice to meet you.</h1>
-            <div>
-            Since beginning my journey as a freelance designer nearly 10 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. 
-            I'm quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time.
+            <div className={classes.section}>
+                <h1 className={classes.header}>My Biography</h1>
+                <hr className={classes.headerLine}></hr>
+                <Container className={classes.bodyDiv}>
+                        Since beginning my journey as a freelance designer nearly 10 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. 
+                        I'm quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time.
+                </Container>
             </div>
-        </div>
     )
 }
 

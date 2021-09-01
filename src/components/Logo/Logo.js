@@ -16,6 +16,8 @@ const LogoContainer = styled.div`
     background: black;
     margin: 0;
     padding: 0;
+    background-color: #000022;
+
 `;
 
 const LogoImage = styled.div`

@@ -8,6 +8,7 @@ import './HeroSection.css';
 import BackgroundColorTwo from './BackgroundColorTwo';
 import BackgroundColorThree from './BackgroundColorThree';
 import BackgroundColor from './BackgroundColor.js';
+import Section from '/Users/l/my-react-website/src/components/HeroSection/Section.js';
 
 
 const CodingImage = styled(BsCodeSlash)`
@@ -23,7 +24,7 @@ const CodingImage = styled(BsCodeSlash)`
 const useStyles = makeStyles((theme) => ({
     hero: {
         backgroundColor: '#fff',
-        height: '1000px',
+        height: '300px',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: '4rem',
+        fontSize: '2rem',
     },
     card: {
         width: '400px',
@@ -55,16 +56,7 @@ function HeroSection() {
             <BackgroundColor />
             <BackgroundColorOne />
             <div className={classes.hero}>
-                <Card className={classes.card} style={{ zIndex: 1000}}>
-                    <div className= 'centerImage'>
-                        <CodingImage />
-                    </div>
-                        <h1 className='header'>Languages</h1>
-                    <li className='list'>HTML</li>
-                    <li className='list'>CSS</li>
-                    <li className='list'>Javascript</li>
-                    <li className='list'>React</li>
-                </Card>
+                <Section />
             </div>
         </div>
     )
