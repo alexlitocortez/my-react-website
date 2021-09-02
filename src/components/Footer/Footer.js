@@ -1,21 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import myCharacter from '../../images/caricature.jpg';
 
 function Footer() {
     return (
         <div className='footer-container'>
+            <img src={myCharacter} className='logoImage'></img>
+            <div className='email'>alexlitocortez@gmail.com</div>
             <div className='footer-link-items'>
-                <Link to='/'>
-                    Twitter
-                </Link>
-                <Link to='/'>
-                    LinkedIn
-                </Link>
-                <Link to='/'>
-                    Github
-                </Link>
-                <div className='social-media-icons'>
                     <Link
                     to='/'
                     target='_blank'
@@ -37,8 +30,8 @@ function Footer() {
                     >
                         <i className='fab fa-github'></i>
                     </Link>
-                </div>
             </div>
+            <div className='copyright'>Copyright © 2021 Alex Cortez. All rights reserved.</div>
         </div>
     )
 }

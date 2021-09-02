@@ -13,8 +13,15 @@ const useStyles = makeStyles((theme) => ({
     },
     header: {
         textAlign: 'center',
-        marginTop: '2rem',
-        marginBottom: '2rem'
+        marginTop: '10rem',
+        marginBottom: '2rem',
+        fontSize: '32px'
+    },
+    container: {
+        ['@media (max-width: 768px)']: {
+            display: 'flex',
+            flexDirection: 'column'
+        }
     },
     text: {
         fontSize: '32px'
@@ -36,9 +43,9 @@ function Section() {
     const classes = useStyles();
 
     return (
-        <div className={classes.body}>
+        <div className={` ${classes.body} ${classes.container} `}>
             <div className={classes.header}>Languages I Know</div>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} className={classes.container}>
                 <Grid item xs={6}>
                     <Paper className={classes.paper}>
                         <img src={htmlImage}></img>

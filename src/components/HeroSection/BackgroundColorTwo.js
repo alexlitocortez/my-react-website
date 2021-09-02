@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     wholeSection: {
         position: 'relative',
         bottom: '15rem',
-        marginTop: '30rem',
+        marginTop: '35rem',
     },
     section: {
         height: '400px',
@@ -19,18 +19,27 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#000022',
         color: 'white',
         position: 'relative',
-        marginTop: '3rem',
-        marginBottom: '3rem',
+        marginBottom: '3rem'
+    },
+    header: {
+        position: 'relative',
+        top: '10rem'
     },
     button: {
         color: 'white',
+        fontSize: '16px',
         backgroundColor: '#7510f7',
         outline: 'none',
         border: 'none',
-        borderRadius: '10%',
+        borderRadius: '12px',
         padding: '1rem',
         width: '8rem',
-        marginTop: '2rem'
+        marginTop: '13rem',
+        cursor: 'pointer',
+        '&:hover': {
+            padding: '1.1rem',
+            transition: '0.3s'
+        }
     },
     projectSection: {
         marginBottom: '5rem'
@@ -43,7 +52,7 @@ function BackgroundColorTwo() {
     return (
         <div className={classes.wholeSection}>
             <div className={classes.section}>
-                <h1>Check out my projects which have brought me satisfaction and frustration.</h1>
+                <h1 className={classes.header}>Check out my projects which have brought me satisfaction and frustration.</h1>
                 <button className={classes.button}>Hire Me</button>
             </div>
             <div className={classes.projectSection}>

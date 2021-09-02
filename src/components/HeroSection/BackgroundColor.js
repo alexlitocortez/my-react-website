@@ -17,20 +17,19 @@ const useStyles = makeStyles((theme) => ({
     button: {
         backgroundColor: '#757AE5',
         color: 'white',
-        borderRadius: '10%',
+        fontSize: '16px',
+        borderRadius: '12px',
         padding: '1rem',
         display: 'block',
         outline: 'none',
         cursor: 'pointer',
         border: 'none',
-        '&hover': {
-            padding: '1px',
+        '&:hover': {
+            padding: '1.1rem',
             transition: '0.3s',
-            transform: 'translateX(1em)'
         }
     }
 }))
-
 
 function BackgroundColor() {
 

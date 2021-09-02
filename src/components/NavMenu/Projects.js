@@ -5,7 +5,6 @@ import Box from '@material-ui/core/Box';
 import { Avatar, Typography } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 
@@ -18,7 +17,7 @@ import projectImageThree from '../../images/investment.jpg';
 const useStyles = makeStyles((theme) => ({
     hero: {
         backgroundColor: '#fff',
-        height: '400px',
+        height: '200px',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
@@ -26,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: '4rem'
+        fontSize: '4rem',
+        fontWeight: 'bold'
     },
     blogsContainer: {
         paddingTop: theme.spacing(3),
@@ -34,14 +34,15 @@ const useStyles = makeStyles((theme) => ({
     },
     card: {
         maxWidth: '90%',
-        marginLeft: '22px'
+        marginLeft: '22px',
+        filter: '50%'
     },
     media: {
-        height: 240
+        height: 300,
     },
     articleTitle: {
         fontWeight: 400,
-        color: 'black',
+        color: 'white',
         marginBottom: '5',
     },
     content: {
@@ -49,7 +50,19 @@ const useStyles = makeStyles((theme) => ({
     },
     author: {
         display: 'flex'
-    }
+    },
+    overlayOne: {
+        position: 'relative',
+        bottom: '80px',
+        left: '10px'
+    },
+    overlay: {
+        position: 'relative',
+        left: '10px',
+        bottom: '80px',
+        display: 'flex',
+        color: 'white'
+    },
 }))
 
 function Projects() {
@@ -58,34 +71,32 @@ function Projects() {
     return (
         <div>
             <Box className={classes.hero}>
-                <Box>Projects</Box>
+                <Box>My Recent Projects</Box>
             </Box>
             <Grid className={classes.blogsContainer} container spacing={3}>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
                     <Link to='/drumkitproject' style={{ textDecoration: 'none' }}>
                     <Card className={classes.card}>
                         <CardActionArea>
-                            <CardMedia
+                            <CardMedia 
                             className={classes.media}
                             image={projectImageOne}
                             />
-                            <CardContent>
-                                <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2'>
-                                    Drumkit Sounds
-                                </Typography>
-                                <Typography variant='body2' color='textSecondary' component='p'>
-                                </Typography>
-                            </CardContent>
-                            <CardActionArea className={classes.cardActions}>
-                            <Box className={classes.author}>
+                            {/* Project title */}
+                            <div className={classes.overlayOne}>
+                                <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2'>Drumkit Sounds</Typography>
+                            </div>
+
+
+                            {/* Author name */}
+                            <div className={classes.overlay}>
                                 <Avatar src={myCharacter} />
-                                <Box ml={2}>
-                                    <Typography variant='subtitle2' component='p'>
-                                        Alex
-                                    </Typography>
-                                </Box>
-                            </Box>
-                            </CardActionArea>
+                                <Typography variant='subtitle2' component='p'>
+                                    Alex
+                                </Typography>
+                            </div>
+                            
+                            
                         </CardActionArea>
                     </Card>
                     </Link>
@@ -98,23 +109,21 @@ function Projects() {
                             className={classes.media}
                             image={projectImageTwo}
                             />
-                            <CardContent>
-                                <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2'>
-                                    Warrior Players Stats
-                                </Typography>
-                                <Typography variant='body2' color='textSecondary' component='p'>
-                                </Typography>
-                            </CardContent>
-                            <CardActionArea className={classes.cardActions}>
-                            <Box className={classes.author}>
+                            
+                            {/* Project title */}
+                            <div className={classes.overlayOne}>
+                                <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2'>Warrior Player Stats</Typography>
+                            </div>
+
+
+                            {/* Author name */}
+                            <div className={classes.overlay}>
                                 <Avatar src={myCharacter} />
-                                <Box ml={2}>
-                                    <Typography variant='subtitle2' component='p'>
-                                        Alex
-                                    </Typography>
-                                </Box>
-                            </Box>
-                            </CardActionArea>
+                                <Typography variant='subtitle2' component='p'>
+                                    Alex
+                                </Typography>
+                            </div>
+
                         </CardActionArea>
                     </Card>
                     </Link>
@@ -127,24 +136,21 @@ function Projects() {
                             className={classes.media}
                             image={projectImageThree}
                             />
-                            <CardContent>
-                                <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2'>
-                                    Website Investment Dashboard
-                                </Typography>
-                                <Typography variant='body2' color='textSecondary' component='p'>
 
-                                </Typography>
-                            </CardContent>
-                            <CardActionArea className={classes.cardActions}>
-                            <Box className={classes.author}>
+                            {/* Project title */}
+                            <div className={classes.overlayOne}>
+                                <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2'>Warrior Player Stats</Typography>
+                            </div>
+
+
+                            {/* Author name */}
+                            <div className={classes.overlay}>
                                 <Avatar src={myCharacter} />
-                                <Box ml={2}>
-                                    <Typography variant='subtitle2' component='p'>
-                                        Alex
-                                    </Typography>
-                                </Box>
-                            </Box>
-                            </CardActionArea>
+                                <Typography variant='subtitle2' component='p'>
+                                    Alex
+                                </Typography>
+                            </div>
+                            
                         </CardActionArea>
                     </Card>
                     </Link>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
-import { Avatar, Typography } from '@material-ui/core';
+import { Avatar, Container, Typography } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -15,11 +15,10 @@ import blogImageOne from '../../images/blog_image_1.jpg';
 import blogImageTwo from '../../images/blog_image_2.jpg';
 import blogImageThree from '../../images/blog_image_3.jpg'
 
-
 const useStyles = makeStyles((theme) => ({
     hero: {
         backgroundColor: '#fff',
-        height: '400px',
+        height: '200px',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
@@ -27,7 +26,18 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: '4rem'
+        fontSize: '4rem',
+        color: '#08D665',
+        fontWeight: 'bold'
+    },
+    heroSecond: {
+        height: '25px',
+        display: 'flex',
+        color: 'black',
+        fontWeight: 'bold',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: '2rem'
     },
     blogTitle: {
         fontWeight: 800,
@@ -47,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
     articleTitle: {
         fontWeight: 400,
-        color: 'black',
+        color: '#08D665',
         marginBottom: '5'
     },
     content: {
@@ -59,7 +69,6 @@ const useStyles = makeStyles((theme) => ({
     }))
 
 
-
 function Blog() {
     const classes = useStyles();
 
@@ -67,6 +76,9 @@ function Blog() {
         <div>
             <Box className={classes.hero}>
                 <Box>Blog</Box>
+            </Box>
+            <Box className={classes.heroSecond}>
+                Read my blog if you're bored
             </Box>
             <Grid className={classes.blogsContainer} container spacing={3}>
                 <Grid item xs={12} sm={6} md={4} lg={4}>

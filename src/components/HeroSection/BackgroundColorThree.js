@@ -31,9 +31,6 @@ function BackgroundColorThree() {
 
     return (
         <div className={classes.wholeSection}>
-            <div className={classes.section}>
-                <h1>Read my blog if you're bored.</h1>
-            </div>
             <Blog />
         </div>
     )
