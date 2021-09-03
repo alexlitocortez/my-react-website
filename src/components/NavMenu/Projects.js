@@ -53,13 +53,13 @@ const useStyles = makeStyles((theme) => ({
     },
     overlayOne: {
         position: 'relative',
-        bottom: '80px',
-        left: '10px'
+        bottom: '10px',
+        left: '10px',
     },
     overlay: {
         position: 'relative',
         left: '10px',
-        bottom: '80px',
+        bottom: '50px',
         display: 'flex',
         color: 'white'
     },
@@ -82,18 +82,17 @@ function Projects() {
                             className={classes.media}
                             image={projectImageOne}
                             />
-                            {/* Project title */}
-                            <div className={classes.overlayOne}>
-                                <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2'>Drumkit Sounds</Typography>
-                            </div>
-
-
                             {/* Author name */}
                             <div className={classes.overlay}>
                                 <Avatar src={myCharacter} />
                                 <Typography variant='subtitle2' component='p'>
                                     Alex
                                 </Typography>
+                            </div>
+
+                            {/* Project title */}
+                            <div className={classes.overlayOne}>
+                                <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2' style={{ color: 'black' }}>Drumkit Sounds</Typography>
                             </div>
                             
                             
@@ -109,12 +108,6 @@ function Projects() {
                             className={classes.media}
                             image={projectImageTwo}
                             />
-                            
-                            {/* Project title */}
-                            <div className={classes.overlayOne}>
-                                <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2'>Warrior Player Stats</Typography>
-                            </div>
-
 
                             {/* Author name */}
                             <div className={classes.overlay}>
@@ -122,6 +115,11 @@ function Projects() {
                                 <Typography variant='subtitle2' component='p'>
                                     Alex
                                 </Typography>
+                            </div>
+
+                            {/* Project title */}
+                            <div className={classes.overlayOne}>
+                                <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2' style={{ color: 'black' }}>Warrior Player Stats</Typography>
                             </div>
 
                         </CardActionArea>
@@ -137,18 +135,17 @@ function Projects() {
                             image={projectImageThree}
                             />
 
-                            {/* Project title */}
-                            <div className={classes.overlayOne}>
-                                <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2'>Warrior Player Stats</Typography>
-                            </div>
-
-
                             {/* Author name */}
                             <div className={classes.overlay}>
                                 <Avatar src={myCharacter} />
                                 <Typography variant='subtitle2' component='p'>
                                     Alex
                                 </Typography>
+                            </div>
+
+                            {/* Project title */}
+                            <div className={classes.overlayOne}>
+                                <Typography className={classes.articleTitle} gutterBottom variant='h5' component='h2' style={{ color: 'black' }}>Website Investment Dashboard</Typography>
                             </div>
                             
                         </CardActionArea>

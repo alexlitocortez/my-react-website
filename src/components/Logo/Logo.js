@@ -82,21 +82,21 @@ function Logo() {
 
                         <div className='social-icons'>
                             <Link
-                            to='/'
+                            to='/https://twitter.com/sufitogoofies'
                             target='_blank'
                             aria-label='Twitter'
                             >
                                 <i className='fab fa-twitter'></i>
                             </Link>
                             <Link
-                            to='/'
+                            to='/https://www.linkedin.com/in/amcortez92/'
                             target='_blank'
                             aria-label='LinkedIn'
                             >
                                 <i className='fab fa-linkedin'></i>
                             </Link>
                             <Link
-                            to='/'
+                            to='/https://github.com/alexthegreat650'
                             target='_blank'
                             aria-label='Github'
                             >

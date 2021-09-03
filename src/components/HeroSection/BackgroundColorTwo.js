@@ -1,11 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Projects from '../NavMenu/Projects';
+import './BackgroundColorTwo.css';
+
 
 const useStyles = makeStyles((theme) => ({
     wholeSection: {
         position: 'relative',
-        bottom: '15rem',
+        bottom: '12rem',
         marginTop: '35rem',
     },
     section: {
@@ -19,7 +21,10 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#000022',
         color: 'white',
         position: 'relative',
-        marginBottom: '3rem'
+        marginBottom: '3rem',
+        ['@media (min-width: 768px)']: {
+            marginTop: '2rem'
+        }
     },
     header: {
         position: 'relative',
@@ -51,6 +56,7 @@ function BackgroundColorTwo() {
 
     return (
         <div className={classes.wholeSection}>
+        <div className='wholeSectionOne'>
             <div className={classes.section}>
                 <h1 className={classes.header}>Check out my projects which have brought me satisfaction and frustration.</h1>
                 <button className={classes.button}>Hire Me</button>
@@ -58,6 +64,7 @@ function BackgroundColorTwo() {
             <div className={classes.projectSection}>
                 <Projects />
             </div>
+        </div>
         </div>
     )
 }
