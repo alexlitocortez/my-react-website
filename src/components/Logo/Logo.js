@@ -79,29 +79,20 @@ function Logo() {
                             <li><NavLink to='/resume'>Resume</NavLink></li>
                             <li><NavLink to='/contact'>Contact</NavLink></li>
                         </ul>
-
                         <div className='social-icons'>
-                            <Link
-                            to='/https://twitter.com/sufitogoofies'
-                            target='_blank'
-                            aria-label='Twitter'
-                            >
+                            
+                            <a href='https://twitter.com/sufitogoofies' target='_blank'>
                                 <i className='fab fa-twitter'></i>
-                            </Link>
-                            <Link
-                            to='/https://www.linkedin.com/in/amcortez92/'
-                            target='_blank'
-                            aria-label='LinkedIn'
-                            >
+                            </a>
+                            
+                            <a href='https://www.linkedin.com/in/amcortez92/' target='_blank'>
                                 <i className='fab fa-linkedin'></i>
-                            </Link>
-                            <Link
-                            to='/https://github.com/alexthegreat650'
-                            target='_blank'
-                            aria-label='Github'
-                            >
+                            </a>
+
+                            <a href='https://github.com/alexthegreat650' target='_blank'>
                                 <i className='fab fa-github'></i>
-                            </Link>
+                            </a>
+                            
                         </div>
                     </NavMenuArea>
             </LogoContainer>

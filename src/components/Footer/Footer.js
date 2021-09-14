@@ -9,27 +9,18 @@ function Footer() {
             <img src={myCharacter} className='logoImage'></img>
             <div className='email'>alexlitocortez@gmail.com</div>
             <div className='footer-link-items'>
-                    <Link
-                    to='/'
-                    target='_blank'
-                    aria-label='Twitter'
-                    >
+                    
+                    <a href='https://twitter.com/sufitogoofies' target='_blank'>
                         <i className='fab fa-twitter'></i>
-                    </Link>
-                    <Link
-                    to='/'
-                    target='_blank'
-                    aria-label='LinkedIn'
-                    >
+                    </a>
+                    
+                    <a href='https://www.linkedin.com/in/amcortez92/' target='_blank'>
                         <i className='fab fa-linkedin'></i>
-                    </Link>
-                    <Link
-                    to='/'
-                    target='_blank'
-                    aria-label='Github'
-                    >
+                    </a>
+
+                    <a href='https://github.com/alexthegreat650' target='_blank'>
                         <i className='fab fa-github'></i>
-                    </Link>
+                    </a>
             </div>
             <div className='copyright'>Copyright © 2021 Alex Cortez. All rights reserved.</div>
         </div>

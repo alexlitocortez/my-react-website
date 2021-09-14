@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({
     section: {
-        height: '400px',
+        height: '600px',
         width: '100%',
         margin: '0',
         padding: '1rem 0 0',
@@ -46,8 +46,13 @@ function BackgroundColorOne() {
                 <h1 className={classes.header}>My Biography</h1>
                 <hr className={classes.headerLine}></hr>
                 <Container className={classes.bodyDiv}>
-                        Since beginning my journey as a freelance designer nearly 10 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. 
-                        I'm quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time.
+                        My coding journey started a year ago. I've done work for startups, small businesses, and started side projects before this journey. 
+                        I'm naturally curious, and obsessively working on my coding skills to get better every day.<br></br>
+                        <br></br>
+                        There are a lot of reasons of why I want to get into coding (check out my blog), but the ability to learn something everyday while 
+                        using creativity to create something of value is an opportunity I can't pass up.<br></br>
+                        <br></br>
+                        Other than that, my hobbies include basketball, lifting, and some chess. Contact me if you want to learn more.
                 </Container>
             </div>
     )
