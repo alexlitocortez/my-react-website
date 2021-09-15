@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import imageOne from '../../images/HeroImageOne.jpeg';
 import imageTwo from '../../images/HeroImageTwo.jpeg';
+import imageThree from '/Users/l/my-react-website/src/images/Acim Jpg.jpg';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
@@ -27,18 +28,11 @@ function About() {
     return (
         <div>
             <BoxTitle>
-                Hi, my name is Alex and I'm an aspiring fronted developer
+                Hi, my name is Alex and I'm an aspiring frontend developer
             </BoxTitle>
             <Grid container spacing={2} justify={'center'} style={{ marginTop: 80 }}>
                 <Grid item maxWidth='sm'>
-                    <Paper style={{ height: 400, width: 600 }}>
-                        <img src={imageOne} alt='sitting on a fence trail' style={{ maxWidth: 600, maxHeight: 600 }}></img>
-                    </Paper>
-                </Grid>
-                <Grid item maxWidth='sm'>
-                    <Paper style={{ height: 600, width: 400 }}>
-                        <img src={imageTwo} alt='standing in front of the Golden Gate Bridge' style={{ maxWidth: 600, maxHeight: 600 }}></img>
-                    </Paper>
+                    <img src={imageThree} alt='sitting on a fence trail' style={{ maxWidth: 600, maxHeight: 600 }}></img>
                 </Grid>
             </Grid>
         </div>
