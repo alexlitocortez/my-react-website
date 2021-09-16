@@ -101,14 +101,14 @@ function Contact() {
         <>
             <GlobalStyle />
             <StyledFormWrapper>
-                <StyledForm>
+                <StyledForm className='contact-form'>
                     <h2>Contact Form</h2>
                     <label htmlFor='name'>Name</label>
-                    <StyledInput type='name' name='name'/>
+                    <StyledInput type='name' name='name' id='name'/>
                     <label htmlFor='email'>Email</label>
-                    <StyledInput type='email' name='email' />
+                    <StyledInput type='email' name='email' id='email'/>
                     <StyledFieldset>
-                        <label htmlFor='message'>Message</label>
+                        <label htmlFor='message' id='message'>Message</label>
                         <StyledTextArea name='message' />
                     </StyledFieldset>
                 <StyledButton type='submit'>Send Message</StyledButton>

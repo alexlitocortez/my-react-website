@@ -28,7 +28,10 @@ function About() {
     return (
         <div>
             <BoxTitle>
-                Hi, my name is Alex and I'm an aspiring frontend developer
+                Hi, my name is Alex and I'm a frontend developer
+            </BoxTitle>
+            <BoxTitle>
+                My hobbies include basketball, lifting, and some chess. Contact me if you want to learn more.
             </BoxTitle>
             <Grid container spacing={2} justify={'center'} style={{ marginTop: 80 }}>
                 <Grid item maxWidth='sm'>
