@@ -43,11 +43,11 @@ function BackgroundColorOne() {
 
     return (
             <div className={classes.section}>
-                <h1 className={classes.header}>My Coding Journey</h1>
+                <h1 className={classes.header}>Why Coding</h1>
                 <hr className={classes.headerLine}></hr>
                 <Container className={classes.bodyDiv}>
                         My coding journey started a year ago. I've done work for startups, small businesses, and started side projects before this journey. 
-                        I'm naturally curious, and obsessively working on my coding skills to get better every day.<br></br>
+                        <br></br>
                         <br></br>
                         There are a lot of reasons of why I want to get into coding (check out my blog), but the ability to learn something everyday while 
                         using creativity to create something of value is an opportunity I couldn't pass up.<br></br>
