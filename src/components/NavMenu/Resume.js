@@ -33,7 +33,6 @@ function Resume() {
         <div style={{ backgroundColor: '#323639', color: '#fffdd0', zIndex: 1000 }}>
                     <Container className={classes.PDFHeader}>
                             <h1 style={{ fontWeight: 70 }}>Alex Cortez</h1>
-                            <h3 style={{ textAlign: 'center' }}>alexlitocortez@gmail.com</h3>
 
                             <SpaceMaker />
                             <h1>EXPERIENCE</h1>
