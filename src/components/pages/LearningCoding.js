@@ -12,13 +12,6 @@ function LearningCoding() {
                     It’s a skill that’s valuable and free to learn. Looking into it, I saw all the advantages coding provides:
                 </Box>
             </div>
-            <ul className='list'>
-                    <li>Feedback loop</li>
-                    <li>Creativity</li>
-                    <li>Learn everyday</li>
-                    <li>Side projects</li>
-                    <li>Community</li>
-            </ul>
             <h1>Feedback Loop</h1>
             <div className="container">
                 <Box>
