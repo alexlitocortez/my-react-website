@@ -17,7 +17,6 @@ const LogoContainer = styled.div`
     margin: 0;
     padding: 0;
     background-color: #000022;
-
 `;
 
 const LogoImage = styled.div`
@@ -71,29 +70,6 @@ function Logo() {
                     </LogoImage>
                     </Link>
                     <NavMenuArea>
-                        <ul>
-                            <li><NavLink to='/'>Home</NavLink></li>
-                            <li><NavLink to='/about'>About</NavLink></li>
-                            <li><NavLink to='/blog'>Blog</NavLink></li>
-                            <li><NavLink to='/projects'>Projects</NavLink></li>
-                            <li><NavLink to='/resume'>Resume</NavLink></li>
-                            <li><NavLink to='/contact'>Contact</NavLink></li>
-                        </ul>
-                        <div className='social-icons'>
-                            
-                            <a href='https://twitter.com/sufitogoofies' target='_blank'>
-                                <i className='fab fa-twitter'></i>
-                            </a>
-                            
-                            <a href='https://www.linkedin.com/in/amcortez92/' target='_blank'>
-                                <i className='fab fa-linkedin'></i>
-                            </a>
-
-                            <a href='https://github.com/alexthegreat650' target='_blank'>
-                                <i className='fab fa-github'></i>
-                            </a>
-                            
-                        </div>
                     </NavMenuArea>
             </LogoContainer>
         </div>
