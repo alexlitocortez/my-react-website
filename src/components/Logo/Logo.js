@@ -30,10 +30,8 @@ const LogoImage = styled.div`
 
 const NavMenuArea = styled.div`
     display: flex;
-    align-items: center;
     position: relative;
     bottom: 45px;
-    left: 400px;
 
     li {
         display: inline-block;
@@ -42,11 +40,13 @@ const NavMenuArea = styled.div`
     a {
         color: #fff;
         text-decoration: none;
-        font-size: 24px;
-        align-items: center;
+        font-size: 1.5rem;
         padding: 0 1rem;
         height: 100%;
         cursor: pointer;
+        letter-spacing: 1.75px;
+        text-transform: uppercase;
+        margin-left: 80rem;
     }
 
     a:hover {
@@ -60,6 +60,8 @@ const NavMenuArea = styled.div`
 `;
 
 
+
+
 function Logo() {
     return (
         <div>
@@ -70,6 +72,9 @@ function Logo() {
                     </LogoImage>
                     </Link>
                     <NavMenuArea>
+                        <ul>
+                            <li><NavLink to='/contact'>Contact</NavLink></li>
+                        </ul>
                     </NavMenuArea>
             </LogoContainer>
         </div>
