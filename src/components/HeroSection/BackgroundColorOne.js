@@ -13,28 +13,39 @@ const useStyles = makeStyles((theme) => ({
         top: '100px',
         left: 0,
         right: 0,
-        backgroundColor: '#000022',
-        color: 'white',
+        color: 'black',
         position: 'relative',
         bottom: '50px',
     },
     header: {
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'left',
         alignItems: 'center',
-        textAlign: 'left',
-        marginBottom: '1rem'
+        marginBottom: '1rem',
+        fontSize: '2.5rem',
+        position: 'relative',
+        left: '200px'
     },
     headerLine: {
-        width: '25em',
-        borderColor: '#08D665'
+        width: '65rem',
+        borderColor: '#5288a4',
+        position: 'relative',
+        left: '0'
     },
     bodyDiv: {
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'left',
         justifyContent: 'center',
         textAlign: 'left',
-        width: '25em'
+        width: '25em',
+        lineHeight: '2.5rem',
+        position: 'relative',
+        right: '300px',
+        '@media (max-width: 768px)' : {
+            display: 'flex',
+            flexDirection: 'column',
+
+        }
     }
 }))
 
@@ -43,7 +54,7 @@ function BackgroundColorOne() {
 
     return (
             <div className={classes.section}>
-                <h1 className={classes.header}>Why Coding</h1>
+                <h1 className={classes.header}>About</h1>
                 <hr className={classes.headerLine}></hr>
                 <Container className={classes.bodyDiv}>
                         My coding journey started a year ago. I've done work for startups, small businesses, and started side projects before this journey. 
