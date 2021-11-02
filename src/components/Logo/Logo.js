@@ -8,6 +8,7 @@ import './Logo.css';
 
 
 const LogoContainer = styled.div`
+    display: flex;
     justify-content: space-between;
     flex-direction: row;
     height: 80px;
@@ -16,7 +17,7 @@ const LogoContainer = styled.div`
     background: black;
     margin: 0;
     padding: 0;
-    background-color: #000022;
+    background-color: #5288a4;
 `;
 
 const LogoImage = styled.div`
@@ -26,15 +27,37 @@ const LogoImage = styled.div`
     position: relative;
     top: 5px;
     left: 5px;
+    text-decoration: none;
+`;
+
+const LogoText = styled.div`
+    display: flex;
+    text-decoration: none;
+    letter-spacing: 1.75px;
+    text-transform: uppercase;
+    font-size: 0.75rem; 
+    color: white;
+    margin: 0 20px;
+    margin-top: 2rem;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const NavMenuArea = styled.div`
     display: flex;
     position: relative;
     bottom: 45px;
+    color: white;
 
     li {
         display: inline-block;
+        color: white;
+        width: 1rem;
+        height: 1rem;
+        position: relative;
+        left: 0;
     }
 
     a {
@@ -71,11 +94,9 @@ function Logo() {
                         <img src={myCharacter} style={{ borderRadius: 90, cursor: 'pointer' }} alt='logo'></img>
                     </LogoImage>
                     </Link>
-                    <NavMenuArea>
-                        <ul>
-                            <li><NavLink to='/contact'>Contact</NavLink></li>
-                        </ul>
-                    </NavMenuArea>
+                    <LogoText>
+                        Alex Cortez
+                    </LogoText>
             </LogoContainer>
         </div>
     )
