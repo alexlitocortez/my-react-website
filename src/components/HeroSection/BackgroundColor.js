@@ -70,11 +70,6 @@ function BackgroundColor() {
             <Grid className={classes.hero}>
                 <div className={classes.firstText}>
                     Hi, I'm Alex.
-                    {/* <Link
-                    to='/about'
-                    target='_blank'
-                    style={{ textDecoration: 'none' }}
-                    ><button className={classes.button}>Know More</button></Link> */}
                 </div>
                 <div className={classes.secondText}>
                     Web Developer

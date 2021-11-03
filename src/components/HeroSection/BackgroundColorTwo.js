@@ -4,7 +4,6 @@ import Projects from '../NavMenu/Projects';
 import './BackgroundColorTwo.css';
 import { Link } from 'react-router-dom';
 
-
 const useStyles = makeStyles((theme) => ({
     wholeSection: {
         position: 'relative',
@@ -19,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
         top: '50px',
         left: 0,
         right: 0,
-        backgroundColor: '#000022',
+        backgroundColor: '#5288a4',
         color: 'white',
         position: 'relative',
         marginBottom: '3rem',
@@ -34,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     button: {
         color: 'white',
         fontSize: '16px',
-        backgroundColor: '#7510f7',
+        backgroundColor: '#b22222',
         outline: 'none',
         border: 'none',
         borderRadius: '12px',
