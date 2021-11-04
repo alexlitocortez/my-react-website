@@ -4,21 +4,30 @@ import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import htmlImage from '/Users/l/my-react-website/src/images/html_logo.png';
-import cssImage from '/Users/l/my-react-website/src/images/css_logo.jpeg';
+import cssImage from '/Users/l/my-react-website/src/images/css_logo.png';
 import reactImage from '/Users/l/my-react-website/src/images/react_logo.png';
 import javascriptImage from '/Users/l/my-react-website/src/images/javascript_logo.png';
 import './Section.css';
-
 
 const useStyles = makeStyles((theme) => ({
     body: {
         marginTop: '7em'
     },
     header: {
+        display: 'flex',
+        justifyContent: 'left',
+        alignItems: 'center',
+        position: 'relative',
         textAlign: 'center',
-        marginTop: '10rem',
+        marginTop: '25rem',
         marginBottom: '2rem',
-        fontSize: '32px',
+        fontSize: '2.5rem',
+    },
+    headerLine: {
+        width: '65rem',
+        borderColor: '#5288a4',
+        position: 'relative',
+        left: '0'
     },
     container: {
         ['@media (max-width: 768px)']: {
@@ -55,37 +64,16 @@ function Section() {
 
     return (
         <div className={` ${classes.body} ${classes.container} `}>
-            <div className={classes.header}>Languages I Know</div>
+            <h1 className={classes.header}>Languages I Know</h1>
+            <hr className={classes.headerLine}></hr>
             <div className="skills-container">
                 <img src={htmlImage} alt='html logo' />
                 <img src={cssImage} alt='css logo' />
                 <img src={javascriptImage} alt='javascript logo' />
+            </div>
+            <div className="skills-container-two">
                 <img src={reactImage} alt='react logo' />
             </div>
-            {/* <Grid container spacing={2} className={classes.container}>
-                <Grid item xs={6} className='paperOne'>
-                    <Paper className={classes.paper}>
-                        <img src={htmlImage}></img>
-                    </Paper>
-                </Grid>
-                <Grid item xs={6} className='paperOne'>
-                    <Paper className={classes.paper}>
-                        <img src={cssImage}></img>
-                    </Paper>
-                </Grid>
-            </Grid>
-            <Grid container spacing={2} className={` ${classes.container} ${classes.containerOne} `}>
-                <Grid item xs={6} className='paperOne'>
-                    <Paper className={classes.paper}>
-                        <img src={javascriptImage}></img>
-                    </Paper>
-                </Grid>
-                <Grid item xs={6} className='paperOne'>
-                    <Paper className={classes.paper}>
-                        <img src={reactImage}></img>
-                    </Paper>
-                </Grid>
-            </Grid> */}
         </div>
     )
 }

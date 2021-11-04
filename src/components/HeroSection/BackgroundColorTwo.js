@@ -4,11 +4,17 @@ import Projects from '../NavMenu/Projects';
 import './BackgroundColorTwo.css';
 import { Link } from 'react-router-dom';
 
+
+
+
 const useStyles = makeStyles((theme) => ({
     wholeSection: {
         position: 'relative',
         bottom: '12rem',
         marginTop: '35rem',
+        ['@media (max-width: 768px)']: {
+            marginTop: '10rem'
+        }
     },
     section: {
         height: '400px',
