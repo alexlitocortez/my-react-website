@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
     articleTitle: {
         fontWeight: 400,
-        color: '#08D665',
+        color: 'black',
         marginBottom: '5'
     },
     content: {
@@ -68,17 +68,13 @@ const useStyles = makeStyles((theme) => ({
     }
     }))
 
-
 function Blog() {
     const classes = useStyles();
 
     return (
         <div>
             <Box className={classes.hero}>
-                <Box>Blog</Box>
-            </Box>
-            <Box className={classes.heroSecond}>
-                Read my blog if you're bored
+                <Box style={{ color: '#493b2a' }}>Blog</Box>
             </Box>
             <Grid className={classes.blogsContainer} container spacing={3}>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
@@ -98,14 +94,6 @@ function Blog() {
                             </Typography>
                             </CardContent>
                             <CardActionArea className={classes.cardActions}>
-                            <Box className={classes.author}>
-                                <Avatar src={myCharacter} />
-                                <Box ml={2}>
-                                    <Typography variant='subtitle2' component='p'>
-                                        Alex
-                                    </Typography>
-                                </Box>
-                            </Box>
                             </CardActionArea>
                             </CardActionArea>
                     </Card>
@@ -129,14 +117,7 @@ function Blog() {
                             </Typography>
                             </CardContent>
                         <CardActionArea className={classes.cardActions}>
-                        <Box className={classes.author}>
-                            <Avatar src={myCharacter} />
-                            <Box ml={2}>
-                                <Typography variant='subtitle2' component='p'>
-                                    Alex
-                                </Typography>
-                            </Box>
-                        </Box>
+
                         </CardActionArea>
                         </CardActionArea>
                     </Card>
@@ -160,14 +141,7 @@ function Blog() {
                             </Typography>
                             </CardContent>
                         <CardActionArea className={classes.cardActions}>
-                            <Box className={classes.author}>
-                                <Avatar src={myCharacter} />
-                                <Box ml={2}>
-                                    <Typography variant='subtitle2' component='p'>
-                                        Alex
-                                    </Typography>
-                                </Box>
-                            </Box>
+                            
                         </CardActionArea>
                         </CardActionArea>
                         </Card>

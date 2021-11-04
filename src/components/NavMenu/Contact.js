@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import emailjs from 'emailjs-com';
 import { makeStyles } from '@material-ui/core';
-import { mergeClasses } from '@material-ui/styles';
 
 
 const StyledFormWrapper = styled.div`
@@ -11,6 +10,12 @@ const StyledFormWrapper = styled.div`
     align-items: center;
     height: 100vh;
     padding: 0 20px;
+
+    @media only screen and (max-width: 728px) {
+        display: block;
+        position: relative;
+        top: 500px;
+    }
 `;
 
 const StyledForm = styled.form`
@@ -63,7 +68,7 @@ const StyledButton = styled.button`
 const useStyles = makeStyles((theme) => ({
     button: {
         display: 'block',
-        backgroundColor: '#00BFFF',
+        backgroundColor: '#b22222',
         color: '#fff',
         fontSize: '.9rem',
         border: '0',

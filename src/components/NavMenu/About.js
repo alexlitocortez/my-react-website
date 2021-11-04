@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import imageOne from '../../images/HeroImageOne.jpeg';
-import imageTwo from '../../images/HeroImageTwo.jpeg';
 import imageThree from '/Users/l/my-react-website/src/images/Acim Jpg.jpg';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
