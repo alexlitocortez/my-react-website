@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center'
     },
     statsBox: {
-        backgroundColor: '#152238',
+        backgroundColor: '#5288a4',
         marginTop: '2rem',
         borderRadius: '10px',
         height: '400px'
