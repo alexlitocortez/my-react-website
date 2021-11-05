@@ -7,7 +7,7 @@ import './BackgroundColor.css';
 
 const useStyles = makeStyles((theme) => ({
     section: {
-        height: '600px',
+        height: '800px',
         width: '100%',
         padding: '1rem 0 0',
         textAlign: 'center',

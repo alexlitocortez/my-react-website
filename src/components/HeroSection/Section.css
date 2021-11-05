@@ -31,8 +31,8 @@
 
 @media only screen and (max-width: 768px) {
     .header {
-        justify-content: center;
-        align-content: center;
+        position: relative;
+        left: 400px;
     }
 }
 

@@ -17,8 +17,8 @@
 }
 
 .caricature img {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 200px;
+    max-height: 200px;
     border-radius: 90%;
 }
 
@@ -28,8 +28,10 @@
         flex-direction: column;
         text-align: left;
         justify-items: center;
+        line-height: 2rem;
         position: relative;
         left: 10px;
+        margin-top: 5rem;
     }
 }
 

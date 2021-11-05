@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'left',
         alignItems: 'center',
         position: 'relative',
+        left: '200px',
         textAlign: 'center',
         marginTop: '25rem',
         marginBottom: '2rem',
@@ -30,6 +31,10 @@ const useStyles = makeStyles((theme) => ({
         left: '0'
     },
     container: {
+        width: '100%',
+        padding: '1rem 0 0',
+        left: 0,
+        right: 0,
         ['@media (max-width: 768px)']: {
             display: 'flex',
             flexDirection: 'column',
@@ -64,7 +69,7 @@ function Section() {
 
     return (
         <div className={` ${classes.body} ${classes.container} `}>
-            <h1 className={classes.header}>Languages I Know</h1>
+            <h1 className={classes.header}>Skills</h1>
             <hr className={classes.headerLine}></hr>
             <div className="skills-container">
                 <img src={htmlImage} alt='html logo' />
