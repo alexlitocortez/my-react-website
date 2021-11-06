@@ -18,16 +18,26 @@ const LogoContainer = styled.div`
     margin: 0;
     padding: 0;
     background-color: #5288a4;
+
+    a {
+        text-decoration: none;
+        letter-spacing: 1.75px;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: white;
+        margin: 0 20px;
+        margin-top: 2rem;
+    }
 `;
 
 const LogoImage = styled.div`
     display: flex;
-    width: 75px;
+    width: 100px;
     height: 75px;
     position: relative;
     top: 5px;
     left: 5px;
-    text-decoration: none;
+    letter-spacing: 1.75px;
 `;
 
 const LogoText = styled.div`
@@ -90,13 +100,13 @@ function Logo() {
         <div>
             <LogoContainer>
                     <Link to='/'>
-                    <LogoImage>
-                        <img src={myCharacter} style={{ borderRadius: 90, cursor: 'pointer' }} alt='logo'></img>
-                    </LogoImage>
-                    </Link>
-                    <LogoText>
                         Alex Cortez
-                    </LogoText>
+                    </Link>
+                    <NavMenuArea>
+                        <Link>
+                            About
+                        </Link>
+                    </NavMenuArea>
             </LogoContainer>
         </div>
     )
