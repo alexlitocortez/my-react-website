@@ -79,7 +79,7 @@ const NavMenuArea = styled.div`
         cursor: pointer;
         letter-spacing: 1.75px;
         text-transform: uppercase;
-        margin-left: 80rem;
+        margin-left: 50rem;
     }
 
     a:hover {
@@ -105,6 +105,15 @@ function Logo() {
                     <NavMenuArea>
                         <Link>
                             About
+                        </Link>
+                        <Link>
+                            Projects
+                        </Link>
+                        <Link>
+                            Blog
+                        </Link>
+                        <Link>
+                            Contact
                         </Link>
                     </NavMenuArea>
             </LogoContainer>
