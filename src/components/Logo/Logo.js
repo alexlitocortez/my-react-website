@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import myCharacter from '../../images/caricature.jpg';
 import { Link } from 'react-router-dom';
 import NavMenu from '../NavMenu/NavMenu';
-import { NavLink } from 'react-router-dom';
 import './Logo.css';
+import { HashLink } from 'react-router-hash-link';
+
+
 
 
 const LogoContainer = styled.div`
@@ -30,16 +32,6 @@ const LogoContainer = styled.div`
     }
 `;
 
-const LogoImage = styled.div`
-    display: flex;
-    width: 100px;
-    height: 75px;
-    position: relative;
-    top: 5px;
-    left: 5px;
-    letter-spacing: 1.75px;
-`;
-
 const LogoText = styled.div`
     display: flex;
     text-decoration: none;
@@ -49,6 +41,7 @@ const LogoText = styled.div`
     color: white;
     margin: 0 20px;
     margin-top: 2rem;
+    cursor: pointer;
 
     @media screen and (max-width: 768px) {
         display: none;
@@ -102,20 +95,13 @@ function Logo() {
                     <Link to='/'>
                         Alex Cortez
                     </Link>
-                    <NavMenuArea>
-                        <Link>
-                            About
-                        </Link>
-                        <Link>
-                            Projects
-                        </Link>
-                        <Link>
-                            Blog
-                        </Link>
-                        <Link>
-                            Contact
-                        </Link>
-                    </NavMenuArea>
+                    <LogoText>
+                            <div><Link to='/#about'>About</Link></div>
+                            <div style={{ marginLeft: '1rem' }}>Skills</div>
+                            <div style={{ marginLeft: '1rem' }}>Projects</div>
+                            <div style={{ marginLeft: '1rem' }}>Blog</div>
+                            <div style={{ marginLeft: '1rem' }}>Contact</div>
+                    </LogoText>
             </LogoContainer>
         </div>
     )
