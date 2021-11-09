@@ -71,7 +71,7 @@ function Projects() {
     return (
         <div>
             <Box className={classes.hero}>
-                <Box style={{ color: '#493b2a'}}>My Recent Projects</Box>
+                <Box id='projects' style={{ color: '#493b2a'}}>My Recent Projects</Box>
             </Box>
             <Grid className={classes.blogsContainer} container spacing={3}>
                 <Grid item xs={12} sm={6} md={4} lg={4}>

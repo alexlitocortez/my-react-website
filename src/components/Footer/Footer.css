@@ -1,6 +1,6 @@
 
 .footer-container {
-    background-color: #000022;
+    background-color: #5288a4;
     padding: 1rem 0 0;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@
 }
 
 .fab {
-    color: #08F665;
+    color: #F1E5AC;
     position: relative;
     text-decoration: none;
 }
@@ -85,7 +85,7 @@ h2 {
     .footer-container {
         height: 400px;
         position: relative;
-        top: 45rem;
+        top: 30rem;
     }
 }
 

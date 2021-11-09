@@ -68,7 +68,7 @@ function BackgroundColor() {
     return (
         <div>
             <Grid className={classes.hero}>
-                <div className={classes.firstText}>
+                <div id='about' className={classes.firstText}>
                     Hi, I'm Alex.
                 </div>
                 <div className={classes.secondText}>

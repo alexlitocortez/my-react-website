@@ -14,11 +14,6 @@ function Combining() {
                 It also gives me an insight to different type of marketing software. Knowing marketing and coding allows me to:
                 </Box>
             </div>
-            <ul className="list">
-                <li>Communicate with developers and sales/marketing</li>
-                <li>Create unique software</li>
-                <li>Work with analytics in-depth</li>
-            </ul>
             <div className="container">
                 <Box p={3}>
                 Knowing both skills lets me communicate with both the sales and engineering team. I’ll understand the lingo of engineers and be able to decipher that and communicate it with sales. Doing this makes me a liaison of some sorts. I can interpret and send messages between teams.

@@ -96,11 +96,11 @@ function Logo() {
                         Alex Cortez
                     </Link>
                     <LogoText>
-                            <div><Link to='/#about'>About</Link></div>
-                            <div style={{ marginLeft: '1rem' }}>Skills</div>
-                            <div style={{ marginLeft: '1rem' }}>Projects</div>
-                            <div style={{ marginLeft: '1rem' }}>Blog</div>
-                            <div style={{ marginLeft: '1rem' }}>Contact</div>
+                            <div><HashLink smooth to='/#about'>About</HashLink></div>
+                            <div style={{ marginLeft: '1rem' }}><HashLink smooth to='/#skills'>Skills</HashLink></div>
+                            <div style={{ marginLeft: '1rem' }}><HashLink smooth to='/#projects'>Projects</HashLink></div>
+                            <div style={{ marginLeft: '1rem' }}><HashLink smooth to='/#blog'>Blog</HashLink></div>
+                            <div style={{ marginLeft: '1rem' }}><HashLink smooth to='/#contact'>Contact</HashLink></div>
                     </LogoText>
             </LogoContainer>
         </div>

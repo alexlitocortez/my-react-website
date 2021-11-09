@@ -14,7 +14,7 @@ const StyledFormWrapper = styled.div`
     @media only screen and (max-width: 728px) {
         display: block;
         position: relative;
-        top: 500px;
+        top: 550px;
     }
 `;
 
@@ -106,7 +106,7 @@ export const Contact = () => {
 
         <StyledFormWrapper>
             <StyledForm ref={form} onSubmit={sendEmail}>
-                <h2 style={{ marginBottom: '2rem' }}>Contact Form</h2>
+                <div id='contact'><h2 style={{ marginBottom: '2rem' }}>Contact Form</h2></div>
                 <label>Name</label>
                 <StyledInput type='text' name='name' style={{ marginBottom: '2rem', minHeight: '25px' }}/>
                 <label>Email</label>

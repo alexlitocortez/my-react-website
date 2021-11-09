@@ -69,7 +69,7 @@ function Section() {
 
     return (
         <div className={` ${classes.body} ${classes.container} `}>
-            <h1 className={classes.header}>Skills</h1>
+            <div id='skills'><h1 className={classes.header}>Skills</h1></div>
             <hr className={classes.headerLine}></hr>
             <div className="skills-container">
                 <img src={htmlImage} alt='html logo' />
