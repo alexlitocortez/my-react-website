@@ -6,7 +6,7 @@ import Blog from '../NavMenu/Blog';
 const useStyles = makeStyles((theme) => ({
     wholeSection: {
         position: 'relative',
-        bottom: '15rem'
+        bottom: '30rem'
     },
     section: {
         height: '200px',
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#7510F7',
         color: 'white',
         position: 'relative',
-        marginBottom: '3rem'
+        marginBottom: '1rem'
     },
     projectSection: {
         marginBottom: '5rem'
@@ -31,9 +31,9 @@ function BackgroundColorThree() {
 
     return (
         <div className={classes.wholeSection}>
-        <div id='blog' className='wholeSectionOne'>
-            <Blog />
-        </div>
+            <div id='blog' className='wholeSectionOne'>
+                <Blog />
+            </div>
         </div>
     )
 }

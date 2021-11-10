@@ -8,13 +8,15 @@ const StyledFormWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 400px;
     padding: 0 20px;
+    position: relative;
+    bottom: 15rem;
 
     @media only screen and (max-width: 728px) {
         display: block;
         position: relative;
-        top: 550px;
+        top: 280px;
     }
 `;
 

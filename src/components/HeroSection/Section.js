@@ -11,7 +11,9 @@ import './Section.css';
 
 const useStyles = makeStyles((theme) => ({
     body: {
-        marginTop: '7em'
+        marginTop: '1em',
+        position: 'relative',
+        bottom: '12rem'
     },
     header: {
         display: 'flex',

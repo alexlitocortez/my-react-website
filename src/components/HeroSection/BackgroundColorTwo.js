@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
     wholeSection: {
         position: 'relative',
-        bottom: '12rem',
+        bottom: '28rem',
         marginTop: '35rem',
         ['@media (max-width: 768px)']: {
             marginTop: '10rem'
@@ -65,12 +65,6 @@ function BackgroundColorTwo() {
         <div className='wholeSectionOne'>
             <div className={classes.section}>
                 <h1 className={classes.header}>Check out my projects which have brought me satisfaction and frustration.</h1>
-                <Link
-                    to='/contact'
-                    target='_blank'
-                    style={{ textDecoration: 'none' }}
-                ><button className={classes.button}>Hire Me</button>
-                </Link>
             </div>
             <div className={classes.projectSection}>
                 <Projects />

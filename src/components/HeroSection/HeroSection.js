@@ -1,12 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
-import Card from '@material-ui/core/Card';
 import { BsCodeSlash } from 'react-icons/bs';
 import BackgroundColorOne from './BackgroundColorOne.js';
 import './HeroSection.css';
-import BackgroundColorTwo from './BackgroundColorTwo';
-import BackgroundColorThree from './BackgroundColorThree';
 import BackgroundColor from './BackgroundColor.js';
 import Section from '/Users/l/my-react-website/src/components/HeroSection/Section.js';
 

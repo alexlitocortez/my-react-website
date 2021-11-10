@@ -6,13 +6,12 @@
     flex-direction: column;
     justify-content: center;
     align-self: center;
-    position: static;
+    position: relative;
     left: 0;
     bottom: 0;
     right: 0;
     height: 400px;
 }
-
 
 .logoImage {
     display: flex;
