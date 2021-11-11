@@ -18,7 +18,7 @@ function Footer() {
                         <i className='fab fa-linkedin'></i>
                     </a>
 
-                    <a href='https://github.com/alexthegreat650' target='_blank'>
+                    <a href='https://github.com/alexlitocortez' target='_blank'>
                         <i className='fab fa-github'></i>
                     </a>
             </div>

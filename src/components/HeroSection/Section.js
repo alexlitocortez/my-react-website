@@ -74,7 +74,7 @@ function Section() {
             <div id='skills'><h1 className={classes.header}>Skills</h1></div>
             <hr className={classes.headerLine}></hr>
             <div className="skills-container">
-                <img src={htmlImage} alt='html logo' />
+                <img className='html' src={htmlImage} alt='html logo' />
                 <img src={cssImage} alt='css logo' />
                 <img src={javascriptImage} alt='javascript logo' />
             </div>

@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import imageThree from '/Users/l/my-react-website/src/images/Acim Jpg.jpg';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 export const aboutText = styled.div`
@@ -38,7 +36,6 @@ function About() {
             </BoxTitle>
             <Grid container spacing={2} justify={'center'} style={{ marginTop: 80 }}>
                 <Grid item maxWidth='sm'>
-                    <img src={imageThree} alt='sitting on a fence trail' style={{ maxWidth: 600, maxHeight: 600 }}></img>
                 </Grid>
             </Grid>
         </div>

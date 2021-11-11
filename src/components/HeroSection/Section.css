@@ -9,6 +9,11 @@
     grid-template-columns: 200px 200px 200px;
 }
 
+.html {
+    width: 93px;
+    height: 90px;
+}
+
 .skills-container-two {
     display: flex;
     justify-content: center;
@@ -20,12 +25,12 @@
 }
 
 .skills-container img{
-    max-width: 150px;
+    max-width: 250px;
     height: 100px;
 }
 
 .skills-container-two img {
-    max-width: 130px;
+    max-width: 300px;
     height: 130px;
 }
 
