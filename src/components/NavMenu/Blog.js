@@ -2,10 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
-import { Avatar, Container, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 
@@ -50,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
     },
     card: {
         maxWidth: '90%',
+        maxHeight: '500px',
         marginLeft: '22px'
     },
     media: {
@@ -58,7 +57,8 @@ const useStyles = makeStyles((theme) => ({
     articleTitle: {
         fontWeight: 400,
         color: 'black',
-        marginBottom: '5'
+        marginTop: '1rem',
+        marginLeft: '1rem'
     },
     content: {
         height: '400px',
@@ -79,73 +79,42 @@ function Blog() {
             <Grid className={classes.blogsContainer} container spacing={3}>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
                     <Link to='/learningcoding' style={{ textDecoration: 'none' }}>
-                    <Card className={classes.card}>
-                        <CardActionArea>
-                                <CardMedia
-                                className={classes.media}
-                                image={blogImageOne}
-                                />
-                            <CardContent>
+                        <Card className={classes.card}>
+                            <CardMedia
+                            className={classes.media}
+                            image={blogImageOne}
+                            />
                             <Typography className={classes.articleTitle} gutterBottom variant="h5" component="h2">
                                 Why I'm Learning To Code
                             </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                            It all started when I got on Twitter and started following people like Naval and Sahil who talked about coding as leverage.
-                            </Typography>
-                            </CardContent>
-                            <CardActionArea className={classes.cardActions}>
-                            </CardActionArea>
-                            </CardActionArea>
-                    </Card>
+                        </Card>
                     </Link>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
                     <Link to='/combining' style={{ textDecoration: 'none' }}>
-                    <Card className={classes.card}>
-                        <CardActionArea>
+                        <Card className={classes.card}>
                             <CardMedia
                             className={classes.media}
                             image={blogImageTwo}
                             />
-                            <CardContent>
                             <Typography className={classes.articleTitle} gutterBottom variant="h5" component="h2">
                                 Combining Coding And Marketing
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                            Lebron James, who is a physical force at 6’8 and 250 pounds can not only score at will, he can also pass. 
-                            This allows him to be a unique talent. 
-                            </Typography>
-                            </CardContent>
-                        <CardActionArea className={classes.cardActions}>
-
-                        </CardActionArea>
-                        </CardActionArea>
-                    </Card>
+                            </Typography>                            
+                        </Card>
                     </Link>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
                     <Link to='/schedule' style={{ textDecoration: 'none' }}>
-                    <Card className={classes.card}>
-                        <CardActionArea>
+                        <Card className={classes.card}>
                             <CardMedia
                             className={classes.media}
                             image={blogImageThree}
                             />
-                            <CardContent>
                             <Typography className={classes.articleTitle} gutterBottom variant="h5" component="h2">
                                 My Schedule For Learning To Code
                             </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                            In the beginning, I would code as long as my head could take. 
-                            While that’s not the best strategy, I knew I had to do it because my learning curve was steep.
-                            </Typography>
-                            </CardContent>
-                        <CardActionArea className={classes.cardActions}>
-                            
-                        </CardActionArea>
-                        </CardActionArea>
                         </Card>
-                        </Link>
+                    </Link>
                 </Grid>
             </Grid>
         </div>
