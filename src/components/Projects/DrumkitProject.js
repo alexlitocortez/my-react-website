@@ -3,7 +3,7 @@ import './Drumkit.css'
 import { Drumkit } from './Drumkit'
 
 // image
-import Drums from '../../images/drumset-copy.jpg'
+import Drums from '/Users/l/my-react-website/src/images/drumkit.jpg'
 
 function DrumkitProject() {
   Drumkit()

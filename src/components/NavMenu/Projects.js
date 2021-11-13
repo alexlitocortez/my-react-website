@@ -9,8 +9,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 
 // Images
-import drumkitImage from '/Users/l/my-react-website/src/images/Drumkit.png';
-import warriorsImage from '/Users/l/my-react-website/src/images/Screen Shot 2021-11-10 at 4.17.16 PM.png';
+import drumkitImage from '/Users/l/my-react-website/src/images/Screen Shot 2021-11-13 at 2.39.19 PM.png';
+import warriorsImage from '/Users/l/my-react-website/src/images/Screen Shot 2021-11-13 at 2.16.29 PM.png';
 import dashboardImage from '/Users/l/my-react-website/src/images/dashboardImage.png';
 
 const useStyles = makeStyles((theme) => ({

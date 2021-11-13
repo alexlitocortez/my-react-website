@@ -111,6 +111,7 @@ function Blog() {
                             image={blogImageThree}
                             />
                             <Typography className={classes.articleTitle} gutterBottom variant="h5" component="h2">
+                                My Schedule For Learning To Code
                             </Typography>
                         </Card>
                     </Link>
