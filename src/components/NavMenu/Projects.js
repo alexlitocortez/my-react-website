@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     },
     featureDescription: {
         marginLeft: '1rem',
+        marginBottom: '3rem',
         fontFamily: 'roboto',
         textTransform: 'uppercase'
     },
@@ -76,6 +77,15 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         color: 'white'
     },
+    button: {
+        float: 'right',
+        marginRight: '3rem',
+        backgroundColor: '#b22222',
+        color: '#fff',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        padding: '0.3rem'
+    }
 }))
 
 function Projects() {
@@ -123,7 +133,9 @@ function Projects() {
                                     <li>Responsive Design</li>
                                 </ul>
                             </div>
-                            
+
+                            <Link to='/drumkitproject'><button className={classes.button}>Check it out</button></Link>
+
                         </CardActionArea>
                     </Card>
                     </Link>
@@ -167,6 +179,8 @@ function Projects() {
                                     <li>Responsive Design</li>
                                 </ul>
                             </div>
+
+                            <Link to='/warriors'><button className={classes.button} style={{ position: 'relative', bottom: '2rem' }}>Check it out</button></Link>
 
                         </CardActionArea>
                     </Card>
@@ -212,6 +226,8 @@ function Projects() {
                                     <li>Responsive Design</li>
                                 </ul>
                             </div>
+
+                            <Link to='/websiteinvestment'><button className={classes.button} style={{ position: 'relative', bottom: '2.8rem' }}>Check it out</button></Link>
                             
                         </CardActionArea>
                     </Card>

@@ -164,7 +164,7 @@ const useStyles = makeStyles((theme) => ({
     revenueAdjustment: {
         '@media (max-width: 768px)': {
             position: 'relative',
-            left: '1.8rem'
+            left: '-3rem'
         }
     },
     expenseAdjustment: {
@@ -175,7 +175,7 @@ const useStyles = makeStyles((theme) => ({
     },
     revenuePieAdjustment: {
         position: 'relative',
-        left: '5rem'
+        left: '-3rem'
     },
     inactive: {
         display: 'none'
