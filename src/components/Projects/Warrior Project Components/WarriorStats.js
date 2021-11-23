@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import styles from './WarriorStats.module.css';
+import styles from './Warriors.css';
 import { makeStyles } from '@material-ui/core';
-
 
 // Warrior images
 import curry from '/Users/l/my-react-website/src/images/curry.jpg';
@@ -11,6 +10,7 @@ import oubre from '/Users/l/my-react-website/src/images/oubre.jpg';
 import wiggins from '/Users/l/my-react-website/src/images/wiggins.jpeg';
 import green from '/Users/l/my-react-website/src/images/green.jpg';
 import wiseman from '/Users/l/my-react-website/src/images/wiseman.jpg';
+
 
 const useStyles = makeStyles((theme) => ({
     playerImage: {
@@ -239,6 +239,7 @@ function WarriorStats() {
     // How to turn off dot when another button is clicked
 
     const classes = useStyles()
+
 
     return (
         <div>

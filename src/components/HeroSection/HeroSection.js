@@ -51,10 +51,6 @@ function HeroSection() {
     return (
         <div>
             <BackgroundColor />
-            <BackgroundColorOne />
-            <div className={classes.hero}>
-                <Section />
-            </div>
         </div>
     )
 }
