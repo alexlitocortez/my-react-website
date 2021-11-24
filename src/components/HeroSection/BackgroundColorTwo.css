@@ -1,7 +1,17 @@
 
-@media only screen and (max-width: 768px) {
-    .wholeSectionOne {
-        position: relative;
-        top: 45rem;
-    }
+.wholeSectionOne {
+    background-image: url('/Users/l/my-react-website/src/images/bg copy.png');
+    box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    padding: 8em 8em 0;
+    text-align: center;
+}
+
+.image.fit {
+    display: block;
+    width: 100%;
+}
+
+.drumkit {
+    height: 270px;
+    width: 100%;
 }

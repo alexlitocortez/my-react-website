@@ -5,6 +5,7 @@ import BackgroundColorTwo from '../HeroSection/BackgroundColorTwo';
 import BackgroundColorThree from '../HeroSection/BackgroundColorThree';
 import Contact from '../NavMenu/Contact';
 import BackgroundColor from '../HeroSection/BackgroundColor';
+import Blog from '/Users/l/my-react-website/src/components/NavMenu/Blog.js';
 
 
 function Home() {
@@ -13,7 +14,6 @@ function Home() {
             <HeroSection />
             <BackgroundColorTwo />
             <BackgroundColorThree />
-            <Contact />
             <Footer />
         </div>
     )

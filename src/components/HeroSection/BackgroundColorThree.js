@@ -6,7 +6,6 @@ import Blog from '../NavMenu/Blog';
 const useStyles = makeStyles((theme) => ({
     wholeSection: {
         position: 'relative',
-        bottom: '30rem'
     },
     section: {
         height: '200px',
