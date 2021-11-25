@@ -6,6 +6,24 @@
     animation-duration: 1.5s;
 }
 
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: darkgray;
+    border-radius: 50%;
+    display: block;
+}
+
+.namePlacement {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 32px;
+    color: black;
+}
+
 @-webkit-keyframes fade {
     from {opacity: .4}
     to {opacity: 1}

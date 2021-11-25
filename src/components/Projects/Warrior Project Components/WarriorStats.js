@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import styles from './Warriors.css';
-import { makeStyles } from '@material-ui/core';
+import './Warriors.css';
+import { makeStyles } from '@material-ui/core/styles';
 
 // Warrior images
 import curry from '/Users/l/my-react-website/src/images/curry.jpg';
@@ -19,12 +19,6 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         height: '600px',
         width: '600px'
-    },
-    namePlacement: {
-        display: 'flex',
-        justifyContent: 'center',
-        textAlign: 'center',
-        fontSize: '32px'
     },
     buttonPlacement: {
         display: 'flex',
@@ -120,6 +114,8 @@ const playerName = {
 }
 
 function WarriorStats() {
+    const classes = useStyles()
+
     const [warrior, setWarrior] = useState(curry)
 
     const [warriorName, setWarriorName] = useState(playerName.steph)
@@ -238,7 +234,6 @@ function WarriorStats() {
 
     // How to turn off dot when another button is clicked
 
-    const classes = useStyles()
 
 
     return (
@@ -247,47 +242,47 @@ function WarriorStats() {
                 <img className={classes.image} id='warriorImage' src={warrior}></img>
             </Container>
             <Box className={classes.namePlacement}>
-                <h1><span id='namePlacement'>{warriorName}</span></h1>
+                <h1><span className='namePlacement'>{warriorName}</span></h1>
             </Box>
             <Box className={classes.dotAlign}>
-                <span id='dotOne' className={` ${styles.dot} ${greyDot ? styles.active : ''}` }></span>
-                <span id='dotTwo' className={` ${styles.dot} ${greyDotTwo ? styles.active : ''}` }></span>
-                <span id='dotThree' className={` ${styles.dot} ${greyDotThree ? styles.active : ''}` }></span>
-                <span id='dotFour' className={` ${styles.dot} ${greyDotFour ? styles.active : ''}` }></span>
-                <span id='dotFive' className={` ${styles.dot} ${greyDotFive ? styles.active : ''}` }></span>
+                <span id='dotOne' className={` dot ${greyDot ? 'active' : ''}`}></span>
+                <span id='dotTwo' className={` dot ${greyDotTwo ? 'active' : ''}`}></span>
+                <span id='dotThree' className={` dot ${greyDotThree ? 'active' : ''}`}></span>
+                <span id='dotFour' className={` dot ${greyDotFour ? 'active' : ''}`}></span>
+                <span id='dotFive' className={` dot ${greyDotFive ? 'active' : ''}`}></span>
             </Box>
             <Box className={classes.buttonPlacement}>
             <button onClick={() => setStatsForCurry()} 
-                    className={styles.button} 
+                    className='button' 
                     id='steph' 
                     type='button'>
             Stephen Curry</button>
             <button onClick={() => setStatsForOubre()} 
-                    className={styles.button} 
+                    className='button' 
                     id='kelly' 
                     type='button'>
             Kelly Oubre</button>
             <button onClick={() => setStatsForWiggins()} 
-                    className={styles.button} 
+                    className='button' 
                     id='andrew' 
                     type='button'>
             Andrew Wiggins</button>
             <button onClick={() => setStatsForGreen()} 
-                    className={styles.button} 
+                    className='button' 
                     id='draymond' 
                     type='button'>
             Draymond Green</button>
             <button onClick={() => setStatsForWiseman()} 
-                    className={styles.button} 
+                    className='button' 
                     id='james' 
                     type='button'>
             James Wiseman</button>
             </Box>
             <Container className={classes.statsBox}>
                 <Container className={classes.innerStatsBox}>
-                <h1>PPG: {warriorPointStats}</h1>
-                <h1>RPG: {warriorReboundStats}</h1>
-                <h1>APG: {warriorAssisStats}</h1>
+                <h1 style={{ color: 'black' }}>PPG: {warriorPointStats}</h1>
+                <h1 style={{ color: 'black' }}>RPG: {warriorReboundStats}</h1>
+                <h1 style={{ color: 'black' }}>APG: {warriorAssisStats}</h1>
                 </Container>
             </Container>
         </div>

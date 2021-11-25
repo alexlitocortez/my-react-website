@@ -88,7 +88,7 @@ function DrumkitProject() {
         <div data-key={75} className="key hihat-close">
           <kbd>K</kbd>
         </div>
-        <audio data-key={74} src="snare.wav" />
+        <audio data-key={74} src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/snare.wav" />
         <audio data-key={66} src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/kick.wav" />
         <audio data-key={86} src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/kick.wav" />
         <audio data-key={72} src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/tom-high.wav" />

@@ -45,7 +45,7 @@ function Blog() {
                 <Box id='blog' style={{ color: '#3e3e3e' }}>Blog</Box>
             </Box>
             <div className='container' style={{ marginBottom: '5rem' }}>
-                <div className='row'>
+                <div className='row' id='blogContainer'>
                     <div className='col-4 col-6-medium col-12-small'><Link to='/learningcoding' style={{ textDecoration: 'none' }}>
                         <article className='box style2'>
                             <div className="image featured"><img src={blogImageOne} /></div>

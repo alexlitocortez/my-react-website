@@ -10,10 +10,6 @@
     box-sizing: border-box;
 }
 
-.row > .col-6 {
-    width: 100%;
-}
-
 .row.gtr-uniform > * > :last-child {
     margin-bottom: 0;
 }
@@ -86,9 +82,7 @@
     margin-left: 41.66667%;
 }
 
-.row > .col-6 {
-    width: 50%;
-}
+
 
 .row > .off-6 {
     margin-left: 50%;
@@ -1235,6 +1229,13 @@ form label {
     margin: 0 0 0.5em 0;
 }
 
+input, textarea {
+    font-family: 'Open Sans', sans-serif;
+    color: #888;
+    font-weight: 300;
+    font-size: 13pt;
+}
+
 form input, textarea {
     border: none;
     background: #282828;
@@ -1242,25 +1243,36 @@ form input, textarea {
 }
 
 form input[type=text] {
-    width: 100%;
+    width: 450px;
     line-height: 4em;
     border-radius: 8px;
-    font-weight: 500;
+    font-weight: 300;
+    text-indent: 8px;
 }
 
 input[type='text']::placeholder {
+    padding-left: 0.8px;
+}
+
+input[type='message'] {
     padding-left: 10px;
 }
 
 form input[name=subject] {
     line-height: 4em;
     border-radius: 8px;
+    width: 930px;
+}
+
+form textarea {
+    padding: 0.6em;
+    height: 15em;
+    width: 920px;
 }
 
 form input[type=email],
 form input[type=password],
-form select,
-form textarea {
+form select {
     -moz-transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
     -webkit-transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
     -ms-transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
@@ -1286,10 +1298,6 @@ form textarea {
         box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025), inset 0px 0px 2px 1px #43bff0;
         color: #fff;
     }
-
-form textarea {
-    height: 15em;
-}
 
 form .actions:last-child {
     margin-bottom: 0;
@@ -1330,6 +1338,21 @@ header h2 {
     text-align: center;
     margin: 1rem;
 }
+
+@media screen and (max-width: 980px) {
+    .actions {
+        position: relative;
+        right: 8rem;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .actions {
+        position: relative;
+        right: 1.5rem;
+    }
+}
+
 
 .actions [type='submit'] {
     background-color: #43b3e0;
@@ -1631,3 +1654,38 @@ ul.social {
             font-size: 6em;
         }
 
+/* Media queries */
+
+@media screen and (max-width: 736px) {
+    #nameBox {
+        width: 100vw;
+        position: relative;
+        right: 1rem;
+    }
+
+    #emailBox {
+        width: 100vw;
+        position: relative;
+        right: 1rem;
+    }
+
+    form input[name='subject'] {
+        width: 445px;
+        position: relative;
+        right: 15px;
+    }
+
+    form textarea[type='message'] {
+        width: 430px;
+        position: relative;
+        right: 16px;
+    }
+}
+
+
+@media screen and (max-width: 980px) {
+    .row > .col-6 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
