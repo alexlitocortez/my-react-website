@@ -10,7 +10,7 @@ h2 {
     transform: scale(2.0);
     border-color: #ffc600;
     box-shadow: 0 0 10px #ffc600;
-}
+} 
 
 .drumset {
     display: block;
@@ -54,7 +54,7 @@ h2 {
 
 .key {
     display: inline-block;
-    transition: all 0.07s;
+    transition: 0.07s;
     background: #eaeaea;
     height: 50px;
     width: 32px;
@@ -88,21 +88,21 @@ h2 {
 
 .kick {
     position: absolute;
-    top: 580px;
+    top: 560px;
     left: 590px;
 }
 
 .kick2 {
     position: absolute;
     left: 550px;
-    top: 580px;
+    top: 560px;
 }
 
 .crash,
 .ride {
     position: absolute;
-    top: 260px;
-    left: 530px;
+    top: 190px;
+    left: 430px;
 }
 
 .crash {
@@ -113,7 +113,7 @@ h2 {
 .hihat-close {
     position: absolute;
     top: 200px;
-    right: 500px;
+    right: 395px;
 }
 
 .hihat-open {

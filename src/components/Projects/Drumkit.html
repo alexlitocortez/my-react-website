@@ -102,6 +102,7 @@ html {
 
 .playing {
     transform: scale(2.0);
+    transition-duration: 2s;
     border-color: #ffc600;
     box-shadow: 0 0 10px #ffc600;
 }
@@ -182,8 +183,8 @@ html {
 }
 
 .kick {
-    position: absolute;
-    top: 440px;
+    position: relative;
+    top: 420px;
     left: 590px;
 }
 
@@ -385,12 +386,13 @@ html {
     });
 
     function removeTransition(e) {
-        if(e.propertyName !== 'transform') return; //skip if it's not a transform
-        this.classList.remove('playing');
+        if(e.propertyName !== 'transform') {
+            this.classList.remove('playing');
+        } //skip if it's not a transform
     }
 
     const keys = document.querySelectorAll('.key');
-    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    keys.forEach(keys => keys.addEventListener('keydown', removeTransition));
 </script>
 
 </html>

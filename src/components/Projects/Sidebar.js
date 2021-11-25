@@ -57,7 +57,7 @@ export default function Sidebar() {
                                 <HiOutlineDocumentReport style={{ marginRight: '5px'}}/>
                                 Reports
                                 <li>
-                                <RiArrowDropDownLine style={{ marginLeft: '100px' }}/>
+                                <RiArrowDropDownLine style={{ marginLeft: '92px' }}/>
                                 </li>
                             </li>
                         </ul>

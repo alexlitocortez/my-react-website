@@ -56,11 +56,16 @@
 
         .container {
             width: 100%;
-            max-width: calc(100% - 30px);
         }
 
             .container.medium {
                 width: 100%;
+            }
+
+            #blogContainer {
+                width: 100vw;
+                position: relative;
+                right: 135px;
             }
 
     }

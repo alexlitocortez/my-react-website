@@ -40,17 +40,17 @@ function Footer() {
                 <div className="row">
                         <form method='post' action="#">
                             <div className="row">
-                                <div className="col-6 col-12-small">
+                                <div className="col-6 col-12-small" id='nameBox'>
 									<input type="text" name="name" id="name" placeholder="Name" />
 								</div>
-                                <div className="col-6 col-12-small">
+                                <div className="col-6 col-12-small" id='emailBox'>
 									<input type="text" name="email" id="email" placeholder="Email" />
 								</div>
-								<div className="col-12">
+								<div className="col-12" id='subjectBox'>
 									<input type="message" name="subject" id="subject" placeholder="Subject" />
 								</div>
-                                <div className="col-12">
-									<textarea name="message" id="message" placeholder="Message"></textarea>
+                                <div className="col-12" id='messageBox'>
+									<textarea type='message' name="message" id="message" placeholder="Message"></textarea>
 								</div>
                                 <div className="col-12">
                                     <ul className="actions">

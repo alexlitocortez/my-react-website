@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
         boxSizing: 'border-box',
         alignItems: 'flex-start',
         justifyContent: 'center',
+        ['@media (max-width: 980px)']: {
+            width: '100vw'
+        },
         ['@media (max-width: 768px)']: {
             display: 'flex',
             flexDirection: 'column',
@@ -40,7 +43,12 @@ const useStyles = makeStyles((theme) => ({
     style1: {
         padding: '3em 2em 3.5em 2em',
         width: '400px',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        ['@media (max-width: 768px)']: {
+            maxWidth: '32em',
+            marginLeft: 'auto !important',
+            marginRight: 'auto !important'
+        }
     },
     image: {
         display: 'inline-block',
