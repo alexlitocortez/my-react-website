@@ -1355,6 +1355,23 @@ header h2 {
     }
 }
 
+<<<<<<< HEAD
+=======
+@media screen and (max-width: 980px) {
+    .actions {
+        position: relative;
+        right: 8rem;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .actions {
+        position: relative;
+        right: 1.5rem;
+    }
+}
+
+>>>>>>> 06115feeb58fbe674bf650d117c7879f7c32e4c2
 
 .actions [type='submit'] {
     background-color: #43b3e0;
@@ -1658,6 +1675,7 @@ ul.social {
 
 /* Media queries */
 
+<<<<<<< HEAD
 @media only screen and (min-width: 737px) and (max-width: 980px) {
     
     #nameBox {
@@ -1683,6 +1701,8 @@ ul.social {
     }
 }
 
+=======
+>>>>>>> 06115feeb58fbe674bf650d117c7879f7c32e4c2
 @media screen and (max-width: 736px) {
     #nameBox {
         width: 100vw;
@@ -1699,17 +1719,26 @@ ul.social {
     form input[name='subject'] {
         width: 445px;
         position: relative;
+<<<<<<< HEAD
         right: 17px;
+=======
+        right: 15px;
+>>>>>>> 06115feeb58fbe674bf650d117c7879f7c32e4c2
     }
 
     form textarea[type='message'] {
         width: 430px;
         position: relative;
+<<<<<<< HEAD
         right: 15px;
+=======
+        right: 16px;
+>>>>>>> 06115feeb58fbe674bf650d117c7879f7c32e4c2
     }
 }
 
 
+<<<<<<< HEAD
 
 @media only screen and (min-width: 414px) and (max-width: 736px) {
 
@@ -1717,3 +1746,11 @@ ul.social {
         position: relative;
     }
 }
+=======
+@media screen and (max-width: 980px) {
+    .row > .col-6 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+>>>>>>> 06115feeb58fbe674bf650d117c7879f7c32e4c2

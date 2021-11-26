@@ -28,7 +28,13 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'flex-start',
         justifyContent: 'center',
         ['@media (max-width: 980px)']: {
+<<<<<<< HEAD
             width: '100vw',
+=======
+            width: '100vw'
+        },
+        ['@media (max-width: 768px)']: {
+>>>>>>> 06115feeb58fbe674bf650d117c7879f7c32e4c2
             display: 'flex',
             flexDirection: 'column',
             position: 'relative',
