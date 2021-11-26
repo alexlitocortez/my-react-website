@@ -1337,12 +1337,14 @@ header h2 {
     justify-content: center;
     text-align: center;
     margin: 1rem;
+    position: relative;
+    right: 30px;
 }
 
 @media screen and (max-width: 980px) {
     .actions {
         position: relative;
-        right: 8rem;
+        right: 0.8rem;
     }
 }
 
@@ -1656,6 +1658,31 @@ ul.social {
 
 /* Media queries */
 
+@media only screen and (min-width: 737px) and (max-width: 980px) {
+    
+    #nameBox {
+        width: 500px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    #emailBox {
+        width: 500px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    form input[name='subject'] {
+        width: 445px;
+        position: relative;
+        right: 0.1rem;
+    }
+
+    form textarea[type='message'] {
+        width: 430px;
+    }
+}
+
 @media screen and (max-width: 736px) {
     #nameBox {
         width: 100vw;
@@ -1672,20 +1699,21 @@ ul.social {
     form input[name='subject'] {
         width: 445px;
         position: relative;
-        right: 15px;
+        right: 17px;
     }
 
     form textarea[type='message'] {
         width: 430px;
         position: relative;
-        right: 16px;
+        right: 15px;
     }
 }
 
 
-@media screen and (max-width: 980px) {
-    .row > .col-6 {
-        display: flex;
-        flex-wrap: wrap;
+
+@media only screen and (min-width: 414px) and (max-width: 736px) {
+
+    #subjectBox {
+        position: relative;
     }
 }
