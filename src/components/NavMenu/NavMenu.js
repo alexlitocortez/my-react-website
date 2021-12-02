@@ -10,6 +10,10 @@ export const NavContainer = styled.section`
     background: black;
     padding: 1rem 2rem;
     margin: 0;
+
+    @media screen and (max-width: 414px) {
+        display: none;
+    }
 `;
 
 const NavMenuArea = styled.div`
@@ -35,7 +39,7 @@ const NavMenuArea = styled.div`
         transition: fill 0.25s;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 414px) {
         display: none;
     }
 `;
@@ -45,7 +49,7 @@ const NavMenuArea = styled.div`
 function NavMenu() {
     return (
         <nav>
-        <div>
+        <div className='navContainer'>
             <NavContainer>
                 <NavMenuArea>
                     <ul>
@@ -53,7 +57,7 @@ function NavMenu() {
                         <li><NavLink to='/about'>About</NavLink></li>
                         <li><NavLink to='/blog'>Blog</NavLink></li>
                         <li><NavLink to='/projects'>Projects</NavLink></li>
-                        <li><NavLink to='/contact'>Contact</NavLink></li>
+                        <li id='contact'><NavLink to='/contact'>Contact</NavLink></li>
                     </ul>
                 </NavMenuArea>
             </NavContainer>

@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Container } from '@material-ui/core';
+
 
 // Images
 import myCharacter from '../../images/caricature.jpg';
@@ -13,7 +12,7 @@ function BackgroundColor() {
         <div id='about' className='wrapper style1'>
             <div className='container'>
                 <div className="row">
-                    <div className='col-4 col-5-large col-12-medium'>
+                    <div className='col-4 col-5-large col-12-medium small'>
                         <span className='image fit'><img id='imageOne' src={myCharacter} alt="caricature picture" /></span>
                     </div>
                     <div className='col-8 col-7-large col-12-medium'>

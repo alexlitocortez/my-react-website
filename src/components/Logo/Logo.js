@@ -6,6 +6,7 @@ import NavMenu from '../NavMenu/NavMenu';
 import './Logo.css';
 import { HashLink } from 'react-router-hash-link';
 
+
 const LogoContainer = styled.div`
     background-color: #282828;
     text-align: center;
@@ -70,30 +71,10 @@ const LogoContainer = styled.div`
 `;
 
 
-const LogoText = styled.div`
-    display: flex;
-    text-decoration: none;
-    letter-spacing: 1.75px;
-    text-transform: uppercase;
-    font-size: 0.75rem; 
-    color: white;
-    margin: 0 20px;
-    margin-top: 2rem;
-    cursor: pointer;
-
-    @media screen and (max-width: 768px) {
-        display: none;
-    }
-`;
-
-
-
-
-
 function Logo() {
     return (
         <div>
-            <LogoContainer>
+            <LogoContainer className='logoContainer'>
                 <ul className='container'>
                     <li><HashLink smooth to ='/#about'>About</HashLink></li>
                     <li><HashLink smooth to='/#projects'>Projects</HashLink></li>

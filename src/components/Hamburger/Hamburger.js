@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
+import { bool, func } from 'prop-types';
 import styled from 'styled-components';
 
 const MenuBars = styled(FaBars)`
@@ -11,12 +12,11 @@ const MenuBars = styled(FaBars)`
         background-size: contain;
         height: 30px;
         width: 40px;
-        color: white;
+        color: grey;
         cursor: pointer;
         position: absolute;
-        top: 10px;
-        right: 0;
-        transform: translateY(-50%, 25%);
+        top: 20px;
+        right: 10px;
 
         &:hover {
             opacity: 0.3;
@@ -26,13 +26,18 @@ const MenuBars = styled(FaBars)`
 `;
 
 
-function Hamburger({toggle}) {
+function Hamburger({ open, setOpen }) {
 
     return (
         <div>
-            <MenuBars onClick={toggle} />
+            <MenuBars open={open} onClick={() => setOpen(!open)} />
         </div>
     )
+}
+
+Hamburger.propTypes = {
+    open: bool.isRequired,
+    setOpen: func.isRequired
 }
 
 export default Hamburger

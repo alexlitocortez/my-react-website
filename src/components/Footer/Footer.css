@@ -1338,40 +1338,30 @@ header h2 {
     text-align: center;
     margin: 1rem;
     position: relative;
-    right: 30px;
 }
 
 @media screen and (max-width: 980px) {
     .actions {
         position: relative;
-        right: 0.8rem;
+        left: 0.3rem;
     }
 }
 
 @media screen and (max-width: 736px) {
     .actions {
         position: relative;
-        right: 1.5rem;
+        left: 0.1rem;
     }
 }
 
-<<<<<<< HEAD
-=======
-@media screen and (max-width: 980px) {
+@media screen and (min-width: 320px) and (max-width: 414px) {
     .actions {
+        width: 3rem;
         position: relative;
-        right: 8rem;
+        left: 8rem;
     }
 }
 
-@media screen and (max-width: 736px) {
-    .actions {
-        position: relative;
-        right: 1.5rem;
-    }
-}
-
->>>>>>> 06115feeb58fbe674bf650d117c7879f7c32e4c2
 
 .actions [type='submit'] {
     background-color: #43b3e0;
@@ -1675,7 +1665,6 @@ ul.social {
 
 /* Media queries */
 
-<<<<<<< HEAD
 @media only screen and (min-width: 737px) and (max-width: 980px) {
     
     #nameBox {
@@ -1701,8 +1690,6 @@ ul.social {
     }
 }
 
-=======
->>>>>>> 06115feeb58fbe674bf650d117c7879f7c32e4c2
 @media screen and (max-width: 736px) {
     #nameBox {
         width: 100vw;
@@ -1719,38 +1706,43 @@ ul.social {
     form input[name='subject'] {
         width: 445px;
         position: relative;
-<<<<<<< HEAD
         right: 17px;
-=======
-        right: 15px;
->>>>>>> 06115feeb58fbe674bf650d117c7879f7c32e4c2
     }
 
     form textarea[type='message'] {
         width: 430px;
         position: relative;
-<<<<<<< HEAD
         right: 15px;
-=======
-        right: 16px;
->>>>>>> 06115feeb58fbe674bf650d117c7879f7c32e4c2
     }
 }
 
 
-<<<<<<< HEAD
 
-@media only screen and (min-width: 414px) and (max-width: 736px) {
+@media only screen and (min-width: 415px) and (max-width: 736px) {
 
     #subjectBox {
         position: relative;
     }
 }
-=======
-@media screen and (max-width: 980px) {
-    .row > .col-6 {
-        display: flex;
-        flex-wrap: wrap;
+
+@media screen and (min-width: 320px) and (max-width: 414px) {
+    form input[type=text] {
+        width: 300px;
+        position: relative;
+        left: 1rem;
+    }
+
+    form input[name='subject'] {
+        width: 291.7px;
+        position: relative;
+        position: relative;
+        left: 0.1rem;
+    }
+
+    form textarea[type='message'] {
+        width: 280px;
+        position: relative;
+        left: 0.1rem;
     }
 }
->>>>>>> 06115feeb58fbe674bf650d117c7879f7c32e4c2
+

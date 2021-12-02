@@ -55,7 +55,6 @@ function Footer() {
                                 <div className="col-12">
                                     <ul className="actions">
                                         <li><input type="submit" value="Send Message" /></li>
-                                        <li><input type="reset" value="Clear Form" className="alt" /></li>
                                     </ul>
 								</div>
                             </div>

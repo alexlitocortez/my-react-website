@@ -79,4 +79,9 @@
                 width: 100%;
             }
 
+        .logoContainer {
+            display: none;
+        }
+
     }
+

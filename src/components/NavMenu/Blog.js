@@ -49,7 +49,7 @@ function Blog() {
                     <div className='col-4 col-6-medium col-12-small'><Link to='/learningcoding' style={{ textDecoration: 'none' }}>
                         <article className='box style2'>
                             <div className="image featured"><img src={blogImageOne} /></div>
-                            <h3 className={classes.header}>Why Coding?</h3>
+                            <h3 className={classes.header}>Why I Chose Coding?</h3>
                         </article>
                     </Link></div>
                     <div className='col-4 col-6-medium col-12-small'><Link to='/combining' style={{ textDecoration: 'none' }}>
