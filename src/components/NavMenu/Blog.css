@@ -1335,7 +1335,7 @@
 
 /* Image */
 
-.image {
+.imageBlog {
     display: inline-block;
     position: relative;
     object-fit: cover;

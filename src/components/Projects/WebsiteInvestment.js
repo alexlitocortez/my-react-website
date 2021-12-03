@@ -39,8 +39,8 @@ const DashboardMenuBars = styled(FaBars)`
         color: white;
         cursor: pointer;
         position: absolute;
-        top: 175px;
-        right: 0;
+        top: 7rem;
+        right: 0.6rem;
         transform: translateY(-50%, 25%);
 
         &:hover {
@@ -85,12 +85,9 @@ const useStyles = makeStyles((theme) => ({
         '@media (max-width: 768px)': {
             position: 'relative',
             right: '1.5rem'
-        }
-    },
-    dashboardAdjustment: {
-        '@media (max-width: 768px)': {
-            position: 'relative',
-            right: '1rem'
+        },
+        '@media (max-width: 425px)': {
+            display: 'none'
         }
     },
     cardTitle: {
@@ -262,11 +259,13 @@ function WebsiteInvestment() {
             <div className='main-container'>
                 <Sidebar />
                 <div className='others'>
+                <div className='nichementHeader'>
+                    <h3 style={{ color: '#696969' }}>Website Valuation Estimate</h3>
+                </div>
                 <div className={classes.lineChartAdjustment}>
-                    <h3 style={{ textAlign: 'center', marginTop: '2rem', marginBottom: '2rem', color: '#696969' }}>Website Valuation Estimate</h3>
                     <LineChart />
                 </div>
-                <Container style={{ marginBottom: '15px' }} className={classes.dashboardAdjustment}>
+                <Container style={{ marginBottom: '15px' }} className='dashboardAdjustment'>
                     <HeroDashboard />
                 </Container>
 

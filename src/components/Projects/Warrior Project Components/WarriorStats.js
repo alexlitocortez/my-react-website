@@ -13,32 +13,11 @@ import wiseman from '/Users/l/my-react-website/src/images/wiseman.jpg';
 
 
 const useStyles = makeStyles((theme) => ({
-    playerImage: {
-        display: 'flex',
-        justifyContent: 'center',
-        textAlign: 'center',
-        height: '600px',
-        width: '600px'
-    },
-    buttonPlacement: {
-        display: 'flex',
-        justifyContent: 'space-around',
-        textAlign: 'center',
-        marginTop: '2rem'
-    },
     card: {
         justifyContent: 'center'
     },
     media: {
         height: 240
-    },
-    image: {
-        margin: 'auto',
-        width: 600,
-        padding: '10px',
-        height: 400,
-        justifyContent: 'center',
-        alignItems: 'center'
     },
     statsBox: {
         backgroundColor: '#5288a4',
@@ -238,9 +217,9 @@ function WarriorStats() {
 
     return (
         <div>
-            <Container className={classes.playerImage}>
-                <img className={classes.image} id='warriorImage' src={warrior}></img>
-            </Container>
+            <div className='playerImage'>
+                <img className='image' id='warriorImage' src={warrior}></img>
+            </div>
             <Box className={classes.namePlacement}>
                 <h1><span className='namePlacement'>{warriorName}</span></h1>
             </Box>
@@ -251,33 +230,33 @@ function WarriorStats() {
                 <span id='dotFour' className={` dot ${greyDotFour ? 'active' : ''}`}></span>
                 <span id='dotFive' className={` dot ${greyDotFive ? 'active' : ''}`}></span>
             </Box>
-            <Box className={classes.buttonPlacement}>
-            <button onClick={() => setStatsForCurry()} 
-                    className='button' 
-                    id='steph' 
-                    type='button'>
-            Stephen Curry</button>
-            <button onClick={() => setStatsForOubre()} 
-                    className='button' 
-                    id='kelly' 
-                    type='button'>
-            Kelly Oubre</button>
-            <button onClick={() => setStatsForWiggins()} 
-                    className='button' 
-                    id='andrew' 
-                    type='button'>
-            Andrew Wiggins</button>
-            <button onClick={() => setStatsForGreen()} 
-                    className='button' 
-                    id='draymond' 
-                    type='button'>
-            Draymond Green</button>
-            <button onClick={() => setStatsForWiseman()} 
-                    className='button' 
-                    id='james' 
-                    type='button'>
-            James Wiseman</button>
-            </Box>
+            <div className='buttonPlacement'>
+                <button onClick={() => setStatsForCurry()} 
+                        className='button' 
+                        id='steph' 
+                        type='button'>
+                Stephen Curry</button>
+                <button onClick={() => setStatsForOubre()} 
+                        className='button' 
+                        id='kelly' 
+                        type='button'>
+                Kelly Oubre</button>
+                <button onClick={() => setStatsForWiggins()} 
+                        className='button' 
+                        id='andrew' 
+                        type='button'>
+                Andrew Wiggins</button>
+                <button onClick={() => setStatsForGreen()} 
+                        className='button' 
+                        id='draymond' 
+                        type='button'>
+                Draymond Green</button>
+                <button onClick={() => setStatsForWiseman()} 
+                        className='button' 
+                        id='james' 
+                        type='button'>
+                James Wiseman</button>
+            </div>
             <Container className={classes.statsBox}>
                 <Container className={classes.innerStatsBox}>
                 <h1 style={{ color: 'black' }}>PPG: {warriorPointStats}</h1>

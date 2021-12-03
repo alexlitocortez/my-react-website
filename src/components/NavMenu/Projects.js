@@ -66,16 +66,6 @@ function Projects() {
             <div className='container'>
                 <div className='row' id='projectContainer'>
                     <div id='projectBox'>
-                        <section className={` ${classes.box} ${classes.style1} `}><Link to='/DrumkitProject' style={{ textDecoration: 'none' }}>
-                            <span className={` ${classes.image} ${classes.fit} `}>
-                                <img className='drumkit' src={drumkitImage} />
-                            </span>
-                            <h3 style={{ color: 'black' }}>Drumkit Sounds</h3>
-                        </Link>
-                        
-                        </section>
-                    </div>
-                    <div id='projectBox'>
                         <section className={` ${classes.box} ${classes.style1} `}><Link to='/warriors' style={{ textDecoration: 'none' }}>
                             <span className={` ${classes.image} ${classes.fit} `}>
                                 <img className='drumkit' src={warriorsImage} />

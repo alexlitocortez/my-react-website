@@ -38,3 +38,21 @@
 .close:hover {
     background-color: red;
 }
+
+
+
+
+@media screen and (max-width: 768px) {
+    .lineAdjustment {
+        position: relative;
+        left: 2.2rem;
+        border: 1px solid red;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .lineAdjustment {
+        width: 10px;
+        border: 1px solid red;
+    }
+}

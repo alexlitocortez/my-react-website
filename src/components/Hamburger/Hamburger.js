@@ -15,7 +15,7 @@ const MenuBars = styled(FaBars)`
         color: grey;
         cursor: pointer;
         position: absolute;
-        top: 20px;
+        top: 0.6rem;
         right: 10px;
 
         &:hover {

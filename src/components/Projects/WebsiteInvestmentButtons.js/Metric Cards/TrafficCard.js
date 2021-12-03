@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Card from '@material-ui/core/Card';
 import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import TrafficChart from '/Users/l/my-react-website/src/components/Projects/Charts/TrafficChart.js';
 import TrafficButton from '/Users/l/my-react-website/src/components/Projects/WebsiteInvestmentButtons.js/Metric Buttons/TrafficButton.js';
-import '/Users/l/my-react-website/src/components/Projects/WebsiteInvestmentButtons.js/Metric Cards/CloseButton.css';
+import './CloseButton.css';
 
 const Line = styled.div`
     height: 0.4px;
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '70px',
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)',
         '@media (max-width: 768px)': {
-            width: '410px'
+            width: '300px'
         }
     },
     cardTitle: {
@@ -38,12 +38,10 @@ const useStyles = makeStyles((theme) => ({
         '@media (max-width: 768px)': {
             position: 'relative',
             left: '2rem'
-        }
-    },
-    lineAdjustment: {
-        '@media (max-width: 768px)': {
-            position: 'relative',
-            left: '2.2rem'
+        },
+        '@media (max-width: 320px)': {
+            display: 'flex',
+            textAlign: 'center'
         }
     },
     trafficAdjustment: {
@@ -62,6 +60,9 @@ const useStyles = makeStyles((theme) => ({
         display: 'none'
     }
 }))
+
+
+
 
 function TrafficCard() {
 
@@ -93,7 +94,7 @@ function TrafficCard() {
                     }}>
                     </div>
             </Container>
-            <Line className={classes.lineAdjustment} />
+            <Line className='lineAdjustment' />
             <div className={classes.trafficAdjustment}>
                 <TrafficChart />
             </div>

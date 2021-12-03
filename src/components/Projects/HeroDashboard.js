@@ -22,17 +22,22 @@ const MoneyMaker = styled.button`
     justify-content: space-around;
 `;
 
+
 const useStyles = makeStyles((theme) => ({
     positioning: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        '@media (max-width: 375px)': {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+        }
     },
     card: {
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)',
         height: '300px',
         width: '100%',
-        flex: '1'
     },
     boxOne: {
         width: '5px',

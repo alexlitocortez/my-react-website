@@ -13,7 +13,7 @@ function BackgroundColor() {
             <div className='container'>
                 <div className="row">
                     <div className='col-4 col-5-large col-12-medium small'>
-                        <span className='image fit'><img id='imageOne' src={myCharacter} alt="caricature picture" /></span>
+                        <span className='imageAbout fit'><img id='imageOne' src={myCharacter} alt="caricature picture" /></span>
                     </div>
                     <div className='col-8 col-7-large col-12-medium'>
                         <header id='aboutSection'>

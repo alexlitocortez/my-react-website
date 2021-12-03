@@ -1,3 +1,10 @@
+
+.nichementHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .main-container {
     display: flex;
 }
@@ -23,3 +30,38 @@
         display: none;
     }
 } 
+
+@media screen and (max-width: 375px) {
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .nichementHeader {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nichementHeader {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .dashboardAdjustment {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+

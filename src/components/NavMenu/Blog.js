@@ -48,19 +48,19 @@ function Blog() {
                 <div className='row' id='blogContainer'>
                     <div className='col-4 col-6-medium col-12-small'><Link to='/learningcoding' style={{ textDecoration: 'none' }}>
                         <article className='box style2'>
-                            <div className="image featured"><img src={blogImageOne} /></div>
+                            <div className="imageBlog featured"><img src={blogImageOne} /></div>
                             <h3 className={classes.header}>Why I Chose Coding?</h3>
                         </article>
                     </Link></div>
                     <div className='col-4 col-6-medium col-12-small'><Link to='/combining' style={{ textDecoration: 'none' }}>
                         <article className='box style2'>
-                            <div className="image featured"><img src={blogImageTwo} /></div>
+                            <div className="imageBlog featured"><img src={blogImageTwo} /></div>
                             <h3 className={classes.header}>Coding And Marketing</h3>
                         </article>
                     </Link></div>
                     <div className='col-4 col-6-medium col-12-small'><Link to='/schedule' style={{ textDecoration: 'none' }}>
                         <article className='box style2'>
-                            <div className="image featured"><img src={blogImageThree} /></div>
+                            <div className="imageBlog featured"><img src={blogImageThree} /></div>
                             <h3 className={classes.header}>Schedule For Learning</h3>
                         </article>
                     </Link></div>
