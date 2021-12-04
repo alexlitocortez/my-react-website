@@ -1,21 +1,22 @@
 import React, {useState} from 'react';
 import Card from '@material-ui/core/Card';
-import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
+import { FaWindowClose } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import TrafficChart from '/Users/l/my-react-website/src/components/Projects/Charts/TrafficChart.js';
 import TrafficButton from '/Users/l/my-react-website/src/components/Projects/WebsiteInvestmentButtons.js/Metric Buttons/TrafficButton.js';
 import './CloseButton.css';
 
-const Line = styled.div`
-    height: 0.4px;
-    width: 25em;
-    transform: rotate(0deg);
-    border: 1px solid #E0E0E0;
-    display: block;
+const CloseButton = styled(FaWindowClose)`
+    height: 1.5rem;
+    width: 1.5rem;
     position: relative;
-    top: 30px;
+    left: 26rem;
+    bottom: 2.5rem;
+    cursor: pointer;
+    color: red;
 `;
+
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -25,29 +26,12 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)',
         '@media (max-width: 768px)': {
             width: '300px'
-        }
-    },
-    cardTitle: {
-        fontWeight: 800,
-        color: 'black',
-        position: 'relative',
-        color: '#696969',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        '@media (max-width: 768px)': {
-            position: 'relative',
-            left: '2rem'
         },
         '@media (max-width: 320px)': {
-            display: 'flex',
-            textAlign: 'center'
+            width: '10rem'
         }
     },
     trafficAdjustment: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
         marginTop: '3rem',
         position: 'relative',
         right: '1rem',
@@ -86,15 +70,13 @@ function TrafficCard() {
                 showTraffic ? <TrafficButton /> : null
             }
         <Card className={` ${classes.card} ${show ? classes.inactive : ''} `}>
-            <Container className={classes.cardTitle}>
-                Traffic
-                    <div className='close' id='close' onClick={() => {
+            <CloseButton onClick={() => {
                         toggleShow();
-                        toggleDiv();
-                    }}>
-                    </div>
-            </Container>
-            <Line className='lineAdjustment' />
+                        toggleDiv();}}>
+            </CloseButton>
+            <div className='cardTitle'>
+                Traffic
+            </div>
             <div className={classes.trafficAdjustment}>
                 <TrafficChart />
             </div>
@@ -104,5 +86,3 @@ function TrafficCard() {
 }
 
 export default TrafficCard
-
-// 1. First solution is to use useEffect with useState

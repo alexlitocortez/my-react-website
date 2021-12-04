@@ -59,7 +59,14 @@ const Line = styled.div`
     display: block;
     position: relative;
     top: 30px;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `;
+
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -90,25 +97,6 @@ const useStyles = makeStyles((theme) => ({
             display: 'none'
         }
     },
-    cardTitle: {
-        fontWeight: 800,
-        color: 'black',
-        position: 'relative',
-        color: '#696969',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        '@media (max-width: 768px)': {
-            position: 'relative',
-            left: '2rem'
-        }
-        },
-    lineAdjustment: {
-        '@media (max-width: 768px)': {
-        position: 'relative',
-        left: '2.2rem'
-        }
-    },
     blogsContainer: {
         position: 'relative',
         justifyContent: 'space-around',
@@ -137,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '70px',
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)',
         '@media (max-width: 768px)': {
-            width: '410px'
+            width: '20rem'
         }
     },
     cardAction: {
@@ -274,14 +262,13 @@ function WebsiteInvestment() {
                             showTraffic ? <TrafficButton /> : null
                         }
                         <Card className={` ${classes.card} ${show ? classes.inactive : ''} `} id='card'>
-                            <Container className={classes.cardTitle}>
+                            <div className='cardTitle'>
                                 Traffic
                                 <div className='close' onClick={() => {
                                     toggleShow();
                                     toggleDiv();
                                 }}></div>
-                            </Container>
-                            <Line className={classes.lineAdjustment} />
+                            </div>
                             <div className={classes.trafficAdjustment}>
                                 <TrafficChart />
                             </div>
@@ -297,7 +284,6 @@ function WebsiteInvestment() {
                                     toggleDivTwo();
                                 }}></div>
                             </Container>
-                            <Line className={classes.lineAdjustment} />
                             <div className={` ${classes.cardAction} ${classes.revenueAdjustment} `}>
                                 <RevenueChart />
                             </div>
@@ -313,7 +299,6 @@ function WebsiteInvestment() {
                                     toggleDivThree();
                                 }}></div>
                             </Container>
-                            <Line className={classes.lineAdjustment} />
                             <div className={` ${classes.cardAction} ${classes.expenseAdjustment} `}>
                                 <ExpensesChart />
                             </div>
@@ -329,7 +314,6 @@ function WebsiteInvestment() {
                                     toggleDivFour();
                                 }}></div>
                             </Container>
-                            <Line className={classes.lineAdjustment} />
                             <div className={classes.revenuePieAdjustment}>
                                 <RevenuePie />
                             </div>

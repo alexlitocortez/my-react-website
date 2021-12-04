@@ -1,20 +1,11 @@
 import React, {useState} from 'react';
 import Card from '@material-ui/core/Card';
-import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import RevenueChart from '../../Charts/RevenueChart';
 import RevenueButton from '../Metric Buttons/RevenueButton';
+import './CloseButton.css';
 
-const Line = styled.div`
-    height: 0.4px;
-    width: 25em;
-    transform: rotate(0deg);
-    border: 1px solid #E0E0E0;
-    display: block;
-    position: relative;
-    top: 30px;
-`;
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -23,26 +14,10 @@ const useStyles = makeStyles((theme) => ({
         padding: '70px',
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)',
         '@media (max-width: 768px)': {
-            width: '410px'
-        }
-    },
-    cardTitle: {
-        fontWeight: 800,
-        color: 'black',
-        position: 'relative',
-        color: '#696969',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        '@media (max-width: 768px)': {
-            position: 'relative',
-            left: '2rem'
-        }
-    },
-    lineAdjustment: {
-        '@media (max-width: 768px)': {
-            position: 'relative',
-            left: '2.2rem'
+            width: '300px'
+        },
+        '@media (max-width: 320px)': {
+            width: '10rem'
         }
     },
     revenueAdjustment: {
@@ -50,12 +25,6 @@ const useStyles = makeStyles((theme) => ({
             position: 'relative',
             left: '1.8rem'
         }
-    },
-    cardAction: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: '3rem'
     },
     inactive: {
         display: 'none'
@@ -86,16 +55,17 @@ function RevenueCard() {
                 showRevenue ? <RevenueButton /> : null
             }
         <Card className={` ${classes.card} ${show ? classes.inactive : ''}`}>
-            <Container className={classes.cardTitle}>
-                Revenue
-                    <div className='close' id='close' onClick={() => {
-                        toggleShow();
-                        toggleDiv();
-                    }}>
-                    </div>
-            </Container>
-            <Line className={classes.lineAdjustment} />
-            <div className={` ${classes.revenueAdjustment} ${classes.cardAction}`}>
+            <div className='cardTitle'>
+                <div className='revenueTitle'>
+                    Revenue
+                </div>
+                <div className='close' id='close' onClick={() => {
+                    toggleShow();
+                    toggleDiv();
+                }}>
+                </div>
+            </div>
+            <div className={classes.revenueAdjustment}>
                 <RevenueChart />
             </div>
         </Card>

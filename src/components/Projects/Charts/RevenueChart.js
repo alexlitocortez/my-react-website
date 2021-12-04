@@ -1,5 +1,5 @@
 import React from "react";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
 const data = [
   {
@@ -18,22 +18,24 @@ const data = [
 
 export default function RevenueChart() {
   return (
-    <BarChart
-      width={500}
-      height={300}
-      data={data}
-      margin={{
-        top: 5,
-        right: 50,
-        left: -4,
-        bottom: 5
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Bar dataKey="revenue" fill="#82ca9d" />
-    </BarChart>
+    <ResponsiveContainer width={'99%'} height={300} className='chartPosition'>
+      <BarChart
+      className='chart'
+        height={300}
+        data={data}
+        margin={{
+          top: 5,
+          right: 10,
+          left: 10,
+          bottom: 5
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Bar dataKey="revenue" fill="#82ca9d" />
+      </BarChart>
+    </ResponsiveContainer>
   );
 }

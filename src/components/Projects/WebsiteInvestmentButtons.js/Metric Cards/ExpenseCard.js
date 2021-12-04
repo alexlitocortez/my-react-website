@@ -94,7 +94,6 @@ function ExpenseCard() {
 
                         </div>
                 </Container>
-                <Line className={classes.lineAdjustment} />
                 <div className={` ${classes.expenseAdjustment} ${classes.cardAction}`}>
                     <ExpensesChart />
                 </div>

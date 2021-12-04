@@ -9,6 +9,15 @@
     display: flex;
 }
 
+.cardTitle {
+    font-weight: 800;
+    color: black;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .others {
     flex: 4;
 }
@@ -60,8 +69,10 @@
         justify-content: center;
         align-items: center;
     }
+
+    .cardTitle {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+    }
 }
-
-
-
-
