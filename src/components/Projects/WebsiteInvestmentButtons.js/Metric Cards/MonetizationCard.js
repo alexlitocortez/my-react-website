@@ -1,20 +1,19 @@
 import React, {useState} from 'react'
 import Card from '@material-ui/core/Card';
-import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
+import { FaWindowClose } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import RevenuePie from '../../Charts/RevenuePie';
 import MonetizationButton from '../Metric Buttons/MonetizationButton';
 
-
-const Line = styled.div`
-    height: 0.4px;
-    width: 25em;
-    transform: rotate(0deg);
-    border: 1px solid #E0E0E0;
-    display: block;
+const CloseButton = styled(FaWindowClose)`
+    height: 1.5rem;
+    width: 1.5rem;
     position: relative;
-    top: 30px;
+    left: 26rem;
+    bottom: 2.5rem;
+    cursor: pointer;
+    color: red;
 `;
 
 const useStyles = makeStyles((theme) => ({
@@ -38,12 +37,6 @@ const useStyles = makeStyles((theme) => ({
         '@media (max-width: 768px)': {
             position: 'relative',
             left: '2rem'
-        }
-    },
-    lineAdjustment: {
-        '@media (max-width: 768px)': {
-            position: 'relative',
-            left: '2.2rem'
         }
     },
     revenuePieAdjustment: {
@@ -83,15 +76,14 @@ function MonetizationCard() {
                 showMonetization ? <MonetizationButton /> : null
             }
         <Card className={` ${classes.card} ${show ? classes.inactive : ''}`}>
-            <Container className={classes.cardTitle}>
+            <CloseButton onClick={() => {
+                    toggleShow();
+                    toggleDiv();
+                }}>
+            </CloseButton>
+            <div className='cardTitle'>
                 Monetization Split
-                    <div className='close' id='close' onClick={() => {
-                        toggleShow();
-                        toggleDiv();
-                    }}>
-                    </div>
-            </Container>
-            <Line className={classes.lineAdjustment} />
+            </div>
             <div className={classes.revenuePieAdjustment}>
                 <RevenuePie />
             </div>

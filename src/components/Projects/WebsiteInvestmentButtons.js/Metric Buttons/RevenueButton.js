@@ -7,22 +7,26 @@ import RevenueCard from '../Metric Cards/RevenueCard.js';
 const useStyles = makeStyles((theme) => ({
     buttonStyle: {
         cursor: 'pointer',
-        color: 'white',
-        backgroundColor: '#7510F7',
+        color: '#FFFFFF',
+        backgroundColor: '#a9a9a9',
         fontSize: '14px',
         fontFamily: 'sans-serif',
         textTransform: 'capitalize',
         width: '8em',
         height: '5em',
-        padding: '10px',
-        marginBottom: '3rem',
-        borderRadius: '10%',
+        padding: '0.35em 1.2em',
+        margin: '0 0.3em 0.3em 0',
+        border: 'none',
+        borderRadius: '0.3em',
+        transition: 'all 0.2s',
+        textDecoration: 'none',
+        textAlign: 'center',
         outline: 'none',
         borderColor: '#3f51b5',
         '&:hover': {
-            padding: '12px',
-            transition: '0.3s',
-            transform: 'translateX(1em)'
+            transform: 'scale(1.1)',
+            backgroundColor: 'white',
+            color: 'black'
         }
     }
 }))
@@ -48,7 +52,8 @@ function RevenueButton() {
                 toggleButton();
                 toggleRevenueChart();
                 }}
-                >Show Revenue</button>
+                >Show Revenue
+            </button>
                 {
                     showRevenueChart ? <RevenueCard /> : null
                 }

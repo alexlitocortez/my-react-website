@@ -2,19 +2,19 @@ import React, {useState} from 'react'
 import Card from '@material-ui/core/Card';
 import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
+import { FaWindowClose } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import ExpensesChart from '../../Charts/ExpensesChart';
 import ExpensesButton from '../Metric Buttons/ExpensesButton';
 
-
-const Line = styled.div`
-    height: 0.4px;
-    width: 25em;
-    transform: rotate(0deg);
-    border: 1px solid #E0E0E0;
-    display: block;
+const CloseButton = styled(FaWindowClose)`
+    height: 1.5rem;
+    width: 1.5rem;
     position: relative;
-    top: 30px;
+    left: 26rem;
+    bottom: 2.5rem;
+    cursor: pointer;
+    color: red;
 `;
 
 const useStyles = makeStyles((theme) => ({
@@ -85,15 +85,15 @@ function ExpenseCard() {
                     showExpenses ? <ExpensesButton /> : null
                 }
             <Card className={` ${classes.card} ${show ? classes.inactive : ''}`}>
-                <Container className={classes.cardTitle}>
-                    Expense
-                        <div className='close' id='close' onClick={() => {
+                <CloseButton onClick={() => {
                             toggleShow();
                             toggleDiv();
                         }}>
 
-                        </div>
-                </Container>
+                </CloseButton>
+                <div className='cardTitle'>
+                    Expenses
+                </div>
                 <div className={` ${classes.expenseAdjustment} ${classes.cardAction}`}>
                     <ExpensesChart />
                 </div>

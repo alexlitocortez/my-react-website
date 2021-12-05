@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
+import { FaWindowClose } from 'react-icons/fa';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
@@ -50,22 +51,16 @@ const DashboardMenuBars = styled(FaBars)`
     }
 `;
 
-const Line = styled.div`
-    height: 0.4px;
-    width: 25em;
-    transform: rotate(0deg);
-    border: 1px solid #E0E0E0;
-    background-color: #E0E0E0;
-    display: block;
+
+const CloseButton = styled(FaWindowClose)`
+    height: 1.5rem;
+    width: 1.5rem;
     position: relative;
-    top: 30px;
-
-    @media screen and (max-width: 768px) {
-        display: none;
-    }
+    left: 26rem;
+    bottom: 2.5rem;
+    cursor: pointer;
+    color: red;
 `;
-
-
 
 
 const useStyles = makeStyles((theme) => ({
@@ -76,7 +71,8 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(2),
     },
     title: {
-        flexGrow: 1
+        flexGrow: 1,
+        fontWeight: '800'
     },
     hero: {
         backgroundColor: '#fff',
@@ -120,8 +116,8 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
     },
     card: {
-        width: '400px',
-        height: '350px',
+        width: '25rem',
+        height: '25rem',
         padding: '70px',
         boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)',
         '@media (max-width: 768px)': {
@@ -133,6 +129,10 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: '3rem'
+    },
+    cardActions: {
+        marginTop: '3rem',
+        boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.2)'
     },
     trafficAdjustment: {
         display: 'flex',
@@ -147,20 +147,30 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     revenueAdjustment: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '3rem',
+        position: 'relative',
+        right: '1rem',
         '@media (max-width: 768px)': {
             position: 'relative',
-            left: '2rem'
+            left: '1rem'
         }
     },
     expenseAdjustment: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '3rem',
+        position: 'relative',
+        right: '1rem',
         '@media (max-width: 768px)': {
             position: 'relative',
             left: '1.6rem'
         }
     },
     revenuePieAdjustment: {
-        position: 'relative',
-        left: '-3rem',
         '@media (max-width: 768px)': {
             position: 'relative',
         }
@@ -261,13 +271,13 @@ function WebsiteInvestment() {
                         {
                             showTraffic ? <TrafficButton /> : null
                         }
-                        <Card className={` ${classes.card} ${show ? classes.inactive : ''} `} id='card'>
-                            <div className='cardTitle'>
-                                Traffic
-                                <div className='close' onClick={() => {
+                        <Card className={` ${classes.card} ${show ? classes.inactive : ''} `}>
+                            <CloseButton onClick={() => {
                                     toggleShow();
                                     toggleDiv();
-                                }}></div>
+                            }}></CloseButton>
+                            <div className='cardTitle'>
+                                Traffic
                             </div>
                             <div className={classes.trafficAdjustment}>
                                 <TrafficChart />
@@ -277,14 +287,14 @@ function WebsiteInvestment() {
                             showRevenue ? <RevenueButton /> : null
                         }
                         <Card className={` ${classes.card} ${showTwo ? classes.inactive : ''}`}>
-                            <Container className={classes.cardTitle}>
-                                Revenue
-                                <div className='close' onClick={() => {
+                            <CloseButton onClick={() => {
                                     toggleShowTwo();
                                     toggleDivTwo();
-                                }}></div>
-                            </Container>
-                            <div className={` ${classes.cardAction} ${classes.revenueAdjustment} `}>
+                            }}></CloseButton>
+                            <div className='cardTitle'>
+                                Revenue
+                            </div>
+                            <div  className={classes.revenueAdjustment}>
                                 <RevenueChart />
                             </div>
                         </Card>
@@ -292,13 +302,13 @@ function WebsiteInvestment() {
                             showExpenses ? <ExpensesButton /> : null
                         }
                         <Card className={` ${classes.card} ${showThree ? classes.inactive : ''}`}>
-                            <Container className={classes.cardTitle}>
-                                Expenses
-                                <div className='close' onClick={() => {
+                            <CloseButton onClick={() => {
                                     toggleShowThree();
                                     toggleDivThree();
-                                }}></div>
-                            </Container>
+                            }}></CloseButton>
+                            <div className='cardTitle'>
+                                Expenses
+                            </div>
                             <div className={` ${classes.cardAction} ${classes.expenseAdjustment} `}>
                                 <ExpensesChart />
                             </div>
@@ -307,14 +317,14 @@ function WebsiteInvestment() {
                             showMonetization ? <MonetizationButton /> : null
                         }
                         <Card className={` ${classes.card} ${showFour ? classes.inactive : ''}`}>
-                            <Container className={classes.cardTitle}>
-                                Monetization Split
-                                <div className='close' onClick={() => {
+                            <CloseButton onClick={() => {
                                     toggleShowFour();
                                     toggleDivFour();
-                                }}></div>
-                            </Container>
-                            <div className={classes.revenuePieAdjustment}>
+                            }}></CloseButton>
+                            <div className='cardTitle'>
+                                Monetization Split
+                            </div>
+                            <div className={` ${classes.revenuePieAdjustment} ${classes.cardActions} `}>
                                 <RevenuePie />
                             </div>
                         </Card>

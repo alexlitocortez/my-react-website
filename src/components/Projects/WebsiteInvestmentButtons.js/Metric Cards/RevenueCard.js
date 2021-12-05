@@ -1,10 +1,21 @@
 import React, {useState} from 'react';
 import Card from '@material-ui/core/Card';
 import styled from 'styled-components';
+import { FaWindowClose } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import RevenueChart from '../../Charts/RevenueChart';
 import RevenueButton from '../Metric Buttons/RevenueButton';
-import './CloseButton.css';
+import '/Users/l/my-react-website/src/components/Projects/WebsiteInvestmentButtons.js/Metric Cards/CloseButton.css'
+
+const ClosedButton = styled(FaWindowClose)`
+    height: 1.5rem;
+    width: 1.5rem;
+    position: relative;
+    left: 26rem;
+    bottom: 2.5rem;
+    cursor: pointer;
+    color: red;
+`;
 
 
 const useStyles = makeStyles((theme) => ({
@@ -55,15 +66,13 @@ function RevenueCard() {
                 showRevenue ? <RevenueButton /> : null
             }
         <Card className={` ${classes.card} ${show ? classes.inactive : ''}`}>
+            <ClosedButton onClick={() => {
+                toggleShow();
+                toggleDiv();
+            }}>
+            </ClosedButton>
             <div className='cardTitle'>
-                <div className='revenueTitle'>
-                    Revenue
-                </div>
-                <div className='close' id='close' onClick={() => {
-                    toggleShow();
-                    toggleDiv();
-                }}>
-                </div>
+                Revenue
             </div>
             <div className={classes.revenueAdjustment}>
                 <RevenueChart />

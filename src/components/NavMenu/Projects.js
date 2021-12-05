@@ -63,28 +63,42 @@ function Projects() {
             <Box id='projects' className={classes.hero}>
                 <Box style={{ color: '#3e3e3e' }}>Projects</Box>
             </Box>
-            <div className='container'>
-                <div className='row' id='projectContainer'>
-                    <div id='projectBox'>
-                        <section className={` ${classes.box} ${classes.style1} `}><Link to='/warriors' style={{ textDecoration: 'none' }}>
-                            <span className={` ${classes.image} ${classes.fit} `}>
-                                <img className='drumkit' src={warriorsImage} />
-                            </span>
-                            <h3 style={{ color: 'black' }}>Warrior Player Stats</h3>
-                        </Link>
-                        
-                        </section>
-                    </div>
-                    <div id='projectBox'>
-                        <section className={` ${classes.box} ${classes.style1} `}><Link to='/websiteinvestment' style={{ textDecoration: 'none' }}>
-                            <span className={` ${classes.image} ${classes.fit} `}>
-                                <img className='drumkit' src={dashboardImage} />
-                            </span>
-                            <h3 style={{ color: 'black' }}>SaaS Dashboard</h3>
-                        </Link>
-                        
-                        </section>
-                    </div>
+            <div class="main-grid-one">
+                <div class="card">
+                    <h1>Warrior Player Stats</h1>
+                </div>
+                <hr />
+                <div class="project-description">
+                    <p>
+                        App that contains an image and stat carousel
+                        of the 2020-2021 Golden State Warriors.
+                    </p>
+                </div>
+                <div class="tech-stack">
+                    <ul>
+                        <li>HTML/CSS</li>
+                        <li>Javascript</li>
+                        <li>React</li>
+                    </ul>
+                </div>
+                <div></div>
+            </div>
+            <div class="main-grid-two">
+                <div class="card">
+                    <h1>SaaS Dashboard</h1>
+                </div>
+                <hr />
+                <div class="project-description">
+                        SaaS dashboard template that shows the valuation
+                        of a website by illustrating the revenue, expenses,
+                        and monetization sources.
+                </div>
+                <div class="tech-stack">
+                    <ul>
+                        <li>HTML/CSS</li>
+                        <li>Javascript</li>
+                        <li>React</li>
+                    </ul>
                 </div>
             </div>
         </div>
