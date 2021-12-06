@@ -63,44 +63,7 @@ function Projects() {
             <Box id='projects' className={classes.hero}>
                 <Box style={{ color: '#3e3e3e' }}>Projects</Box>
             </Box>
-            <div class="main-grid-one">
-                <div class="card">
-                    <h1>Warrior Player Stats</h1>
-                </div>
-                <hr />
-                <div class="project-description">
-                    <p>
-                        App that contains an image and stat carousel
-                        of the 2020-2021 Golden State Warriors.
-                    </p>
-                </div>
-                <div class="tech-stack">
-                    <ul>
-                        <li>HTML/CSS</li>
-                        <li>Javascript</li>
-                        <li>React</li>
-                    </ul>
-                </div>
-                <div></div>
-            </div>
-            <div class="main-grid-two">
-                <div class="card">
-                    <h1>SaaS Dashboard</h1>
-                </div>
-                <hr />
-                <div class="project-description">
-                        SaaS dashboard template that shows the valuation
-                        of a website by illustrating the revenue, expenses,
-                        and monetization sources.
-                </div>
-                <div class="tech-stack">
-                    <ul>
-                        <li>HTML/CSS</li>
-                        <li>Javascript</li>
-                        <li>React</li>
-                    </ul>
-                </div>
-            </div>
+            
         </div>
     );
 }

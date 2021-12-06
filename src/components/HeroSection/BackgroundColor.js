@@ -17,7 +17,7 @@ function BackgroundColor() {
                     </div>
                     <div className='col-8 col-7-large col-12-medium'>
                         <header id='aboutSection'>
-                            <h1>Hi, I'm<strong> Alex Cortez</strong>.</h1>
+                            <h1 className='hero-section-header'>Hi, I'm<strong> Alex Cortez</strong>.</h1>
                         </header>
                         <p id='aboutSection' className='paragraph'>I'm a<strong style={{ color: '#3e3e3e' }}> Frontend Developer</strong>.</p>
                     </div>

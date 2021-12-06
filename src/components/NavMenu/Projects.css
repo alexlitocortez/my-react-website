@@ -115,7 +115,9 @@ ul li {
 
     .main-grid-one {
         display: flex;
-        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         padding: 0 2px;
         background-color: #141414;
         margin: auto;

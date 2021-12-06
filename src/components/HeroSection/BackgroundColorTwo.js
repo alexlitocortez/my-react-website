@@ -26,7 +26,7 @@ function BackgroundColorTwo() {
 
     return (
         <div>
-            <div className='wholeSectionOne'>
+            <div className='wholeSectionTwo'>
                 <div className={classes.projectSection}>
                     <Projects />
                 </div>
